@@ -3,6 +3,13 @@
     let projectsOpen = false;
     let residentialOpen = false;
     let commercialOpen = false;
+
+    const closeAll = () => {
+        menuOpen = false;
+        projectsOpen = false;
+        residentialOpen = false;
+        commercialOpen = false;
+    };
 </script>
 
 <nav class="navbar">
@@ -19,79 +26,150 @@
     </button>
 
     <ul class="menu {menuOpen ? 'open' : ''}">
-        <li><a href="/">Home</a></li>
+        <li><a href="/" data-sveltekit-reload on:click={closeAll}>Home</a></li>
 
-        <!-- Projects Dropdown -->
-        <div class="dropdown">
+        <!-- PROJECTS DROPDOWN -->
+        <li class="dropdown">
             <a
                 href="#"
-                on:click|preventDefault={() => (projectsOpen = !projectsOpen)}
                 class="nav-link"
+                on:click|preventDefault={() => (projectsOpen = !projectsOpen)}
             >
                 Projects ▾
             </a>
+
             {#if projectsOpen}
-                <div class="dropdown-menu2">
-                    <div class="dropdown-item">
+                <ul class="dropdown-menu2">
+                    <!-- RESIDENTIAL -->
+                    <li class="dropdown-item">
                         <a
                             href="#"
+                            class="dropdown-link"
                             on:click|preventDefault={() =>
                                 (residentialOpen = !residentialOpen)}
-                            class="dropdown-link"
                         >
                             Residential ▸
                         </a>
-                        {#if residentialOpen}
-                            <div class="sub-dropdown">
-                                <a href="/casestudies/Lawrence" class="sub-link"
-                                    >Lawrence Villa</a
-                                >
-                                <a
-                                    href="/casestudies/roopnagar"
-                                    class="sub-link">Roop Nagar Villa</a
-                                >
-                                <a
-                                    href="/casestudies/indrapuram"
-                                    class="sub-link">Indrapuram</a
-                                >
-                            </div>
-                        {/if}
-                    </div>
 
-                    <div class="dropdown-item">
+                        {#if residentialOpen}
+                            <ul class="sub-dropdown">
+                                <li>
+                                    <a
+                                        href="/casestudies/Lawrence"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        Lawrence Villa
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/casestudies/roopnagar"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        Roop Nagar Villa
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/casestudies/indrapuram"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        Indrapuram
+                                    </a>
+                                </li>
+                            </ul>
+                        {/if}
+                    </li>
+
+                    <!-- COMMERCIAL -->
+                    <li class="dropdown-item">
                         <a
                             href="#"
+                            class="dropdown-link"
                             on:click|preventDefault={() =>
                                 (commercialOpen = !commercialOpen)}
-                            class="dropdown-link"
                         >
                             Commercial ▸
                         </a>
-                        {#if commercialOpen}
-                            <div class="sub-dropdown">
-                                <a
-                                    href="/casestudies/mouse-and-cheese-design-studio"
-                                    class="sub-link"
-                                >
-                                    Mouse & Cheese Design Studio
-                                </a>
-                                <a
-                                    href="/casestudies/office-Space"
-                                    class="sub-link">Office-Space</a
-                                >
-                                <a href="#" class="sub-link">A-82 First Floor</a
-                                >
-                            </div>
-                        {/if}
-                    </div>
-                </div>
-            {/if}
-        </div>
-        <a href="/blog" class="nav-link">Blogs</a>
-        <a href="/in-between" class="nav-link">In-between</a>
-        <a href="/contact" class="nav-link">Contact us</a>
 
-        <li><a href="/about">About Us</a></li>
+                        {#if commercialOpen}
+                            <ul class="sub-dropdown">
+                                <li>
+                                    <a
+                                        href="/casestudies/mouse-and-cheese-design-studio"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        Mouse & Cheese Design Studio
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/casestudies/office-Space"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        Office-Space
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="/casestudies/A-82-first-floor"
+                                        class="sub-link"
+                                        data-sveltekit-reload
+                                        on:click={closeAll}
+                                    >
+                                        A-82 First Floor
+                                    </a>
+                                </li>
+                            </ul>
+                        {/if}
+                    </li>
+                </ul>
+            {/if}
+        </li>
+
+        <li>
+            <a
+                href="/blog"
+                class="nav-link"
+                data-sveltekit-reload
+                on:click={closeAll}>Blogs</a
+            >
+        </li>
+        <li>
+            <a
+                href="/in-between"
+                class="nav-link"
+                data-sveltekit-reload
+                on:click={closeAll}>In-between</a
+            >
+        </li>
+        <li>
+            <a
+                href="/contact"
+                class="nav-link"
+                data-sveltekit-reload
+                on:click={closeAll}>Contact us</a
+            >
+        </li>
+        <li>
+            <a href="/about" data-sveltekit-reload on:click={closeAll}
+                >About Us</a
+            >
+        </li>
     </ul>
 </nav>
 
@@ -108,7 +186,7 @@
         z-index: 100;
     }
 
-    .logo > img {
+    .logo img {
         width: 50px;
     }
 
@@ -119,15 +197,6 @@
         color: white;
         cursor: pointer;
         z-index: 101;
-    }
-
-    @keyframes slideInBackground {
-        0% {
-            background-color: rgba(139, 58, 58, 0.3);
-        }
-        100% {
-            background-color: rgba(139, 58, 58, 1);
-        }
     }
 
     .menu {
@@ -145,15 +214,23 @@
         margin: 0;
         transform: translateX(0);
         transition: transform 0.6s ease-in-out;
-        z-index: 100;
         background-color: rgba(139, 58, 58, 0.8);
+        z-index: 100;
     }
 
     .menu.open {
         right: 0;
         transform: translateX(-100%);
-        background-color: rgba(139, 58, 58, 0.3);
-        animation: slideInBackground 0.8s ease forwards;
+        animation: slideInBackground 0.8s forwards;
+    }
+
+    @keyframes slideInBackground {
+        from {
+            background-color: rgba(139, 58, 58, 0.3);
+        }
+        to {
+            background-color: rgba(139, 58, 58, 1);
+        }
     }
 
     .menu a {
@@ -171,12 +248,8 @@
         gap: 0.8rem;
     }
 
-    .dropdown-link {
-        cursor: pointer;
-    }
-
-    @media screen and (max-width: 600px) {
-        .logo > img {
+    @media (max-width: 600px) {
+        .logo img {
             width: 30px;
         }
     }
