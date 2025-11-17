@@ -178,9 +178,9 @@
         </div>
 
         <div class="section-2">
-            <img src="/section2.png" alt="Section 2 Image" />
-            <img src="/section2.png" alt="Section 2 Image" />
-            <img src="/section2.png" alt="Section 2 Image" />
+            <img src="/Rectangle 159 (1).png" alt="Section 2 Image" />
+            <img src="/Rectangle 161 (1).png" alt="Section 2 Image" />
+            <img src="/Rectangle 160 (1).png" alt="Section 2 Image" />
         </div>
 
         <div class="sub-head-2">
