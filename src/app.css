@@ -1,0 +1,122 @@
+/* ==== Reset & Normalize ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  /* background-color: var(--background); */
+  background-image: url('/bg.png');
+  background-repeat: repeat;
+  color: var(--text);
+  background-color: var(--background);
+  font-family: var(--sub);
+  color: var(--text);
+
+
+}
+
+/* ==== Root Variables ==== */
+:root {
+  --primary: #8B3A3A;
+  --secondary: #6366f1;
+  --background: #dfdad0;
+  --text: #171717;
+
+  --font-size-base: 16px;
+  --border-radius: 8px;
+
+  --max-width: 1280px;
+
+  --main: "Playfair Display";
+  --sub: "Instrument Sans";
+
+}
+
+.bg-primary {
+  background-color: #8B3A3A !important;
+  color: white !important;
+}
+
+.curve {
+  border-radius: 10px;
+}
+
+.playfair {
+  font-family: "Playfair Display";
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.instrument {
+  font-family: "Instrument Sans";
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+
+
+
+/* ==== Base Elements ==== */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--main);
+  color: var(--primary);
+}
+
+h1,
+h2 {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.wrapper-1200 {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: static;
+}
