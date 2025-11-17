@@ -39,7 +39,7 @@
 
             function isFullyInView(el) {
                 const rect = el.getBoundingClientRect();
-                return rect.top >= 0 && rect.bottom <= window.innerHeight - 10;
+                return rect.top >= 0 || rect.bottom <= window.innerHeight - 10;
             }
 
             const handleWheel = (e) => {
