@@ -39,7 +39,7 @@
 
             function isFullyInView(el) {
                 const rect = el.getBoundingClientRect();
-                return rect.top >= 0 && rect.bottom <= window.innerHeight - 10;
+                return rect.top >= 0 || rect.bottom <= window.innerHeight - 10;
             }
 
             const handleWheel = (e) => {
@@ -236,10 +236,10 @@
                 </p>
             </div>
             <div class="scroll-item-2">
-                <video class="scroll-video" autoplay muted loop playsinline>
-                    <source src="/hrscrollv1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <img
+                    class="scroll-video"
+                    src="/1b28021e-40da-491a-8cdb-e9e64401a7ba 1 (1).png"
+                />
             </div>
 
             <div class="scroll-item-3">

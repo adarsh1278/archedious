@@ -104,7 +104,7 @@
                             <ul class="sub-dropdown">
                                 <li>
                                     <a
-                                        href="/casestudies/mouse-and-cheese-design-studio"
+                                        href="/casestudies/mouseAndcheese"
                                         class="sub-link"
                                         data-sveltekit-reload
                                         on:click={closeAll}

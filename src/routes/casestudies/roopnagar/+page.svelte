@@ -176,7 +176,11 @@
                 need more room. They needed clarity, connection, and comfort.
                 The vision became simple: remove the fragmentation and shape a
                 space that felt unified, brighter, and genuinely livable within
-                the structure’s limits.
+                the structure’s limits. change to (This residence is envisioned
+                as a calm, crafted living environment where space, light, and
+                material come together with quiet precision. The design elevates
+                everyday living through thoughtful planning, refined details,
+                and a curated palette that balances warmth with modern clarity.
             </p>
         </div>
 
@@ -188,8 +192,8 @@
 
         <div class="sub-head-2">
             <h2>
-                The Starting Point:<br />
-                Brand, Behaviour & Bare Bones
+                How we built a<br />
+                Space that Lives with you
             </h2>
         </div>
 

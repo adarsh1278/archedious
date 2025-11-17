@@ -102,7 +102,7 @@
 <style>
     section {
         width: 100%;
-        height: 100dvh;
+
         display: flex;
         justify-content: center;
         align-items: center;
