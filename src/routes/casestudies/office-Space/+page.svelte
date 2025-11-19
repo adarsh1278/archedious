@@ -162,21 +162,19 @@
     <div class="container">
         <div class="hero-bg">
             <div>
-                <h1>Office Space</h1>
-                <p>Residential | Delhi</p>
+                <h1>The Terrace Studio</h1>
+                <p>Commercial| Delhi</p>
             </div>
         </div>
 
         <div class="sub-head">
-            <h2>Symphony of Light & Space</h2>
+            <h2>The Art of Everyday Space</h2>
             <p>
-                The aim wasn’t to create something new, but to make the existing
-                space truly work. The family owned two stacked floors in an old
-                building that felt dark, closed, and disconnected. They didn’t
-                need more room. They needed clarity, connection, and comfort.
-                The vision became simple: remove the fragmentation and shape a
-                space that felt unified, brighter, and genuinely livable within
-                the structure’s limits.
+                This residence is envisioned as a calm, crafted living
+                environment where space, light, and material come together with
+                quiet precision. The design elevates everyday living through
+                thoughtful planning, refined details, and a curated palette that
+                balances warmth with modern clarity.
             </p>
         </div>
 
@@ -186,12 +184,12 @@
             <img src="/Rectangle 161.png" alt="Section 2 Image" />
         </div> -->
 
-        <div class="sub-head-2">
+        <!-- <div class="sub-head-2">
             <h2>
                 The Starting Point:<br />
                 Brand, Behaviour & Bare Bones
             </h2>
-        </div>
+        </div> -->
 
         <div class="horizontal-scroll">
             <!-- <div class="scroll-item-1">

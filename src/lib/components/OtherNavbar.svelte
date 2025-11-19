@@ -77,7 +77,7 @@
                             >Mouse & Cheese Design Studio</a
                         >
                         <a href="/casestudies/office-Space" class="sub-link"
-                            >SixD</a
+                            >The Terrace Studio</a
                         >
                         <a href="#" class="sub-link">A-82 First Floor</a>
                     </div>

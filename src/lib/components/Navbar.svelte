@@ -120,7 +120,7 @@
                                         data-sveltekit-reload
                                         on:click={closeAll}
                                     >
-                                        Office-Space
+                                        The Terrace Studio
                                     </a>
                                 </li>
 

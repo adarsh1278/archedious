@@ -12,7 +12,7 @@
                 "The marriage of neuroscience and architectural design represents one of the most promising frontiers in contemporary building science—a discipline that recognizes the human brain as the ultimate judge of architectural success.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/blog21.png",
                 alt: "Biophilic design elements in modern architecture",
             },
         },
@@ -61,7 +61,7 @@
                     "Green buildings increasingly incorporate advanced glazing systems that optimize daylight penetration while controlling heat gain and glare. Smart glass technology enables windows that adapt transparency and tinting throughout the day, providing optimal light conditions for different activities while maintaining visual connection to outdoor environments.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/3d67254ac666ff0fec49a2b4cb07116b81a3d84f.png",
                     alt: "Natural lighting in biophilic architecture",
                 },
                 subsection: {
@@ -82,7 +82,7 @@
                     "Contemporary Indian architecture can learn from these traditional building strategies while incorporating modern biophilic research. Sustainable architecture firms increasingly design residential complexes and commercial buildings that combine energy efficiency with biophilic principles, creating spaces that serve both environmental and neurological health.",
                 ],
                 image: {
-                    src: "/image 85.png",
+                    src: "/01005b8c430eaa606b0e86ca600d19cbe4897b04.png",
                     alt: "Traditional Indian architecture with biophilic elements",
                     caption: "Traditional wisdom meets modern neuroscience",
                 },
@@ -328,9 +328,8 @@
                         <div class=" content-3-card-header">
                             <div class=" content-3-card-description">
                                 <p>
-                                    Explore how putting users at the heart of
-                                    the design process fosters creativity and
-                                    drives impactful solutions.
+                                    The Craft of Matter: How Material Choice
+                                    Tells a Story in Architecture
                                 </p>
                             </div>
                             <span> 15min </span>
@@ -418,7 +417,7 @@
     }
     .hero-sub {
         margin: 36px 0px;
-        color: #3f352f;
+        color: #1e1e1e;
         font-weight: 600;
         font-size: 2rem;
     }
@@ -439,15 +438,17 @@
     .lead-figure img {
         width: 100%;
         height: auto;
+        max-height: 700px;
         display: block;
     }
 
     h2 {
         font-size: 20px;
         margin-top: 20px;
-        color: #3b2b2a;
+        color: #1e1e1e;
     }
     h3 {
+        color: #1e1e1e;
         font-size: 16px;
         margin: 0 0 10px 0;
     }

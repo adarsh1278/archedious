@@ -168,15 +168,17 @@
         </div>
 
         <div class="sub-head">
-            <h2>Symphony of Light & Space</h2>
+            <h2>Designing Within the Lines</h2>
             <p>
-                The aim wasn’t to create something new, but to make the existing
-                space truly work. The family owned two stacked floors in an old
-                building that felt dark, closed, and disconnected. They didn’t
-                need more room. They needed clarity, connection, and comfort.
-                The vision became simple: remove the fragmentation and shape a
-                space that felt unified, brighter, and genuinely livable within
-                the structure’s limits.
+                The clients wanted their 4+1 penthouse to feel light, timeless,
+                and quietly luxurious. What we received was a raw bare-shell —
+                concrete walls, basic flooring, and fixed service layouts that
+                couldn’t be moved. The challenge was to turn this rigid shell
+                into a warm, cohesive home without altering the MEP framework.
+                Every decision had to work within these limits, focusing on
+                openness, natural light, and smooth circulation. The brief
+                pushed us toward subtle layers, textures, and precise detailing
+                rather than large structural changes.
             </p>
         </div>
 
@@ -187,10 +189,7 @@
         </div>
 
         <div class="sub-head-2">
-            <h2>
-                The Starting Point:<br />
-                Brand, Behaviour & Bare Bones
-            </h2>
+            <h2>Spatial & Functional Response</h2>
         </div>
 
         <div class="horizontal-scroll">

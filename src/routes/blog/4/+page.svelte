@@ -307,9 +307,8 @@
                         <div class=" content-3-card-header">
                             <div class=" content-3-card-description">
                                 <p>
-                                    Explore how putting users at the heart of
-                                    the design process fosters creativity and
-                                    drives impactful solutions.
+                                    The Craft of Matter: How Material Choice
+                                    Tells a Story in Architecture
                                 </p>
                             </div>
                             <span> 15min </span>

@@ -188,8 +188,8 @@
 
         <div class="sub-head-2">
             <h2>
-                The Starting Point:<br />
-                Brand, Behaviour & Bare Bones
+                How We Built<br />
+                A Space That Lives With You
             </h2>
         </div>
 
@@ -289,7 +289,7 @@
             </video>
 
             <div class="section-3-card">
-                <h2>Heritage in the Structuret</h2>
+                <h2>Heritage in the Structure</h2>
                 <p>
                     The building had almost 40 years behind it — uneven slabs,
                     worn-out walls, and quirks that only time can carve. Instead

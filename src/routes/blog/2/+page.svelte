@@ -12,7 +12,7 @@
                 "This is architecture as literature written in matter—where every surface texture, every joint detail, every weathering pattern contributes to an ongoing narrative about place, culture, time, and human aspiration. Sustainable design adds new chapters to this story, demanding materials that speak not just of present needs but of responsibility toward future generations.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png",
                 alt: "Grid of material samples: concrete, wood, steel, brick",
             },
         },
@@ -45,7 +45,7 @@
                     "Wood species selection provides architects with different narrative vocabularies. Teak tells stories of tropical luxury and colonial history. Pine speaks of northern forests and modest craftsmanship. Bamboo narrates rapid growth and renewable resources. Each species brings specific cultural associations and performance characteristics that contribute to the building's overall story.",
                 ],
                 image: {
-                    src: "/image 85.png",
+                    src: "/full-frame-of-wooden-stump-texture-as-backdrop-2024-11-17-13-51-26-utc 1.png",
                     alt: "planks of finished wood showing grain and finish",
                 },
                 additionalContent: [
@@ -65,7 +65,7 @@
                     "Steel fabrication techniques create different narrative possibilities. Welded connections speak of permanent joinery and industrial precision. Bolted connections tell stories of assembly and potential disassembly, of structures designed for change. Cast steel elements enable custom shapes that combine industrial capability with artistic expression.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/forged-door-floral-element-close-up-2025-10-14-09-49-48-utc 1.png",
                     alt: "Grid of material samples: concrete, wood, steel, brick",
                 },
                 additionalContent: [
@@ -286,9 +286,8 @@
                         <div class=" content-3-card-header">
                             <div class=" content-3-card-description">
                                 <p>
-                                    Explore how putting users at the heart of
-                                    the design process fosters creativity and
-                                    drives impactful solutions.
+                                    The Craft of Matter: How Material Choice
+                                    Tells a Story in Architecture
                                 </p>
                             </div>
                             <span> 15min </span>
