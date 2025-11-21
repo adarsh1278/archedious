@@ -208,7 +208,7 @@
           <div class=" content-3-card">
             <div class=" content-3-card-image">
               <img src="arrow.png" alt="Image 3" class="content-3-image2" />
-              <img src="card1.png" alt="Image 3" class="content-3-image1" />
+              <img src="image 83.png" alt="Image 3" class="content-3-image1" />
             </div>
             <div class=" content-3-card-header">
               <div class=" content-3-card-description">
@@ -250,8 +250,8 @@
       <a href="/blog/1">
         <div class=" content-3-card">
           <div class=" content-3-card-image">
-            <img src="arrow.png" alt="Image 3" class="content-3-image2" />
-            <img src="image 83.png" alt="Image 3" class="content-3-image1" />
+            <img src="/arrow.png" alt="Image 3" class="content-3-image2" />
+            <img src="/blog21.png" alt="Image 3" class="content-3-image1" />
           </div>
           <div class=" content-3-card-header">
             <div class=" content-3-card-description">
@@ -315,10 +315,10 @@
     overflow-x: hidden;
   }
   .hero-sub {
-    margin: 36px 0px;
-    color: #3f352f;
+    color: #1e1e1e;
     font-weight: 600;
     font-size: 2rem;
+    margin: 36px 0px;
   }
 
   .lead p {

@@ -21,7 +21,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="card1.png"
+                            src="/image 83.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -78,7 +78,7 @@
                         class="content-3-image2"
                     />
                     <img
-                        src="image 83.png"
+                        src="/blog21.png"
                         alt="Image 3"
                         class="content-3-image1"
                     />
@@ -106,7 +106,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="card1.png"
+                            src="image 83.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -186,7 +186,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="card1.png"
+                            src="image 83.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />

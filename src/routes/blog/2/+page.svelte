@@ -248,7 +248,7 @@
                                 class="content-3-image2"
                             />
                             <img
-                                src="/card1.png"
+                                src="/image 83.png"
                                 alt="Image 3"
                                 class="content-3-image1"
                             />
@@ -304,7 +304,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="/image 83.png"
+                            src="/blog21.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -375,7 +375,7 @@
     }
     .hero-sub {
         margin: 36px 0px;
-        color: #3f352f;
+        color: #1e1e1e;
         font-weight: 600;
         font-size: 2rem;
     }
@@ -396,15 +396,17 @@
     .lead-figure img {
         width: 100%;
         height: auto;
+        max-height: 600px;
         display: block;
     }
 
     h2 {
         font-size: 20px;
         margin-top: 20px;
-        color: #3b2b2a;
+        color: #1e1e1e;
     }
     h3 {
+        color: #1e1e1e;
         font-size: 16px;
         margin: 0 0 10px 0;
     }

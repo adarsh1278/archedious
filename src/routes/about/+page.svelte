@@ -186,86 +186,89 @@
         </div>
     </div>
 
-    <div class="content-3">
+    <div class=" content-3">
         <div class="content-3-tab">
-            <a href="/blog" class="hoverme">
-                <div class="content-3-card">
-                    <div class="content-3-card-image">
+            <a href="/blog">
+                <div class=" content-3-card">
+                    <div class=" content-3-card-image">
                         <img
                             src="/arrow.png"
-                            alt="Arrow"
+                            alt="Image 3"
                             class="content-3-image2"
                         />
                         <img
-                            src="/card1.png"
-                            alt="Card 1"
+                            src="/image 83.png"
+                            alt="Image 3"
                             class="content-3-image1"
                         />
                     </div>
-                    <div class="content-3-card-header">
-                        <h4>Designing with Purpose</h4>
-                        <span>12min</span>
-                    </div>
-                    <div class="content-3-card-description">
-                        <p>
-                            We believe great design starts with intention.
-                            Here's how purpose guides every decision we make
-                        </p>
+                    <div class=" content-3-card-header">
+                        <div class=" content-3-card-description">
+                            <p>
+                                The Science Behind Timeless Materials: Why
+                                Concrete, Steel, and Wood Still Reign in Modern
+                                Architecture
+                            </p>
+                        </div>
+                        <!-- <h4>
+                            The Science Behind Timeless Materials: Why Concrete,
+                            Steel, and Wood Still Reign in Modern Architecture
+                        </h4> -->
+                        <span> 12min </span>
                     </div>
                 </div>
             </a>
-
-            <div class="content-3-card">
-                <div class="content-3-card-image">
+            <a href="/blog/2">
+                <div class=" content-3-card">
+                    <div class=" content-3-card-image">
+                        <img
+                            src="/arrow.png"
+                            alt="Image 3"
+                            class="content-3-image2"
+                        />
+                        <img
+                            src="/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
+                            alt="Image 3"
+                            class="content-3-image1"
+                        />
+                    </div>
+                    <div class=" content-3-card-header">
+                        <div class=" content-3-card-description">
+                            <p>
+                                The Craft of Matter: How Material Choice Tells a
+                                Story in Architecture
+                            </p>
+                        </div>
+                        <span> 15min </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="/blog/1">
+            <div class=" content-3-card">
+                <div class=" content-3-card-image">
                     <img
                         src="/arrow.png"
-                        alt="Arrow"
+                        alt="Image 3"
                         class="content-3-image2"
                     />
                     <img
-                        src="/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
-                        alt="Card 2"
+                        src="/blog21.png"
+                        alt="Image 3"
                         class="content-3-image1"
                     />
                 </div>
-                <div class="content-3-card-header">
-                    <h4>User - Centered Innovation</h4>
-                    <span>15min</span>
-                </div>
-                <div class="content-3-card-description">
-                    <p>
-                        Explore how putting users at the heart of the design
-                        process fosters creativity and drives impactful
-                        solutions.
-                    </p>
+                <div class=" content-3-card-header">
+                    <div class=" content-3-card-description">
+                        <p>
+                            Biophilic Design: Where Neuroscience Meets
+                            Architecture
+                        </p>
+                    </div>
+                    <span> 10min </span>
                 </div>
             </div>
-        </div>
-
-        <div class="content-3-card">
-            <div class="content-3-card-image">
-                <img src="/arrow.png" alt="Arrow" class="content-3-image2" />
-                <img
-                    src="/image 83.png"
-                    alt="Card 3"
-                    class="content-3-image1"
-                />
-            </div>
-            <div class="content-3-card-header">
-                <h4>
-                    Sustainable
-                    <br />
-                    Practices in Design
-                </h4>
-                <span>10min</span>
-            </div>
-            <div class="content-3-card-description">
-                <p>
-                    Discover the importance of sustainability in design and how
-                    it influences our approach to creating lasting products.
-                </p>
-            </div>
-        </div>
+        </a>
     </div>
 
     <div class="content-4">
