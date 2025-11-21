@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="blank-section"></div>
+  <!-- <div class="blank-section"></div> -->
 </div>
 
 <div class="container">
@@ -58,17 +58,14 @@
     --max-width: 1300px;
   }
 
-
-  .text-section > h1{
+  .text-section > h1 {
     z-index: 3;
     position: relative;
-
   }
 
-   .text-section > p{
+  .text-section > p {
     z-index: 3;
     position: relative;
-    
   }
 
   .container {

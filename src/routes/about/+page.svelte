@@ -129,24 +129,40 @@
                 Archideus is a full-spectrum architectural practice led by the
                 demands of function, not trends.
             </p>
-            <img src="/aboutus1.png" alt="Section 1 Image" />
+            <img
+                src="/man-walking-behind-glass-doors-2025-10-17-01-24-17-utc 1.png"
+                alt="Section 1 Image"
+            />
         </div>
 
         <div class="section section-2">
             <p>
-                Every project begins with clarity, what the space is meant to
-                do, who it must serve, and how it should endure.
+                Every project begins with clarity,
+                <br />
+                <span class="it">
+                    What the space is meant to do,
+                    <br />
+                    Who it must serve,
+                    <br />
+                    How it should endure.
+                </span>
             </p>
-            <img src="/hrscroll1.png" alt="Section 2 Image" />
+            <img src="/final copy1 2.png" alt="Section 2 Image" />
         </div>
 
         <div class="section section-3">
             <p>
-                From site planning to the last fixture, we shape environments
-                that earn their place: practical, precise, and purposeful by
-                design.
+                From site planning to the last fixture, we <br />
+                shape environments that earn their place:
+                <br />
+                <span class="it">
+                    practical, precise, and purposeful by design.
+                </span>
             </p>
-            <img src="/hrscroll1.png" alt="Section 3 Image" />
+            <video class="section-3-video" autoplay muted loop playsinline>
+                <source src="/Untitled design.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <div class="section section-4">
@@ -170,7 +186,14 @@
                     </span>
                 </div>
             </div>
-            <img src="/aboutus2.png" alt="Section 4 Image" />
+            <div class="image-section-4">
+                <div class="frame">
+                    <img src="/Group 35.png" alt="Happy couple at home" />
+                </div>
+                <div class="sec-4-img-txt"></div>
+            </div>
+
+            <!-- <img src="/aboutus2.png" alt="Section 4 Image" /> -->
         </div>
     </div>
 
@@ -287,9 +310,72 @@
     .hoverme {
         transition: all 0.7s ease;
     }
-
+    .image-section-4 {
+        /* background-color: aqua; */
+        width: 40%;
+        padding-top: 5vmax;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .frame img {
+        width: 533px;
+        height: 533px;
+        flex-shrink: 0;
+        aspect-ratio: 1/1;
+    }
     .hoverme:hover {
         scale: 1.1;
         text-decoration: none;
+    }
+
+    :root {
+        --primary-color: #8c3d3d;
+        --text-color: #333;
+        --max-width: 1300px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .container {
+            gap: 30px;
+            padding: 40px 30px;
+        }
+
+        .blank-section {
+            display: none; /* hide spacing column on tablets */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .text-section,
+        .image-section {
+            flex: 1 1 100%;
+        }
+
+        .image-section {
+            order: -1; /* move image above text */
+        }
+
+        .blank-section {
+            display: none; /* no blank space on mobile */
+        }
+
+        .circle {
+            display: none; /* remove circle for simplicity */
+        }
+
+        .text-section p {
+            margin: 0 auto;
+        }
     }
 </style>
