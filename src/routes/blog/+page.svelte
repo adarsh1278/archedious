@@ -229,7 +229,11 @@
           <div class=" content-3-card">
             <div class=" content-3-card-image">
               <img src="arrow.png" alt="Image 3" class="content-3-image2" />
-              <img src="card2.png" alt="Image 3" class="content-3-image1" />
+              <img
+                src="background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
+                alt="Image 3"
+                class="content-3-image1"
+              />
             </div>
             <div class=" content-3-card-header">
               <div class=" content-3-card-description">
@@ -247,7 +251,7 @@
         <div class=" content-3-card">
           <div class=" content-3-card-image">
             <img src="arrow.png" alt="Image 3" class="content-3-image2" />
-            <img src="card3.jpg" alt="Image 3" class="content-3-image1" />
+            <img src="image 83.png" alt="Image 3" class="content-3-image1" />
           </div>
           <div class=" content-3-card-header">
             <div class=" content-3-card-description">

@@ -145,7 +145,7 @@
                     link: "/blog",
                 },
                 {
-                    image: "/card2.png",
+                    image: "/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png",
                     title: "User - Centered Innovation",
                     readTime: "15min",
                     description:
@@ -153,7 +153,7 @@
                     link: null,
                 },
                 {
-                    image: "/card3.jpg",
+                    image: "/image 83.png",
                     title: "Sustainable Practices in Design",
                     readTime: "10min",
                     description:
@@ -320,7 +320,7 @@
                                 class="content-3-image2"
                             />
                             <img
-                                src="/card2.png"
+                                src="/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
                                 alt="Image 3"
                                 class="content-3-image1"
                             />
@@ -346,7 +346,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="/card3.jpg"
+                            src="/image 83.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -438,7 +438,7 @@
     .lead-figure img {
         width: 100%;
         height: auto;
-        max-height: 700px;
+        max-height: 600px;
         display: block;
     }
 

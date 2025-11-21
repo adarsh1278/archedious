@@ -604,7 +604,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="/card2.png"
+                            src="/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -631,7 +631,7 @@
                         class="content-3-image2"
                     />
                     <img
-                        src="/card3.jpg"
+                        src="/image 83.png"
                         alt="Image 3"
                         class="content-3-image1"
                     />

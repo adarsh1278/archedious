@@ -188,33 +188,32 @@
 
     <div class="content-3">
         <div class="content-3-tab">
-          
-                <a href="/blog" class="hoverme">
-                      <div class="content-3-card">
-                <div class="content-3-card-image">
-                    <img
-                        src="/arrow.png"
-                        alt="Arrow"
-                        class="content-3-image2"
-                    />
-                    <img
-                        src="/card1.png"
-                        alt="Card 1"
-                        class="content-3-image1"
-                    />
+            <a href="/blog" class="hoverme">
+                <div class="content-3-card">
+                    <div class="content-3-card-image">
+                        <img
+                            src="/arrow.png"
+                            alt="Arrow"
+                            class="content-3-image2"
+                        />
+                        <img
+                            src="/card1.png"
+                            alt="Card 1"
+                            class="content-3-image1"
+                        />
+                    </div>
+                    <div class="content-3-card-header">
+                        <h4>Designing with Purpose</h4>
+                        <span>12min</span>
+                    </div>
+                    <div class="content-3-card-description">
+                        <p>
+                            We believe great design starts with intention.
+                            Here's how purpose guides every decision we make
+                        </p>
+                    </div>
                 </div>
-                <div class="content-3-card-header">
-                    <h4>Designing with Purpose</h4>
-                    <span>12min</span>
-                </div>
-                <div class="content-3-card-description">
-                    <p>
-                        We believe great design starts with intention. Here's
-                        how purpose guides every decision we make
-                    </p>
-                </div>
-            </div>
-                </a>
+            </a>
 
             <div class="content-3-card">
                 <div class="content-3-card-image">
@@ -224,7 +223,7 @@
                         class="content-3-image2"
                     />
                     <img
-                        src="/card2.png"
+                        src="/background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
                         alt="Card 2"
                         class="content-3-image1"
                     />
@@ -246,7 +245,11 @@
         <div class="content-3-card">
             <div class="content-3-card-image">
                 <img src="/arrow.png" alt="Arrow" class="content-3-image2" />
-                <img src="/card3.jpg" alt="Card 3" class="content-3-image1" />
+                <img
+                    src="/image 83.png"
+                    alt="Card 3"
+                    class="content-3-image1"
+                />
             </div>
             <div class="content-3-card-header">
                 <h4>
@@ -278,11 +281,11 @@
 <style>
     @import url("./index.css");
 
-    .hoverme{
+    .hoverme {
         transition: all 0.7s ease;
     }
 
-    .hoverme:hover{
+    .hoverme:hover {
         scale: 1.1;
         text-decoration: none;
     }
