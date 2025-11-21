@@ -65,8 +65,8 @@
                         <a href="/casestudies/roopnagar" class="sub-link"
                             >Roop Nagar Villa</a
                         >
-                        <a href="/casestudies/indrapuram" class="sub-link"
-                            >Indrapuram</a
+                        <a href="/casestudies/Indirapuram" class="sub-link"
+                            >Indirapuram</a
                         >
                     </div>
                 </div>

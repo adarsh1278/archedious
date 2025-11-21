@@ -77,12 +77,12 @@
 
                                 <li>
                                     <a
-                                        href="/casestudies/indrapuram"
+                                        href="/casestudies/Indirapuram"
                                         class="sub-link"
                                         data-sveltekit-reload
                                         on:click={closeAll}
                                     >
-                                        Indrapuram
+                                        Indirapuram
                                     </a>
                                 </li>
                             </ul>

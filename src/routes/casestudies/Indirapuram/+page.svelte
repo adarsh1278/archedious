@@ -39,7 +39,7 @@
 
             function isFullyInView(el) {
                 const rect = el.getBoundingClientRect();
-                return rect.top >= 0 && rect.bottom <= window.innerHeight - 10;
+                return rect.top >= 0 || rect.bottom <= window.innerHeight - 10;
             }
 
             const handleWheel = (e) => {
@@ -183,9 +183,7 @@
         </div>
 
         <div class="section-2">
-            <img src="/Rectangle 159.png" alt="Section 2 Image" />
-            <img src="/Rectangle 160.png" alt="Section 2 Image" />
-            <img src="/Rectangle 161.png" alt="Section 2 Image" />
+            <img src="/CORRIDOR 1.png" alt="Section 2 Image" />
         </div>
 
         <div class="sub-head-2">
@@ -195,71 +193,66 @@
         <div class="horizontal-scroll">
             <div class="scroll-item-1">
                 <img
-                    src="/hand sketch 1.png"
+                    src="/Enscape_2024-12-03-18-40-58 1.png"
                     alt="Image 1"
                     class="scroll-image"
                 />
                 <p>
-                    The first big step was connecting the two floors to create a
-                    duplex. This instantly improved how the space functioned. It
-                    allowed clear separation between family areas and private
-                    rooms, and the staircase became a natural anchor that guided
-                    movement and brought in light.
+                    <span class=" hr-head">Living & Dining </span>
+                    <br />
+
+                    We used a calm palette, soft textures, and layered lighting
+                    to create an atmosphere of understated luxury. The living
+                    area visually flows into the balcony, while the dining space
+                    is subtly zoned through furniture placement and ceiling
+                    detailing. It feels open, yet rooted.
                 </p>
             </div>
 
             <div class="scroll-item-1">
                 <img
-                    src="/8091bdfa-c3d8-49d8-b6f3-0a039c49705d 1.png"
+                    src="/GUEST BEDROOM_01 1.png"
                     alt="Image 2"
                     class="scroll-image"
                 />
                 <p>
-                    We kept the needs of a multi-generation family at the
-                    center. The idea was to create a space where privacy and
-                    togetherness both felt natural.
-                </p>
-            </div>
-            <div class="scroll-item-1">
-                <img
-                    src="/f54ce718-c901-458b-80d4-1be627d98778 1.png"
-                    alt="Image 2"
-                    class="scroll-image"
-                />
-                <p>
-                    Since the layout was long and narrow, we made every part
-                    work harder. We pulled natural light deeper into the space,
-                    avoided dead corners, and designed elements to serve more
-                    than one purpose. Storage also added warmth, walls supported
-                    light flow, and transitions became places to breathe.
-                </p>
-            </div>
-            <div class="scroll-item-2">
-                <video class="scroll-video" autoplay muted loop playsinline>
-                    <source src="/hrscrollv1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+                    <span class=" hr-head"> Bedrooms </span>
+                    <br />
 
-            <div class="scroll-item-3">
-                <div class="scroll-item-4">
-                    <img
-                        src="/FRONT BEDROOM-01 1.png"
-                        alt="Image 3"
-                        class="scroll-image-3"
-                    />
-                </div>
-
-                <p>
-                    The rooms were designed to adapt as the family grows and
-                    changes. Spaces can shift from one purpose to another — from
-                    kids to teenagers to elders. The design is flexible enough
-                    to evolve with their lives, not hold them back.
+                    Each bedroom tells its own story. The master suite is calm
+                    and cocoon-like, with warm textures and gentle lighting for
+                    a restful mood. The kids’ room brings in playful colors
+                    while still aligning with the home’s overall palette for
+                    harmony. The guest bedroom uses soft color accents to feel
+                    fresh and inviting — a comfortable stopover rather than a
+                    formal space.
                 </p>
             </div>
 
             <div class="scroll-item-5">
-                <img src="/FRONT BEDROOM -02 1 (1).png" alt="Image 1" />
+                <img src="/MASTER BEDROOM_01 1.png" alt="Image 1" />
+            </div>
+            <div class="scroll-item-5">
+                <img src="/MASTERBEDROOM_02 1.png" alt="Image 1" />
+            </div>
+            <div class="scroll-item-5">
+                <img src="/TEEN BEDROOM_03 1.png" alt="Image 1" />
+            </div>
+            <div class="scroll-item-1">
+                <img
+                    src="/Enscape_2025-03-12-18-27-54 1.png"
+                    alt="Image 2"
+                    class="scroll-image"
+                />
+                <p>
+                    <span class=" hr-head"> Texture & Tactility </span>
+                    <br />
+
+                    Materials were chosen for their touch and tone matte oak
+                    veneers, fabric laminates, soft textiles like boucle, and
+                    subtle grain finishes in marble and wood created a
+                    comforting, layered texture palette
+                </p>
             </div>
         </div>
 
@@ -288,19 +281,16 @@
             </video>
 
             <div class="section-3-card">
-                <h2>Heritage in the Structuret</h2>
+                <h2>Behind the Build: Craft, Constraint & Creation</h2>
                 <p>
-                    The building had almost 40 years behind it — uneven slabs,
-                    worn-out walls, and quirks that only time can carve. Instead
-                    of fighting its age, we worked with it. We kept what held
-                    strong, strengthened what had given up, and let go of what
-                    no longer made sense. The goal wasn’t to force it into
-                    looking new, but to help it stand true , steady, usable, and
-                    quietly confident in its own lived-in history. The entire
-                    project was delivered within a ₹40L budget, without
-                    shortcuts. This was achieved by using high-performing
-                    natural materials, lean planning, and smart structure , not
-                    by stripping down experience.
+                    Designing within fixed Mivan walls and rigid service layouts
+                    demanded precision at every step. From aligning electrical
+                    points to coordinating finishes across multiple vendors, the
+                    process was a balance of discipline and detail. The result
+                    is a home that feels expansive, warm, and effortlessly
+                    refined—where thoughtful flow, layered lighting, and
+                    material harmony come together to create a space that’s
+                    timeless, personal, and truly lived-in.
                 </p>
             </div>
         </div>
@@ -734,6 +724,15 @@
         margin-bottom: 0%;
         letter-spacing: -1px;
     }
+    .hr-head {
+        color: #1e1e1e;
+        font-family: "Instrument Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px; /* 150% */
+        letter-spacing: -0.38px;
+    }
 
     .hero-bg p {
         color: #fff;
@@ -877,8 +876,7 @@
     }
 
     .section-2 img {
-        min-width: 29vmax;
-        max-width: 429px;
+        width: 100%;
         max-height: 366px;
         flex-shrink: 0;
         border-radius: 12px;
