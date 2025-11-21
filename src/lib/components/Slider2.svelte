@@ -3,57 +3,89 @@
 
     let visible = false;
     let container;
-
-    function setupObserver(el, setVisible) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        if (entry.isIntersecting) setVisible(true);
-                    }, 100);
-                } else {
-                    setVisible(false);
-                }
-            },
-            { threshold: 0.7 },
-        );
-
-        if (el) observer.observe(el);
-        return () => observer.disconnect();
-    }
+    let swiperInstance;
+    let isInitialized = false;
 
     onMount(() => {
-        const cleanup = setupObserver(container, (v) => (visible = v));
+        // Intersection Observer for animation
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    visible = entry.isIntersecting;
+                });
+            },
+            { 
+                threshold: 0.2,
+                rootMargin: "50px"
+            }
+        );
 
-        // Swiper init with autoplay
-        new Swiper(".mySwiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            mousewheel: true,
-            keyboard: true,
-            autoplay: {
-                delay: 5000, // 5 sec per slide
-                disableOnInteraction: false, // user navigate kare tab bhi autoplay continue rahe
-            },
-            loop: true, // infinite loop
-        });
+        if (container) {
+            observer.observe(container);
+        }
 
-        return () => cleanup();
+        // Initialize Swiper
+        const initSwiper = () => {
+            if (isInitialized || typeof Swiper === 'undefined') return;
+            
+            try {
+                swiperInstance = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    speed: 600,
+                    effect: 'slide',
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                        dynamicBullets: false,
+                    },
+                    keyboard: {
+                        enabled: true,
+                        onlyInViewport: true,
+                    },
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    loop: true,
+                    grabCursor: true,
+                    watchSlidesProgress: true,
+                    preventInteractionOnTransition: false,
+                });
+                isInitialized = true;
+            } catch (error) {
+                console.error('Swiper initialization error:', error);
+            }
+        };
+
+        // Wait for Swiper library and DOM
+        const checkAndInit = () => {
+            if (typeof Swiper !== 'undefined') {
+                initSwiper();
+            } else {
+                setTimeout(checkAndInit, 50);
+            }
+        };
+
+        setTimeout(checkAndInit, 100);
+
+        return () => {
+            observer.disconnect();
+            if (swiperInstance && isInitialized) {
+                try {
+                    swiperInstance.destroy(true, true);
+                } catch (e) {
+                    console.error('Swiper destroy error:', e);
+                }
+            }
+        };
     });
 </script>
-
-<!-- Swiper CSS -->
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
 
 <section bind:this={container}>
     <h1 class="title">See What We Build</h1>
@@ -63,34 +95,35 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="/casestudies/roopnagar">
+                        <img src="/FINAL 1.png" alt="Roop nagar villa" />
                         <h2>Roop nagar villa</h2>
                         <span>Residential | Noida, Uttar Pradesh</span>
-                        <img src="/FINAL 1.png" width="100%" />
                     </a>
                 </div>
 
                 <div class="swiper-slide">
                     <a href="/casestudies/mouseAndcheese">
-                        <h2 id="nmsmjk">Mouse and cheese design studio</h2>
+                        <img src="/2.png" alt="Mouse and cheese design studio" />
+                        <h2 class="nmsmjk">Mouse and cheese design studio</h2>
                         <span>Commercial | Noida, Uttar Pradesh</span>
-
-                        <img src="2.png" width="100%" />
                     </a>
                 </div>
+
                 <div class="swiper-slide">
-                    <a href="/casestudies/DIRECTOR CABIN LOUNGE  1.png">
-                        <h2 id="nmsmjk">office-Space</h2>
+                    <a href="/casestudies/office-space">
+                        <img src="/2.png" alt="Office Space" />
+                        <h2 class="nmsmjk">Office Space</h2>
                         <span>Commercial | Noida, Uttar Pradesh</span>
-
-                        <img src="2.png" width="100%" />
                     </a>
                 </div>
 
-                <a class="swiper-slide" href="/casestudies/Lawrence">
-                    <h2>Laurence Duplex</h2>
-                    <img src="/case2.png" width="100%" />
-                    <span>Residential | Noida, Uttar Pradesh</span>
-                </a>
+                <div class="swiper-slide">
+                    <a href="/casestudies/Lawrence">
+                        <img src="/case2.png" alt="Laurence Duplex" />
+                        <h2>Laurence Duplex</h2>
+                        <span>Residential | Noida, Uttar Pradesh</span>
+                    </a>
+                </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -102,13 +135,13 @@
 <style>
     section {
         width: 100%;
-
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         margin: 100px 0px;
         flex-direction: column;
+        contain: layout style paint;
     }
 
     .title {
@@ -188,26 +221,41 @@
         font-size: 22px !important;
     }
 
+    :global(.swiper-pagination-bullet) {
+        background: white !important;
+        opacity: 0.5 !important;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+        opacity: 1 !important;
+    }
+
     .inner-box {
-        background: gray;
-        transition: all 600ms ease-in-out;
+        background: #2a2a2a;
+        transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1), 
+                    height 600ms cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     .initial {
         width: 1322px;
         height: 622px;
+        max-width: 95vw;
     }
 
     .expanded {
         width: 100%;
         height: 100%;
+        min-height: 622px;
     }
 
     /* Swiper full inside */
     .swiper {
         width: 100%;
         height: 100%;
+        transform: translateZ(0);
     }
 
     .swiper-slide {
@@ -217,6 +265,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 
     .swiper-slide img {
@@ -224,6 +273,21 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.4s ease-out;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    .swiper-slide:hover img {
+        transform: scale(1.02) translateZ(0);
+    }
+
+    .swiper-slide a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
     }
 
     @media (max-width: 768px) {
@@ -292,7 +356,7 @@
             left: 15px !important;
         }
 
-        #nmsmjk {
+        .nmsmjk {
             font-size: 1.6rem !important;
         }
     }

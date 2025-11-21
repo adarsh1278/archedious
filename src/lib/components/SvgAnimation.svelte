@@ -2,82 +2,97 @@
   import { onMount } from "svelte";
 
   let path;
-  let pathLength;
-  const svgHeight = 5500; // same as SVG viewBox height
-  const scrollBuffer = typeof window !== "undefined" ? window.innerHeight : 0;
-  const speed = 1.3; 
+  let pathLength = 0;
+  const svgHeight = 5500;
+  const speed = 1.3;
+  let triggerPoint = 700;
+  let ticking = false;
 
-
-  let triggerPoint = 700; // yaha se animation start hoga
-
-  
   onMount(() => {
-
-        // ✅ update trigger point dynamically
     const updateTrigger = () => {
       triggerPoint = window.innerWidth >= 1445 ? 500 : 800;
     };
 
-    updateTrigger(); // run once on load
-    window.addEventListener("resize", updateTrigger);
+    updateTrigger();
+    
+    // Wait for path to be available
+    const initPath = () => {
+      if (!path) {
+        setTimeout(initPath, 50);
+        return;
+      }
 
-    if (path) {
-      pathLength = path.getTotalLength();
-      path.style.strokeDasharray = pathLength;
-      path.style.strokeDashoffset = pathLength;
+      try {
+        pathLength = path.getTotalLength();
+        
+        if (pathLength && pathLength > 0) {
+          // Set initial state
+          path.style.strokeDasharray = pathLength.toString();
+          path.style.strokeDashoffset = pathLength.toString();
 
-      document.body.style.height = `${svgHeight + scrollBuffer}px`;
+          const handleScroll = () => {
+            if (!ticking) {
+              ticking = true;
+              window.requestAnimationFrame(() => {
+                const scrollTop = window.scrollY || window.pageYOffset;
 
-      const handleScroll = () => {
-        const scrollTop = window.scrollY;
+                if (scrollTop < triggerPoint) {
+                  path.style.strokeDashoffset = pathLength.toString();
+                } else {
+                  const effectiveScroll = scrollTop - triggerPoint;
+                  const scrollPercent = (effectiveScroll / (svgHeight - triggerPoint)) * speed;
+                  const clampedPercent = Math.min(Math.max(scrollPercent, 0), 1);
+                  const offset = pathLength * (1 - clampedPercent);
+                  path.style.strokeDashoffset = offset.toString();
+                }
+                
+                ticking = false;
+              });
+            }
+          };
 
-        if (scrollTop < triggerPoint) {
-          // Trigger point se pehle line hidden rahegi
-          path.style.strokeDashoffset = pathLength;
-          return;
+          window.addEventListener("scroll", handleScroll, { passive: true });
+          window.addEventListener("resize", updateTrigger);
+          
+          // Initial draw
+          handleScroll();
+
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", updateTrigger);
+          };
         }
+      } catch (error) {
+        console.error('SVG path initialization error:', error);
+      }
+    };
 
-        // Trigger ke baad drawing start kare
-        const effectiveScroll = scrollTop - triggerPoint;
-        const scrollPercent = (effectiveScroll / (svgHeight - triggerPoint)) * speed;
-        const clampedPercent = Math.min(scrollPercent, 1);
-
-        path.style.strokeDashoffset = pathLength * (1 - clampedPercent);
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
+    const cleanup = initPath();
+    
+    return () => {
+      if (cleanup) cleanup();
+    };
   });
 </script>
 <style>
-
-
   .wrapper {
-   max-width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 100px 0;
     position: absolute;
     top: 804px;
     z-index: 0;
-
-  }
-
-  .svg-container {
-    position: relative;
-    width: 100%;
+    pointer-events: none;
   }
 
   svg {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 5500px;
     pointer-events: none;
-    transition: all 0.5s ease;
-    height: 5500px; /* same as SVG viewBox height */
+    transform: translateZ(0);
   }
 
   .cls-1 {
@@ -85,37 +100,22 @@
     stroke: #dbd3c3;
     stroke-width: 7px;
     stroke-miterlimit: 20;
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-    transform-origin: center;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
   }
-
 
   @media only screen and (max-width: 800px) {
-   .wrapper {
-   max-width: 100%;
-    margin: 0 auto;
-    padding: 100px 0;
-    position: absolute;
-    top: 804px;
-    z-index: 0;
-    display: none;
-
+    .wrapper {
+      display: none;
+    }
   }
-}
 
   @media only screen and (min-width: 1920px) {
-   .wrapper {
-   max-width: 100%;
-    margin: 0 auto;
-    padding: 100px 0;
-    position: absolute;
-    top: 804px;
-    z-index: 0;
-    display: none;
-
+    .wrapper {
+      display: none;
+    }
   }
-}
 </style>
 
 <div class="wrapper">
