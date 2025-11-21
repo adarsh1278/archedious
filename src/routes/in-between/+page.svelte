@@ -237,7 +237,7 @@
         <h3>
             <span>If you’ve come this far,</span>
             <span>Then you’re already imagining it.</span>
-            <span></span>Lets bring it to life.
+            <span class="itallic">Lets bring it to life.</span>
         </h3>
         <button> Just Say Hello </button>
     </div>

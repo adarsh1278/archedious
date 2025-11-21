@@ -208,7 +208,9 @@
                 {#if section.subsection}
                     <div class="two-col">
                         <div>
-                            <h3>{section.subsection.heading}</h3>
+                            <p class="drop">
+                                <strong> {section.subsection.heading}</strong>
+                            </p>
                             {#each section.subsection.content as paragraph}
                                 <p>
                                     {paragraph}
@@ -236,10 +238,16 @@
                 {/if}
 
                 {#if section.additionalContent}
-                    {#each section.additionalContent as content}
-                        <p>
-                            {content}
-                        </p>
+                    {#each section.additionalContent as content, index}
+                        {#if index === 0}
+                            <p class="drop">
+                                <strong>{content}</strong>
+                            </p>
+                        {:else}
+                            <p>
+                                {content}
+                            </p>
+                        {/if}
                     {/each}
                 {/if}
             {/each}
@@ -346,7 +354,7 @@
             <h3>
                 <span>If you’ve come this far,</span>
                 <span>Then you’re already imagining it.</span>
-                <span></span>Lets bring it to life.
+                <span class="itallic">Lets bring it to life.</span>
             </h3>
             <button> Just Say Hello </button>
         </div>
@@ -422,9 +430,15 @@
     }
 
     h2 {
-        font-size: 20px;
-        margin-top: 20px;
         color: #1e1e1e;
+
+        /* Heading/40 */
+        font-family: "Instrument Sans";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 40px; /* 100% */
+        letter-spacing: -0.8px;
     }
     h3 {
         color: #1e1e1e;
@@ -434,8 +448,13 @@
 
     .drop {
         margin-top: 12px;
-        margin-bottom: 10px;
-        color: #6a5849;
+        color: var(--Accent, #171717);
+        font-family: "Instrument Sans";
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 30px; /* 125% */
+        letter-spacing: -0.456px;
     }
 
     .two-col {

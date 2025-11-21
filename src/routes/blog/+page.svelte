@@ -154,7 +154,9 @@
         {#if section.subsection}
           <div class="two-col">
             <div>
-              <h3>{section.subsection.heading}</h3>
+              <p class="drop">
+                <strong> {section.subsection.heading}</strong>
+              </p>
               {#each section.subsection.content as paragraph}
                 <p>
                   {paragraph}
@@ -266,7 +268,7 @@
       <h3>
         <span>If you’ve come this far,</span>
         <span>Then you’re already imagining it.</span>
-        <span></span>Lets bring it to life.
+        <span class="itallic">Lets bring it to life.</span>
       </h3>
       <button> Just Say Hello </button>
     </div>
