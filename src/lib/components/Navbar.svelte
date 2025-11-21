@@ -143,14 +143,6 @@
 
         <li>
             <a
-                href="/blog"
-                class="nav-link"
-                data-sveltekit-reload
-                on:click={closeAll}>Blogs</a
-            >
-        </li>
-        <li>
-            <a
                 href="/in-between"
                 class="nav-link"
                 data-sveltekit-reload
