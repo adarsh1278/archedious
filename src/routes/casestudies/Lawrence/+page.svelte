@@ -646,7 +646,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-            <button>Just Say Hello</button>
+           <a href="/contact">
+ <button>Just Say Hello</button>
+       </a>
         </div>
     </div>
 </div>
@@ -1417,7 +1419,7 @@
 
     @media (max-width: 1024px) {
         .section-3 {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 3rem;
         }
 
@@ -1445,7 +1447,7 @@
 
     @media (max-width: 600px) {
         .section-3 {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 2rem;
             padding: 1.5rem 0;
         }

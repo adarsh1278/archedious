@@ -318,7 +318,8 @@
             <span>Then you're already imagining it.</span>
             <span class="itallic">Lets bring it to life.</span>
         </h3>
-        <button>Just Say Hello</button>
+       <a href="/contact">
+ <button>Just Say Hello</button>
     </div>
 </div>
 
@@ -448,13 +449,15 @@
             width: 95% !important;
             gap: 3vmax !important;
             margin-top: 8vmax !important;
-            align-items: center !important;
+            text-align: left !important;
+            align-items: start !important;
+            padding-left: 1vmax;
         }
 
         .content-4 h3 {
             font-size: 32px !important;
             line-height: 40px !important;
-            text-align: center !important;
+            text-align: left !important;
             width: 100% !important;
         }
 
