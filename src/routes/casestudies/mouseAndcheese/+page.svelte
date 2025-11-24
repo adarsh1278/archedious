@@ -3,14 +3,22 @@
     import { page } from "$app/stores";
 
     let slideIndex = 1;
+    let zoneSlideIndex = 1;
 
     onMount(() => {
-        // Auto slide functionality
+        // Auto slide functionality for main carousel
         const autoSlide = () => {
             slideIndex = slideIndex >= 3 ? 1 : slideIndex + 1;
         };
 
         const interval = setInterval(autoSlide, 5000);
+
+        // Auto slide functionality for zone carousel
+        const autoZoneSlide = () => {
+            zoneSlideIndex = zoneSlideIndex >= 3 ? 1 : zoneSlideIndex + 1;
+        };
+
+        const zoneInterval = setInterval(autoZoneSlide, 5000);
 
         // Horizontal scroll functionality
         const content1 = document.querySelector(".horizontal-scroll");
@@ -86,14 +94,30 @@
             return () => {
                 content1.removeEventListener("wheel", handleWheel);
                 clearInterval(interval);
+                clearInterval(zoneInterval);
             };
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            clearInterval(interval);
+            clearInterval(zoneInterval);
+        };
     });
 
     function currentSlide(n) {
         slideIndex = n;
+    }
+
+    function currentZoneSlide(n) {
+        zoneSlideIndex = n;
+    }
+
+    function nextZoneSlide() {
+        zoneSlideIndex = zoneSlideIndex >= 3 ? 1 : zoneSlideIndex + 1;
+    }
+
+    function prevZoneSlide() {
+        zoneSlideIndex = zoneSlideIndex <= 1 ? 3 : zoneSlideIndex - 1;
     }
 
     function openVideoLightbox(videoSrc) {
@@ -254,11 +278,62 @@
 
         <div class="hero-2">
             <div class="hero-bg-2">
-                <div class="animated-text">
-                    <p class="text-1">Micro-collaboration zone</p>
-                    <p class="text-2">Hierarchy Without Exclusion</p>
-                    <p class="text-3">Prototyping Zone</p>
+                <!-- Slide 1 -->
+                <div class="zone-slide {zoneSlideIndex === 1 ? 'active' : ''}">
+                    <div class="zone-slide-content">
+                        <p>Micro-collaboration zone</p>
+                    </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="zone-slide {zoneSlideIndex === 2 ? 'active' : ''}">
+                    <div class="zone-slide-content">
+                        <p>Hierarchy Without Exclusion</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="zone-slide {zoneSlideIndex === 3 ? 'active' : ''}">
+                    <div class="zone-slide-content">
+                        <p>Prototyping Zone</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="zone-nav-btn zone-prev" on:click={prevZoneSlide}>
+                    <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M25 10L15 20L25 30"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+                <button class="zone-nav-btn zone-next" on:click={nextZoneSlide}>
+                    <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M15 10L25 20L15 30"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -877,7 +952,7 @@
     .scroll-image {
         height: 536px;
         width: auto;
-        max-width: 800px;
+        min-width: 800px;
         object-fit: cover;
         border-radius: 12px;
     }
@@ -987,6 +1062,14 @@
         border-radius: 12px;
     }
 
+    /* Tablet breakpoint for better image sizing */
+    @media (max-width: 1280px) and (min-width: 1081px) {
+        .scroll-image {
+            min-width: 600px;
+        }
+    }
+
+    /* Mobile and small tablet breakpoint */
     @media (max-width: 1080px) {
         .horizontal-scroll {
             display: flex;
@@ -1000,10 +1083,11 @@
         }
 
         .scroll-video {
-            width: auto;
-            height: 552px;
+            width: 100%;
+            height: auto;
             max-height: 90vh;
             object-fit: cover;
+            border-radius: 12px;
         }
 
         .scroll-item-1,
@@ -1017,7 +1101,15 @@
             height: auto;
         }
 
-        .scroll-image,
+        .scroll-image {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
         .scroll-video,
         .scroll-item-4 img,
         .scroll-item-5 img {
@@ -1032,16 +1124,30 @@
             align-items: flex-start;
         }
 
+        .scroll-item-3 {
+            max-width: 100%;
+        }
+
         .scroll-item-3 h3 {
             margin-top: 2rem;
         }
 
+        .scroll-item-4 {
+            width: 100%;
+        }
+
+        .scroll-item-5 {
+            width: 100%;
+        }
+
+        .scroll-item-5 img {
+            width: 100%;
+            height: auto;
+        }
+
         .scroll-item-1 p {
-            /* background-color: aqua; */
             text-align: left !important;
-            /* override justify */
             text-justify: auto;
-            /* reset from inter-word */
             line-height: 30px;
             letter-spacing: -0.38px;
         }
@@ -1066,34 +1172,52 @@
         animation: changeBackground 15s infinite;
     }
 
-    .hero-2 {
+  .hero-2 {
         width: 90%;
     }
 
-    @keyframes changeBackground {
-        0%,
-        33.33% {
-            background-image: url("/bg2.png");
-        }
-
-        33.34%,
-        66.66% {
-            background-image: url("/bg5.png");
-        }
-
-        66.67%,
-        100% {
-            background-image: url("/bg6.png");
-        }
-    }
-
-    .hero-bg-2 .animated-text {
-        position: relative;
+    .zone-slide {
+        position: absolute;
         width: 100%;
-        height: auto;
+        height: 100%;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
     }
 
-    .hero-bg-2 .animated-text p {
+    .zone-slide.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .zone-slide:nth-child(1) {
+        background-image: url("/bg2.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .zone-slide:nth-child(2) {
+        background-image: url("/bg5.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .zone-slide:nth-child(3) {
+        background-image: url("/bg6.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .zone-slide-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+
+    .zone-slide-content p {
         color: #000;
         text-align: center;
         font-family: "Playfair Display";
@@ -1102,76 +1226,130 @@
         font-weight: 500;
         line-height: 56px;
         letter-spacing: -1px;
+        margin: 0;
+    }
+
+    .zone-nav-btn {
         position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 20px;
-        opacity: 0;
-        transform: translateY(29px);
-        transition:
-            opacity 0.5s ease,
-            transform 0.5s ease;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #000;
+        z-index: 10;
+        transition: all 0.3s ease;
     }
 
-    .hero-bg-2 .text-1 {
-        animation: showText1 9s infinite;
+    .zone-nav-btn:hover {
+        background-color: #fff;
+        transform: translateY(-50%) scale(1.1);
     }
 
-    .hero-bg-2 .text-2 {
-        animation: showText2 9s infinite;
+    .zone-prev {
+        left: 20px;
     }
 
-    .hero-bg-2 .text-3 {
-        animation: showText3 9s infinite;
+    .zone-next {
+        right: 20px;
     }
 
-    @keyframes showText1 {
-        0%,
-        30% {
-            opacity: 1;
+    @media (max-width: 1024px) {
+        .hero-bg-2 {
+            height: 35vmax;
         }
 
-        33.33%,
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes showText2 {
-        0%,
-        33.33% {
-            opacity: 0;
-            color: white;
+        .zone-slide-content p {
+            font-size: 2.5vmax;
+            line-height: 44px;
         }
 
-        36.66%,
-        63.33% {
-            opacity: 1;
-            color: white;
+        .zone-nav-btn {
+            width: 45px;
+            height: 45px;
         }
 
-        66.66%,
-        100% {
-            opacity: 0;
+        .zone-prev {
+            left: 15px;
+        }
+
+        .zone-next {
+            right: 15px;
         }
     }
 
-    @keyframes showText3 {
-        0%,
-        66.66% {
-            opacity: 0;
-            color: white;
+    @media (max-width: 768px) {
+        .hero-bg-2 {
+            height: 30vmax;
+            padding: 1rem;
         }
 
-        69.99%,
-        97% {
-            opacity: 1;
-            color: white;
+        .zone-slide-content {
+            padding-bottom: 1.5rem;
         }
 
-        100% {
-            opacity: 0;
-            color: white;
+        .zone-slide-content p {
+            font-size: 2vmax;
+            line-height: 36px;
+        }
+
+        .zone-nav-btn {
+            width: 40px;
+            height: 40px;
+        }
+
+        .zone-nav-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .zone-prev {
+            left: 10px;
+        }
+
+        .zone-next {
+            right: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-bg-2 {
+            height: 25vmax;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .zone-slide-content {
+            padding-bottom: 1rem;
+        }
+
+        .zone-slide-content p {
+            font-size: 1.5vmax;
+            line-height: 28px;
+        }
+
+        .zone-nav-btn {
+            width: 35px;
+            height: 35px;
+        }
+
+        .zone-nav-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .zone-prev {
+            left: 8px;
+        }
+
+        .zone-next {
+            right: 8px;
         }
     }
 

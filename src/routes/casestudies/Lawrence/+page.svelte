@@ -20,13 +20,15 @@
         bgSlideIndex = (bgSlideIndex - 1 + bgImages.length) % bgImages.length;
     }
 
+    let autoSlideInterval = null;
+
     onMount(() => {
-        // Auto slide functionality for testimonials
+        // Auto slide functionality for testimonials carousel
         const autoSlide = () => {
             slideIndex = slideIndex >= 3 ? 1 : slideIndex + 1;
         };
 
-        const interval = setInterval(autoSlide, 5000);
+        autoSlideInterval = setInterval(autoSlide, 5000);
 
         // Auto slide for background carousel
         const bgAutoSlide = () => {
@@ -108,19 +110,26 @@
 
             return () => {
                 content1.removeEventListener("wheel", handleWheel);
-                clearInterval(interval);
+                clearInterval(autoSlideInterval);
                 clearInterval(bgInterval);
             };
         }
 
         return () => {
-            clearInterval(interval);
+            clearInterval(autoSlideInterval);
             clearInterval(bgInterval);
         };
     });
 
     function currentSlide(n) {
         slideIndex = n;
+        // Reset auto-slide timer when user manually changes slide
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(() => {
+                slideIndex = slideIndex >= 3 ? 1 : slideIndex + 1;
+            }, 5000);
+        }
     }
 
     function openVideoLightbox(videoSrc) {
@@ -960,9 +969,9 @@
         width: auto;
         min-width: 800px;
         object-fit: cover;
-
         border-radius: 12px;
     }
+    
     .scroll-image-3 {
         height: 536px;
         width: 500px;
@@ -1076,6 +1085,19 @@
         border-radius: 12px;
     }
 
+    /* Tablet breakpoint for better image sizing */
+    @media (max-width: 1280px) and (min-width: 1081px) {
+        .scroll-image {
+            min-width: 600px;
+        }
+        
+        .scroll-image-3 {
+            min-width: 300px;
+            width: 400px;
+        }
+    }
+
+    /* Mobile and small tablet breakpoint */
     @media (max-width: 1080px) {
         .horizontal-scroll {
             display: flex;
@@ -1089,10 +1111,11 @@
         }
 
         .scroll-video {
-            width: auto;
-            height: 552px;
+            width: 100%;
+            height: auto;
             max-height: 90vh;
             object-fit: cover;
+            border-radius: 12px;
         }
 
         .scroll-item-1,
@@ -1106,7 +1129,24 @@
             height: auto;
         }
 
-        .scroll-image,
+        .scroll-image {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .scroll-image-3 {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
         .scroll-video,
         .scroll-item-4 img,
         .scroll-item-5 img {
@@ -1121,16 +1161,30 @@
             align-items: flex-start;
         }
 
+        .scroll-item-3 {
+            max-width: 100%;
+        }
+
         .scroll-item-3 h3 {
             margin-top: 2rem;
         }
 
+        .scroll-item-4 {
+            width: 100%;
+        }
+
+        .scroll-item-5 {
+            width: 100%;
+        }
+
+        .scroll-item-5 img {
+            width: 100%;
+            height: auto;
+        }
+
         .scroll-item-1 p {
-            /* background-color: aqua; */
             text-align: left !important;
-            /* override justify */
             text-justify: auto;
-            /* reset from inter-word */
             line-height: 30px;
             letter-spacing: -0.38px;
         }
@@ -1431,11 +1485,13 @@
         overflow: hidden;
         border-radius: 16px;
         height: 100%;
+        background: #f5f5f5;
     }
 
     .carousel-slide {
         display: none;
         width: 100%;
+        opacity: 0;
     }
 
     .carousel-slide.active {
@@ -1444,6 +1500,7 @@
         height: 100%;
         justify-content: center;
         align-items: center;
+        opacity: 1;
     }
 
     .video-component {
@@ -1584,18 +1641,17 @@
         border: none;
         background-color: rgba(23, 23, 23, 0.2);
         cursor: pointer;
-        transition: all 0.3s ease;
         padding: 0;
     }
 
     .dot:hover {
         background-color: rgba(23, 23, 23, 0.4);
-        transform: scale(1.1);
     }
 
     .dot.active {
         background-color: #171717;
-        transform: scale(1.2);
+        width: 14px;
+        height: 14px;
     }
 
     @media (max-width: 1024px) {
@@ -1712,7 +1768,8 @@
         }
 
         .dot.active {
-            transform: scale(1.5);
+            width: 10px;
+            height: 10px;
         }
 
         .play-button svg {

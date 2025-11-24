@@ -963,9 +963,9 @@
         width: auto;
         min-width: 800px;
         object-fit: cover;
-
         border-radius: 12px;
     }
+    
     .scroll-image-3 {
         height: 536px;
         width: 500px;
@@ -1079,6 +1079,19 @@
         border-radius: 12px;
     }
 
+    /* Tablet breakpoint for better image sizing */
+    @media (max-width: 1280px) and (min-width: 1081px) {
+        .scroll-image {
+            min-width: 600px;
+        }
+        
+        .scroll-image-3 {
+            min-width: 300px;
+            width: 400px;
+        }
+    }
+
+    /* Mobile and small tablet breakpoint */
     @media (max-width: 1080px) {
         .horizontal-scroll {
             display: flex;
@@ -1092,10 +1105,11 @@
         }
 
         .scroll-video {
-            width: auto;
-            height: 552px;
+            width: 100%;
+            height: auto;
             max-height: 90vh;
             object-fit: cover;
+            border-radius: 12px;
         }
 
         .scroll-item-1,
@@ -1109,7 +1123,24 @@
             height: auto;
         }
 
-        .scroll-image,
+        .scroll-image {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .scroll-image-3 {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
         .scroll-video,
         .scroll-item-4 img,
         .scroll-item-5 img {
@@ -1124,16 +1155,30 @@
             align-items: flex-start;
         }
 
+        .scroll-item-3 {
+            max-width: 100%;
+        }
+
         .scroll-item-3 h3 {
             margin-top: 2rem;
         }
 
+        .scroll-item-4 {
+            width: 100%;
+        }
+
+        .scroll-item-5 {
+            width: 100%;
+        }
+
+        .scroll-item-5 img {
+            width: 100%;
+            height: auto;
+        }
+
         .scroll-item-1 p {
-            /* background-color: aqua; */
             text-align: left !important;
-            /* override justify */
             text-justify: auto;
-            /* reset from inter-word */
             line-height: 30px;
             letter-spacing: -0.38px;
         }
