@@ -156,7 +156,7 @@
                 shape environments that earn their place:
                 <br />
                 <span class="it">
-                    practical, precise, and purposeful by design.
+                    Practical, Precise, & Purposeful by design.
                 </span>
             </p>
             <video class="section-3-video" autoplay muted loop playsinline>

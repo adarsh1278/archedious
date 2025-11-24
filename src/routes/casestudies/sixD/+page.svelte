@@ -390,9 +390,9 @@
                             <div class="video-content">
                                 <h3>
                                     It’s a workspace that truly matches the
-                                    precision
+                                    precision we stand for.
                                 </h3>
-                                <p class="video-subtitle">we stand for.</p>
+
                                 <p class="video-description">
                                     The new office brings clarity and structure
                                     into our everyday operations. Every zone,
@@ -437,10 +437,11 @@
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>It’s a home that reflects the</h3>
-                                <p class="video-subtitle">
-                                    elegance we always imagined
-                                </p>
+                                <h3>
+                                    It’s a home that reflects the elegance we
+                                    always imagined
+                                </h3>
+
                                 <p class="video-description">
                                     Every corner of the space carries a quiet
                                     sense of luxury, subtle, warm, and
