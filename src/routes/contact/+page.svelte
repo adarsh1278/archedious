@@ -100,7 +100,7 @@
                     </div>
                     <div class="text pl-3">
                         <p>
-                            <a href="mailto:info@yoursite.com">@archideus.in</a>
+                            <a href="https://www.instagram.com/archideus.in?igsh=MzM0OHpqcHJrczIz">@archideus.in</a>
                         </p>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="text pl-3">
                         <p>
-                            <a href="tel:+919657734567">+91 96577 34567</a>
+                            <a href="tel:+919657734567">+91 87005 13166</a>
                         </p>
                     </div>
                 </div>

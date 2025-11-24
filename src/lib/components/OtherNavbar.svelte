@@ -1,9 +1,16 @@
 <script>
     import { onMount } from "svelte";
 
-    let menuToggle;
+    let menuToggle = null;
     let lastScroll = 0;
     let navVisible = true;
+
+    function closeDrawer() {
+        const menuCheckbox = document.getElementById("menu-toggle");
+        if (menuCheckbox && menuCheckbox instanceof HTMLInputElement && menuCheckbox.checked) {
+            menuCheckbox.checked = false;
+        }
+    }
 
     onMount(() => {
         window.addEventListener("scroll", () => {
@@ -21,20 +28,16 @@
             lastScroll = current;
         });
 
+        // Close drawer when clicking on any link with valid href
         const drawerLinks = document.querySelectorAll(".drawer a");
 
         drawerLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
+            link.addEventListener("click", () => {
                 const href = link.getAttribute("href");
 
-                // Ignore submenu toggles
-                if (!href || href === "#" || href.trim() === "") {
-                    return;
-                }
-
-                // Close drawer if it's currently open
-                if (menuToggle && menuToggle.checked) {
-                    menuToggle.checked = false;
+                // Close drawer only for valid navigation links
+                if (href && href !== "#" && href.trim() !== "") {
+                    closeDrawer();
                 }
             });
         });
@@ -105,8 +108,8 @@
     <div class="drawer">
         <label for="menu-toggle" class="drawer-close">×</label>
         <div class="drawer-content">
-            <a href="/" class="drawer-link">Home</a>
-            <a href="/about" class="drawer-link">About</a>
+            <a href="/" class="drawer-link" on:click={closeDrawer}>Home</a>
+            <a href="/about" class="drawer-link" on:click={closeDrawer}>About</a>
 
             <!-- Mobile Projects with submenu -->
             <div class="drawer-dropdown">
@@ -119,9 +122,8 @@
                     <div class="drawer-subitem">
                         <input
                             type="checkbox"
-                            id="menu-toggle"
+                            id="mobile-residential-toggle"
                             hidden
-                            bind:this={menuToggle}
                         />
 
                         <label
@@ -131,15 +133,18 @@
                         <div class="drawer-sub-submenu">
                             <a
                                 href="/casestudies/Lawrence"
-                                class="drawer-sublink-child">Lawrence Villa</a
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Lawrence Villa</a
                             >
                             <a
                                 href="/casestudies/roopnagar"
-                                class="drawer-sublink-child">Roop Nagar Villa</a
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Roop Nagar Villa</a
                             >
                             <a
                                 href="/casestudies/Indirapuram"
-                                class="drawer-sublink-child">Indirapuram</a
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Indirapuram</a
                             >
                         </div>
                     </div>
@@ -159,24 +164,27 @@
                             <a
                                 href="/casestudies/mouseAndcheese"
                                 class="drawer-sublink-child"
+                                on:click={closeDrawer}
                                 >Mouse & Cheese Design Studio</a
                             >
                             <a
                                 href="/casestudies/office-Space"
                                 class="drawer-sublink-child"
+                                on:click={closeDrawer}
                                 >The Terrace Studio</a
                             >
                             <a
                                 href="/casestudies/sixD"
-                                class="drawer-sublink-child">SixD Office</a
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>SixD Office</a
                             >
                         </div>
                     </div>
                 </div>
             </div>
 
-            <a href="#" class="drawer-link">Archideus Journal</a>
-            <a href="/contact" class="drawer-link">Contact us</a>
+            <a href="/Archideus Journal" class="drawer-link" on:click={closeDrawer}>Archideus Journal</a>
+            <a href="/contact" class="drawer-link" on:click={closeDrawer}>Contact us</a>
         </div>
     </div>
 </nav>

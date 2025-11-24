@@ -423,14 +423,14 @@
         .content-3 {
             flex-direction: column !important;
             width: 95% !important;
-            gap: 4vmax !important;
-            padding-top: 8vmax !important;
+            gap: 2rem !important;
+            padding-top: 3rem !important;
         }
 
         .content-3-tab {
             flex-direction: column !important;
             width: 100% !important;
-            gap: 4vmax !important;
+            gap: 2rem !important;
         }
 
         .content-3-card {
@@ -447,8 +447,8 @@
         /* Content 4 Styles */
         .content-4 {
             width: 95% !important;
-            gap: 3vmax !important;
-            margin-top: 8vmax !important;
+            gap: 2rem !important;
+            margin-top: 3rem !important;
             text-align: left !important;
             align-items: start !important;
             padding-left: 1vmax;

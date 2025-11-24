@@ -2106,6 +2106,7 @@
             justify-content: start;
             align-items: start;
             gap: 0;
+            margin-top: 2rem;
         }
 
         .content-2 h3 {
@@ -2126,19 +2127,19 @@
 
         .content-3 {
             flex-direction: column;
-            gap: 7vmax;
+            gap: 2rem;
         }
 
         .content-3-tab {
             flex-direction: column;
-            gap: 6vmax;
-            margin-bottom: 6vmax;
+            gap: 2rem;
+            margin-bottom: 0;
             width: 100%;
         }
 
         .content-4 h3 {
             width: 100%;
-            margin-top: 8vmax;
+            margin-top: 3rem;
         }
 
         .content-3-card {
@@ -2146,6 +2147,7 @@
             max-width: none;
             min-width: auto;
             width: 100%;
+            height: auto;
         }
     }
 

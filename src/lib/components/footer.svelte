@@ -6,7 +6,10 @@
                 <div class="menu">
                     <div class="address">
                         <span>Address</span>
-                        <p>Random st, Sector 45 Noida-78</p>
+                        <p>Random st, Sector 45 Noida-78
+                            Ashok Vihar
+                            Delhi 110052
+                        </p>
                     </div>
                     <div class="mymenu">
                         <span>Navlinks</span>
