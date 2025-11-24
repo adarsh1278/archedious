@@ -251,7 +251,9 @@
                             The Science Behind Timeless Materials: Why Concrete,
                             Steel, and Wood Still Reign in Modern Architecture
                         </h4> -->
-                        <span> 12min </span>
+                        <div>
+                            <span> 12min </span>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -412,6 +414,113 @@
             display: none; /* hide spacing column on tablets */
         }
     }
+    /* 📱 Mobile (up to 768px) - Content 3 & 4 */
+    @media (max-width: 768px) {
+        /* Content 3 Styles */
+        .content-3 {
+            flex-direction: column !important;
+            width: 95% !important;
+            gap: 4vmax !important;
+            padding-top: 8vmax !important;
+        }
+
+        .content-3-tab {
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 4vmax !important;
+        }
+
+        .content-3-card {
+            width: 100% !important;
+            min-width: auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .content-3-image1 {
+            height: 220px !important;
+        }
+
+        /* Content 4 Styles */
+        .content-4 {
+            width: 95% !important;
+            gap: 3vmax !important;
+            margin-top: 8vmax !important;
+            align-items: center !important;
+        }
+
+        .content-4 h3 {
+            font-size: 32px !important;
+            line-height: 40px !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+
+        .content-4 h3 span {
+            display: block !important;
+        }
+
+        .content-4 button {
+            width: 100% !important;
+            max-width: 280px !important;
+            font-size: 18px !important;
+        }
+
+        /* Image Section 4 Mobile Adjustments */
+        .image-section-4 {
+            width: 100% !important;
+            padding-top: 0 !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 2rem !important;
+        }
+
+        .frame {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .frame img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 400px !important;
+        }
+
+        .sec-4-img-txt {
+            position: static !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            padding: 0 1rem !important;
+            gap: 0.5rem !important;
+            height: auto !important;
+        }
+
+        .sec-4-head {
+            font-size: 24px !important;
+            text-align: center !important;
+            margin-bottom: 0 !important;
+            white-space: normal !important;
+            line-height: 1.3 !important;
+        }
+
+        .sec-4-des {
+            font-size: 14px !important;
+            text-align: center !important;
+            white-space: normal !important;
+            line-height: 1.4 !important;
+            word-wrap: break-word !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
 
     @media (max-width: 768px) {
         .container {
@@ -420,25 +529,26 @@
             gap: 30px;
             padding: 40px 20px;
         }
-        .sec-4-img-txt {
-            bottom: 6.4vmax;
-            height: 0 !important;
-        }
-        .sec-image {
-            height: auto !important;
-            /* width: 90vw !important; */
-        }
-        .image-section-4 {
-            margin: 0;
-            padding-top: 0%;
-            /* background-color: aqua; */
-            height: 320px;
-        }
-        .frame {
-            margin-top: 0%;
-            padding: 0%;
 
-            /* background-color: #8c3d3d; */
+        .blank-section {
+            display: none; /* no blank space on mobile */
+        }
+
+        .circle {
+            display: none; /* remove circle for simplicity */
+        }
+
+        .text-section p {
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 40px 20px;
         }
 
         .text-section,
@@ -462,13 +572,14 @@
             margin: 0 auto;
         }
         .frame img {
-            width: 100%;
-            /* background-color: aqua; */
-
-            height: auto;
-            /* height: 533px; */
+            width: 40vmax !important;
+            height: 533px;
             flex-shrink: 0;
             aspect-ratio: 1/1;
         }
     }
+
+    /* 📱 Very Small Mobile (up to 480px) - Additional adjustments */
+
+    /* Content 2 Responsive (if needed) */
 </style>
