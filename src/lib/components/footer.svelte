@@ -33,7 +33,7 @@
                                     <span class="icons">
                                         <i class="fa-solid fa-angle-right"></i>
                                     </span>
-                                    In-between
+                                    Archideus Journal
                                 </li>
                             </a>
                             <a href="">

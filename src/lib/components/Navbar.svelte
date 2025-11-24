@@ -143,10 +143,10 @@
 
         <li>
             <a
-                href="/in-between"
+                href="/Archideus Journal"
                 class="nav-link"
                 data-sveltekit-reload
-                on:click={closeAll}>In-between</a
+                on:click={closeAll}>Archideus Journal</a
             >
         </li>
         <li>

@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <a href="/in-between" class="nav-link">In-between</a>
+        <a href="/Archideus Journal" class="nav-link">Archideus Journal</a>
         <a href="/contact" class="nav-link">Contact us</a>
     </div>
     <!-- Right Empty (Desktop) -->
@@ -175,7 +175,7 @@
                 </div>
             </div>
 
-            <a href="#" class="drawer-link">In-between</a>
+            <a href="#" class="drawer-link">Archideus Journal</a>
             <a href="/contact" class="drawer-link">Contact us</a>
         </div>
     </div>

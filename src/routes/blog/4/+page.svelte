@@ -256,7 +256,7 @@
 
     <div class="footer-content">
         <div class="content-2">
-            <h3>The In - Between</h3>
+            <h3>The Archideus Journal</h3>
             <div class="content-2-description">
                 <p>
                     Dive into our thoughts, process, and inspirations. From

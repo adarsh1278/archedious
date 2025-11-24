@@ -156,7 +156,7 @@
                 shape environments that earn their place:
                 <br />
                 <span class="it">
-                    Practical, Precise, & Purposeful by Design
+                    practical, precise, and purposeful by design.
                 </span>
             </p>
             <video class="section-3-video" autoplay muted loop playsinline>
@@ -178,12 +178,12 @@
                         For him, what matters most is making it possible—doing whatever
                         it takes to shape a space into what it is meant to be.
                     </span>
-
+                    <!-- <div class="hieght"></div> -->
                     <span>
-                        <div class="desc-special">
+                        <span class="desc-special">
                             Vasu's process always begins on paper, sketching by
                             hand to translate emotions into lines.
-                        </div>
+                        </span>
                         <div class="hieght"></div>
                         These blueprints are more than technical drawings; they are
                         the first step in turning intention into form, guiding spaces
@@ -193,13 +193,17 @@
             </div>
             <div class="image-section-4">
                 <div class="frame">
-                    <img src="/Group 35.png" alt="Happy couple at home" />
+                    <img
+                        src="/Group 35.png"
+                        alt="Happy couple at home"
+                        class="sec-image"
+                    />
                 </div>
                 <div class="sec-4-img-txt">
                     <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
-                    <h4 class="sec-4-des">
+                    <div class="sec-4-des">
                         Studio head Architect, Concept Design Head
-                    </h4>
+                    </div>
                 </div>
             </div>
 
@@ -336,6 +340,8 @@
         /* line-height: 36px; */
     }
     .image-section-4 {
+        position: relative;
+
         /* background-color: aqua; */
         width: 40%;
         padding-top: 5vmax;
@@ -345,8 +351,11 @@
         justify-content: space-between;
         align-items: center;
     }
+    .sec-image {
+        position: relative;
+    }
+
     .frame img {
-        /* background-color: aqua; */
         width: 533px;
         height: 533px;
         flex-shrink: 0;
@@ -357,8 +366,11 @@
         text-decoration: none;
     }
     .sec-4-img-txt {
+        position: absolute;
+        bottom: 0;
         padding: 0%;
-        height: 100%;
+        left: 2vmax;
+        height: 23%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -408,6 +420,26 @@
             gap: 30px;
             padding: 40px 20px;
         }
+        .sec-4-img-txt {
+            bottom: 6.4vmax;
+            height: 0 !important;
+        }
+        .sec-image {
+            height: auto !important;
+            /* width: 90vw !important; */
+        }
+        .image-section-4 {
+            margin: 0;
+            padding-top: 0%;
+            /* background-color: aqua; */
+            height: 320px;
+        }
+        .frame {
+            margin-top: 0%;
+            padding: 0%;
+
+            /* background-color: #8c3d3d; */
+        }
 
         .text-section,
         .image-section {
@@ -430,8 +462,11 @@
             margin: 0 auto;
         }
         .frame img {
-            width: 40vmax !important;
-            height: 533px;
+            width: 100%;
+            /* background-color: aqua; */
+
+            height: auto;
+            /* height: 533px; */
             flex-shrink: 0;
             aspect-ratio: 1/1;
         }

@@ -271,13 +271,13 @@
                     biggest challenge lay in the curved glass walls—an idea
                     central to the spatial language, yet constantly questioned
                     for cost, execution, and practicality. It sat right in the
-                    in-between: too ambitious to be easy, too essential to let
-                    go. We navigated it with a series of jugaads—adjusting
-                    alignments, working with local fabricators, testing
-                    mock-ups—not to dilute the idea, but to protect its essence.
-                    The final outcome isn't a perfect curve, but a resolved one.
-                    It holds the brand's openness and softness exactly where it
-                    matters most.
+                    Archideus Journal: too ambitious to be easy, too essential
+                    to let go. We navigated it with a series of
+                    jugaads—adjusting alignments, working with local
+                    fabricators, testing mock-ups—not to dilute the idea, but to
+                    protect its essence. The final outcome isn't a perfect
+                    curve, but a resolved one. It holds the brand's openness and
+                    softness exactly where it matters most.
                 </p>
             </div>
         </div>
