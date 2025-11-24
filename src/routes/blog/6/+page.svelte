@@ -311,7 +311,9 @@
                     design insights to behind-the-scenes stories — explore how
                     we think, build, and imagine at Archideus
                 </p>
-                <button> Read Our stories </button>
+                <a href="/Archideus Journal">
+                    <button> Read Our stories </button>
+                </a>
             </div>
         </div>
         <div class=" content-3">
@@ -404,7 +406,9 @@
                 <span>Then you’re already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-            <button> Just Say Hello </button>
+            <a href="/contact">
+                <button> Just Say Hello </button>
+            </a>
         </div>
     </div>
 </div>

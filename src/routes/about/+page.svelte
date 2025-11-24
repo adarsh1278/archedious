@@ -219,7 +219,9 @@
                 insights to behind-the-scenes stories — explore how we think,
                 build, and imagine at Archideus
             </p>
-            <button> Read Our stories </button>
+            <a href="/Archideus Journal">
+                <button> Read Our stories </button>
+            </a>
         </div>
     </div>
 
