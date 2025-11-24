@@ -435,29 +435,31 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/v1.png"
+                                        src="/v234.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Perfect collaboration space.</h3>
-                                <p class="video-subtitle">
-                                    Beyond expectations.
-                                </p>
+                                <h3>
+                                    It’s a workspace that truly matches the
+                                    precision
+                                </h3>
+                                <p class="video-subtitle">we stand for.</p>
                                 <p class="video-description">
-                                    The design perfectly captures our creative
-                                    energy and provides the flexibility we need
-                                    for different types of work and
-                                    collaboration.
+                                    The new office brings clarity and structure
+                                    into our everyday operations. Every zone,
+                                    whether collaborative or private, has been
+                                    thoughtfully designed to support how our
+                                    engineering team works.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Sarah Mitchell, Creative Director
+                                        Pawan Panchpal, Founder
                                     </p>
                                     <p class="company-name">
-                                        Mouse & Cheese Design Studio
+                                        SixD Engineering Solutions
                                     </p>
                                 </div>
                             </div>
@@ -482,28 +484,30 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/section2.png"
+                                        src="/v46823.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Inspiring work environment.</h3>
-                                <p class="video-subtitle">Thoughtful design.</p>
+                                <h3>It’s a home that reflects the</h3>
+                                <p class="video-subtitle">
+                                    elegance we always imagined
+                                </p>
                                 <p class="video-description">
-                                    Every corner of the studio has been
-                                    thoughtfully designed to enhance creativity
-                                    and productivity while maintaining a
-                                    comfortable atmosphere.
+                                    Every corner of the space carries a quiet
+                                    sense of luxury, subtle, warm, and
+                                    beautifully curated. The aesthetics feel
+                                    effortless, yet every detail has been
+                                    thoughtfully designed to match our
+                                    lifestyle.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Alex Chen, Lead Designer
+                                        Ashutosh Sehrawat, Co-Founder
                                     </p>
-                                    <p class="company-name">
-                                        Mouse & Cheese Design Studio
-                                    </p>
+                                    <p class="company-name">Research Realm</p>
                                 </div>
                             </div>
                         </div>

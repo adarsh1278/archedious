@@ -257,10 +257,13 @@
         </div>
 
         <div class="sub-head">
-            <h2>Making Everyday Living Feel Better</h2>
+            <h2>A home that elevates each day with openness and warmth</h2>
             <p>
-                We reimagined the space as something you don’t just see, but
-                feel.
+                A bare-shell penthouse transformed into a warm, cohesive home
+                rooted in timeless design. With fixed services and Mivan
+                constraints, the project focuses on seamless planning, refined
+                materiality, and layered lighting to create quiet everyday
+                luxury.
             </p>
         </div>
 
@@ -286,11 +289,13 @@
                     Designing within fixed Mivan walls and rigid service layouts
                     demanded precision at every step. From aligning electrical
                     points to coordinating finishes across multiple vendors, the
-                    process was a balance of discipline and detail. The result
-                    is a home that feels expansive, warm, and effortlessly
-                    refined—where thoughtful flow, layered lighting, and
-                    material harmony come together to create a space that’s
-                    timeless, personal, and truly lived-in.
+                    process was a balance of discipline and detail.
+                    <br class="gp" />
+
+                    The result is a home that feels expansive, warm, and
+                    effortlessly refined—where thoughtful flow, layered
+                    lighting, and material harmony come together to create a
+                    space that’s timeless, personal, and truly lived-in.
                 </p>
             </div>
         </div>
@@ -363,29 +368,31 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/v1.png"
+                                        src="/v234.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Perfect collaboration space.</h3>
-                                <p class="video-subtitle">
-                                    Beyond expectations.
-                                </p>
+                                <h3>
+                                    It’s a workspace that truly matches the
+                                    precision
+                                </h3>
+                                <p class="video-subtitle">we stand for.</p>
                                 <p class="video-description">
-                                    The design perfectly captures our creative
-                                    energy and provides the flexibility we need
-                                    for different types of work and
-                                    collaboration.
+                                    The new office brings clarity and structure
+                                    into our everyday operations. Every zone,
+                                    whether collaborative or private, has been
+                                    thoughtfully designed to support how our
+                                    engineering team works.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Sarah Mitchell, Creative Director
+                                        Pawan Panchpal, Founder
                                     </p>
                                     <p class="company-name">
-                                        Mouse & Cheese Design Studio
+                                        SixD Engineering Solutions
                                     </p>
                                 </div>
                             </div>
@@ -410,28 +417,30 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/section2.png"
+                                        src="/v46823.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Inspiring work environment.</h3>
-                                <p class="video-subtitle">Thoughtful design.</p>
+                                <h3>It’s a home that reflects the</h3>
+                                <p class="video-subtitle">
+                                    elegance we always imagined
+                                </p>
                                 <p class="video-description">
-                                    Every corner of the studio has been
-                                    thoughtfully designed to enhance creativity
-                                    and productivity while maintaining a
-                                    comfortable atmosphere.
+                                    Every corner of the space carries a quiet
+                                    sense of luxury, subtle, warm, and
+                                    beautifully curated. The aesthetics feel
+                                    effortless, yet every detail has been
+                                    thoughtfully designed to match our
+                                    lifestyle.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Alex Chen, Lead Designer
+                                        Ashutosh Sehrawat, Co-Founder
                                     </p>
-                                    <p class="company-name">
-                                        Mouse & Cheese Design Studio
-                                    </p>
+                                    <p class="company-name">Research Realm</p>
                                 </div>
                             </div>
                         </div>
@@ -585,6 +594,10 @@
 </div>
 
 <style>
+    .gp {
+        height: 3vmax;
+        width: 100%;
+    }
     .case-study-wrapper {
         background-image: url("/bg.png");
         background-repeat: repeat;
