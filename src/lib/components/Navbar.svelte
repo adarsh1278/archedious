@@ -126,12 +126,12 @@
 
                                 <li>
                                     <a
-                                        href="/casestudies/A-82-first-floor"
+                                        href="/casestudies/sixD"
                                         class="sub-link"
                                         data-sveltekit-reload
                                         on:click={closeAll}
                                     >
-                                        A-82 First Floor
+                                        SixD
                                     </a>
                                 </li>
                             </ul>

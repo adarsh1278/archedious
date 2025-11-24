@@ -162,19 +162,19 @@
     <div class="container">
         <div class="hero-bg">
             <div>
-                <h1>The Terrace Studio</h1>
-                <p>Commercial| Delhi</p>
+                <h1>SixD Office</h1>
+                <p>Commercial| Noida</p>
             </div>
         </div>
 
         <div class="sub-head">
-            <h2>The Art of Everyday Space</h2>
+            <h2>A Modern Workspace of Clarity & Confidence</h2>
             <p>
-                This residence is envisioned as a calm, crafted living
-                environment where space, light, and material come together with
-                quiet precision. The design elevates everyday living through
-                thoughtful planning, refined details, and a curated palette that
-                balances warmth with modern clarity.
+                This workspace balances functional hierarchy with a transparent
+                and inclusive environment. From collaborative zones to private
+                cabins, every area is structured to encourage clarity and ease
+                of interaction. A refined client lounge creates a comfortable
+                and inviting experience for all visitors.
             </p>
         </div>
 
@@ -261,16 +261,13 @@
             </div> -->
 
             <div class="scroll-item-5">
-                <img src="/DIRECTOR CABIN-03 1.png" alt="Image 1" />
+                <img src="/image 90.png" alt="Image 1" />
             </div>
             <div class="scroll-item-5">
-                <img src="/DIRECTOR CABIN-02 1.png" alt="Image 1" />
+                <img src="/image 91.png" alt="Image 1" />
             </div>
             <div class="scroll-item-5">
-                <img src="/DIRECTOR CABIN 1.png" alt="Image 1" />
-            </div>
-            <div class="scroll-item-5">
-                <img src="/CONFERENCE ROOM 1.png" alt="Image 1" />
+                <img src="/image 92.png" alt="Image 1" />
             </div>
         </div>
 
@@ -633,7 +630,7 @@
 
     .hero-bg {
         margin-top: 0%;
-        background-image: url("/DIRECTOR CABIN LOUNGE  1.png");
+        background-image: url("/image 89.png");
         /* background-color: aqua; */
         background-size: cover;
         background-position: center;

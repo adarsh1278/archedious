@@ -79,7 +79,9 @@
                         <a href="/casestudies/office-Space" class="sub-link"
                             >The Terrace Studio</a
                         >
-                        <a href="#" class="sub-link">A-82 First Floor</a>
+                        <a href="/casestudies/sixD" class="sub-link"
+                            >SixD Office</a
+                        >
                     </div>
                 </div>
             </div>
@@ -127,11 +129,17 @@
                             class="drawer-sublink">Residential ▸</label
                         >
                         <div class="drawer-sub-submenu">
-                            <a href="#" class="drawer-sublink-child">Villa</a>
-                            <a href="#" class="drawer-sublink-child"
-                                >Apartment</a
+                            <a
+                                href="/casestudies/Lawrence"
+                                class="drawer-sublink-child">Lawrence Villa</a
                             >
-                            <a href="#" class="drawer-sublink-child">Bungalow</a
+                            <a
+                                href="/casestudies/roopnagar"
+                                class="drawer-sublink-child">Roop Nagar Villa</a
+                            >
+                            <a
+                                href="/casestudies/Indirapuram"
+                                class="drawer-sublink-child">Indirapuram</a
                             >
                         </div>
                     </div>
@@ -148,9 +156,20 @@
                             class="drawer-sublink">Commercial ▸</label
                         >
                         <div class="drawer-sub-submenu">
-                            <a href="#" class="drawer-sublink-child">Office</a>
-                            <a href="#" class="drawer-sublink-child">Mall</a>
-                            <a href="#" class="drawer-sublink-child">Hotel</a>
+                            <a
+                                href="/casestudies/mouseAndcheese"
+                                class="drawer-sublink-child"
+                                >Mouse & Cheese Design Studio</a
+                            >
+                            <a
+                                href="/casestudies/office-Space"
+                                class="drawer-sublink-child"
+                                >The Terrace Studio</a
+                            >
+                            <a
+                                href="/casestudies/sixD"
+                                class="drawer-sublink-child">SixD Office</a
+                            >
                         </div>
                     </div>
                 </div>
