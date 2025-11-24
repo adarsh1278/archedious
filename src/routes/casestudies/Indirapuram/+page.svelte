@@ -3,6 +3,25 @@
     import { page } from "$app/stores";
 
     let slideIndex = 1;
+    let bgSlideIndex = 0;
+    const bgImages = [
+        "/Enscape_2024-12-03-18-23-26 2.png",
+        "/Enscape_2024-12-03-18-38-51 (1) 1.png",
+        "/Enscape_2024-12-03-18-33-14 1.png",
+        "/Enscape_2025-02-15-16-55-40 1.png",
+    ];
+    let bgTimer = 5000;
+    let bgTimeLeft = bgTimer;
+
+    function nextBgSlide() {
+        bgSlideIndex = (bgSlideIndex + 1) % bgImages.length;
+        bgTimeLeft = bgTimer;
+    }
+
+    function prevBgSlide() {
+        bgSlideIndex = (bgSlideIndex - 1 + bgImages.length) % bgImages.length;
+        bgTimeLeft = bgTimer;
+    }
 
     onMount(() => {
         // Auto slide functionality
@@ -63,7 +82,7 @@
                     ) {
                         e.preventDefault();
 
-                        const scrollDistance = e.deltaY * 2;
+                        const scrollDistance = e.deltaY * 0.5;
                         targetScrollLeft = Math.max(
                             0,
                             Math.min(
@@ -89,7 +108,9 @@
             };
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            clearInterval(interval);
+        };
     });
 
     function currentSlide(n) {
@@ -268,18 +289,55 @@
         </div>
 
         <div class="hero-2">
-            <div class="hero-bg-2">
-                <!-- <div class="animated-text">
-                    <p class="text-1">Living Room</p>
-                    <p class="text-2">Master Bedroom</p>
-                    <p class="text-3">BathStudio</p>
-                </div> -->
+            <div
+                class="hero-bg-2"
+                style="background-image: url('{bgImages[bgSlideIndex]}');"
+            >
+                <button
+                    class="carousel-arrow prev-arrow"
+                    on:click={prevBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button
+                    class="carousel-arrow next-arrow"
+                    on:click={nextBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <div class="carousel-timer">
+                    <div class="timer-progress" style="width: 0%"></div>
+                </div>
             </div>
         </div>
 
         <div class="section-3">
             <video class="section-3-video" autoplay muted loop playsinline>
-                <source src="/Untitled design.mp4" type="video/mp4" />
+                <source src="/indrav3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
@@ -1087,7 +1145,7 @@
         width: 100%;
         height: 45.48vmax;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         color: white;
         text-align: center;
@@ -1095,36 +1153,79 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-        animation: changeBackground 15s infinite;
     }
 
     .hero-2 {
         width: 90%;
     }
 
-    @keyframes changeBackground {
-        0%,
-        20% {
-            background-image: url("/1 29.png");
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: rgba(255, 255, 255, 0.8);
+        z-index: 10;
+        padding: 0;
+    }
+
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+    }
+
+    .prev-arrow {
+        left: 2rem;
+    }
+
+    .next-arrow {
+        right: 2rem;
+    }
+
+    .carousel-timer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0 0 12px 0;
+        overflow: hidden;
+    }
+
+    .timer-progress {
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        transition: width 0.1s linear;
+        border-radius: 0 0 12px 0;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
         }
 
-        20.1%,
-        40% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM)-02 1.png");
+        .carousel-arrow svg {
+            width: 32px;
+            height: 32px;
         }
 
-        40.1%,
-        60% {
-            background-image: url("/BACK BATHROOM  1.png");
-        }
-        60.1%,
-        80% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM) 1.png");
+        .prev-arrow {
+            left: 1rem;
         }
 
-        80.1%,
-        100% {
-            background-image: url("/PARENT BEDROOM_01 1.png");
+        .next-arrow {
+            right: 1rem;
         }
     }
 
