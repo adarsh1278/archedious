@@ -173,16 +173,21 @@
                         Meet Vaasudev, the founder of Archideus. He is the heart
                         and spirit behind the practice, driven by the belief
                         that architecture is not only about structures but about
-                        the emotions a space can hold. For him, what matters
-                        most is making it possible—doing whatever it takes to
-                        shape a space into what it is meant to be.
+                        the emotions a space can hold.<br />
+                        <div class="hieght"></div>
+                        For him, what matters most is making it possible—doing whatever
+                        it takes to shape a space into what it is meant to be.
                     </span>
+
                     <span>
-                        Vasu's process always begins on paper, sketching by hand
-                        to translate emotions into lines. These blueprints are
-                        more than technical drawings; they are the first step in
-                        turning intention into form, guiding spaces that are
-                        functional, enduring, and deeply human.
+                        <div class="desc-special">
+                            Vasu's process always begins on paper, sketching by
+                            hand to translate emotions into lines.
+                        </div>
+                        <div class="hieght"></div>
+                        These blueprints are more than technical drawings; they are
+                        the first step in turning intention into form, guiding spaces
+                        that are functional, enduring, and deeply human.
                     </span>
                 </div>
             </div>
@@ -192,6 +197,9 @@
                 </div>
                 <div class="sec-4-img-txt">
                     <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
+                    <h4 class="sec-4-des">
+                        Studio head Architect, Concept Design Head
+                    </h4>
                 </div>
             </div>
 
@@ -312,6 +320,21 @@
     .hoverme {
         transition: all 0.7s ease;
     }
+    .hieght {
+        height: 14px !important;
+        /* background-color: aqua !important; */
+        width: 100% !important;
+    }
+    .desc-special {
+        margin-top: 0% !important;
+        /* background-color: aqua; */
+        color: #000;
+        font-family: "Instrument Sans";
+        font-size: 24px;
+        font-style: italic !important;
+        font-weight: 500;
+        /* line-height: 36px; */
+    }
     .image-section-4 {
         /* background-color: aqua; */
         width: 40%;
@@ -323,6 +346,7 @@
         align-items: center;
     }
     .frame img {
+        /* background-color: aqua; */
         width: 533px;
         height: 533px;
         flex-shrink: 0;
@@ -332,13 +356,39 @@
         scale: 1.1;
         text-decoration: none;
     }
+    .sec-4-img-txt {
+        padding: 0%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 0;
+        /* padding-left: 2vmax; */
+        /* background-color: #8c3d3d; */
+    }
+    .sec-4-head {
+        /* background-color: aqua; */
+        margin-bottom: 2vmax;
+    }
 
     :root {
         --primary-color: #8c3d3d;
         --text-color: #333;
         --max-width: 1300px;
     }
-
+    .sec-4-des {
+        margin: 0% !important;
+        padding: 0% !important;
+        /* background-color: aqua; */
+        color: #8c3d3d !important;
+        font-family: "Instrument Sans" !important;
+        font-size: 16px !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+        line-height: 0px !important;
+    }
     /* Responsive */
     @media (max-width: 1024px) {
         .container {
@@ -378,6 +428,12 @@
 
         .text-section p {
             margin: 0 auto;
+        }
+        .frame img {
+            width: 40vmax !important;
+            height: 533px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
         }
     }
 </style>
