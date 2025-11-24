@@ -192,7 +192,7 @@
 
         <div class="horizontal-scroll">
             <div class="scroll-item-1">
-                <img src="/hrscroll1.png" alt="Image 1" class="scroll-image" />
+                <img src="/hrscollmnc.png" alt="Image 1" class="scroll-image" />
                 <p>
                     Inspired by their looped logo, we recognized early on that
                     the space couldn't be linear. It needed to support smooth

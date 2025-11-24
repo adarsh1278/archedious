@@ -3,14 +3,37 @@
     import { page } from "$app/stores";
 
     let slideIndex = 1;
+    let bgSlideIndex = 0;
+    const bgImages = [
+        "/1 29.png",
+        "/BACK SIDE (MASTER BEDROOM)-02 1.png",
+        "/BACK BATHROOM  1.png",
+        "/BACK SIDE (MASTER BEDROOM) 1.png",
+        "/PARENT BEDROOM_01 1.png",
+    ];
+
+    function nextBgSlide() {
+        bgSlideIndex = (bgSlideIndex + 1) % bgImages.length;
+    }
+
+    function prevBgSlide() {
+        bgSlideIndex = (bgSlideIndex - 1 + bgImages.length) % bgImages.length;
+    }
 
     onMount(() => {
-        // Auto slide functionality
+        // Auto slide functionality for testimonials
         const autoSlide = () => {
             slideIndex = slideIndex >= 3 ? 1 : slideIndex + 1;
         };
 
         const interval = setInterval(autoSlide, 5000);
+
+        // Auto slide for background carousel
+        const bgAutoSlide = () => {
+            nextBgSlide();
+        };
+
+        const bgInterval = setInterval(bgAutoSlide, 5000);
 
         // Horizontal scroll functionality
         const content1 = document.querySelector(".horizontal-scroll");
@@ -86,10 +109,14 @@
             return () => {
                 content1.removeEventListener("wheel", handleWheel);
                 clearInterval(interval);
+                clearInterval(bgInterval);
             };
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            clearInterval(interval);
+            clearInterval(bgInterval);
+        };
     });
 
     function currentSlide(n) {
@@ -273,12 +300,46 @@
         </div>
 
         <div class="hero-2">
-            <div class="hero-bg-2">
-                <!-- <div class="animated-text">
-                    <p class="text-1">Living Room</p>
-                    <p class="text-2">Master Bedroom</p>
-                    <p class="text-3">BathStudio</p>
-                </div> -->
+            <div
+                class="hero-bg-2"
+                style="background-image: url('{bgImages[bgSlideIndex]}');"
+            >
+                <button
+                    class="carousel-arrow prev-arrow"
+                    on:click={prevBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button
+                    class="carousel-arrow next-arrow"
+                    on:click={nextBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -1148,7 +1209,7 @@
         width: 100%;
         height: 45.48vmax;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         color: white;
         text-align: center;
@@ -1156,36 +1217,62 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-        animation: changeBackground 15s infinite;
+        transition: background-image 0.5s ease-in-out;
     }
 
     .hero-2 {
         width: 90%;
     }
 
-    @keyframes changeBackground {
-        0%,
-        20% {
-            background-image: url("/1 29.png");
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        z-index: 10;
+    }
+
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-arrow {
+        left: 2rem;
+    }
+
+    .next-arrow {
+        right: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
         }
 
-        20.1%,
-        40% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM)-02 1.png");
+        .carousel-arrow svg {
+            width: 32px;
+            height: 32px;
         }
 
-        40.1%,
-        60% {
-            background-image: url("/BACK BATHROOM  1.png");
-        }
-        60.1%,
-        80% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM) 1.png");
+        .prev-arrow {
+            left: 1rem;
         }
 
-        80.1%,
-        100% {
-            background-image: url("/PARENT BEDROOM_01 1.png");
+        .next-arrow {
+            right: 1rem;
         }
     }
 
