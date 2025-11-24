@@ -41,7 +41,7 @@
     });
 </script>
 
-<nav class="navbar">
+<nav class="navbar {navVisible ? 'show' : 'hide'}">
     <!-- Left (Logo) -->
     <div class="nav-left">
         <img src="/logo-2.svg" alt="Logo" class="logo" />
@@ -183,8 +183,6 @@
 
     /* Show when scrolling up */
     .navbar.show {
-        backdrop-filter: blur(3px);
-        background-color: rgba(255, 255, 255, 0.01);
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
@@ -202,7 +200,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--background) !important;
+        background: #8B3A3A !important;
         min-width: 200px;
         display: none;
         flex-direction: column;
@@ -225,7 +223,7 @@
     .dropdown-link {
         display: block;
         padding: 10px 15px;
-        color: black;
+        color: white;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -237,7 +235,7 @@
         position: absolute;
         top: 0;
         left: 100%;
-        background: #cec7bf;
+        background: #8B3A3A;
         min-width: 180px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: none;
@@ -252,7 +250,7 @@
     .sub-link {
         display: block;
         padding: 15px;
-        color: black;
+        color: white;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -261,25 +259,22 @@
 
     .dropdown-item:focus,
     .dropdown-item:hover {
-        background: #c8c3b8 !important;
+        background: #7a3333 !important;
     }
 
     .sub-link:hover {
-        background: #dfdad0dd !important;
+        background: #7a3333 !important;
     }
 
     .navbar {
         width: 100%;
         height: 71px;
-        /* background-color: var(--background); */
-        background: transparent;
+        background: #8B3A3A;
         display: flex;
         align-items: center;
         padding: 0 20px;
         position: fixed;
         z-index: 100;
-        /* background-image: url(bg.png); */
-        /* background-repeat: repeat; */
     }
 
     .nav-left {
@@ -296,7 +291,7 @@
 
     .nav-link {
         text-decoration: none;
-        color: black;
+        color: white;
         font-family: var(--sub);
         font-weight: 300;
         font-size: 18px;
@@ -322,7 +317,7 @@
 
     .hamburger span {
         height: 3px;
-        background: #000;
+        background: white;
         border-radius: 3px;
         transition: 0.3s;
     }
@@ -332,11 +327,11 @@
         width: 100%;
         clear: both;
         font-weight: 400;
-        color: var(--bs-dropdown-link-color);
+        color: white;
         text-align: inherit;
         text-decoration: none;
         white-space: nowrap;
-        background-color: #d1cbbf !important;
+        background-color: #8B3A3A !important;
         border: 0;
     }
 
