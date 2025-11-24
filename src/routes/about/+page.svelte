@@ -190,7 +190,9 @@
                 <div class="frame">
                     <img src="/Group 35.png" alt="Happy couple at home" />
                 </div>
-                <div class="sec-4-img-txt"></div>
+                <div class="sec-4-img-txt">
+                    <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
+                </div>
             </div>
 
             <!-- <img src="/aboutus2.png" alt="Section 4 Image" /> -->
