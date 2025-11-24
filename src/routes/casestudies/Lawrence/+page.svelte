@@ -386,34 +386,10 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/v1.png"
+                                        src="/Rectangle 58.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
@@ -459,34 +435,10 @@
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/bg2.png"
+                                        src="/v1.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
@@ -534,30 +486,6 @@
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
