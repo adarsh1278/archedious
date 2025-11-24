@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <!-- <div class="blank-section"></div> -->
+  <div class="blank-section"></div>
 </div>
 
 <div class="container">
@@ -26,7 +26,6 @@
     <div class="frame">
       <img src="hh2.png" alt="Modern workspace" />
     </div>
-    <div class="circle"></div>
   </div>
 
   <div class="blank-section"></div>
@@ -45,7 +44,6 @@
     <div class="frame">
       <img src="hh4.png" alt="Public spaces" />
     </div>
-    <div class="circle"></div>
   </div>
 
   <div class="blank-section"></div>

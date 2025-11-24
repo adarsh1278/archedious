@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import SvgLineDrawing from "./SvgLineDrawing.svelte";
 
     let testimonials = [
         {
@@ -49,7 +50,7 @@
     }
 
     onMount(() => {
-        interval = setInterval(nextSlide, 3000); // auto slide
+        interval = setInterval(nextSlide, 3000);
         return () => clearInterval(interval);
     });
 </script>
@@ -88,6 +89,7 @@
         </div>
     </div>
 </div>
+<div class="wrap">
 
 <div class="dots">
     {#each testimonials as _, i}
@@ -123,7 +125,10 @@
         </a>
     </div>
 
-    <img src="last.svg" class="smksd" />
+    <div class="svg-animation-container">
+        <SvgLineDrawing svgPath="/last.svg" className="smksd" />
+    </div>
+</div>
 </div>
 
 <style>
@@ -134,7 +139,15 @@
         display: flex;
         justify-content: space-between;
         margin-top: 85px;
-        z-index: 3;
+         z-index: 3;
+        background-image: url('/bg.png');
+  background-repeat: repeat;
+       
+    }
+    .wrap{
+         z-index: 3;
+        background-image: url('/bg.png');
+  background-repeat: repeat;    
     }
 
     .nsksdoo {
@@ -190,10 +203,35 @@
         display: block;
     }
 
-    .smksd {
+    .svg-animation-container {
         margin-top: 20px;
-        width: 360px;
         margin-left: 20px;
+        max-width: 100%;
+    }
+
+    :global(.smksd) {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        display: block;
+    }
+    
+    @media (min-width: 1440px) {
+        :global(.smksd) {
+            max-width: 360px;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        :global(.smksd) {
+            max-width: 300px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        :global(.smksd) {
+            max-width: 250px;
+        }
     }
 
     .play-btn {
@@ -325,7 +363,11 @@
 
     .nmslks {
         display: flex;
+        
         flex-direction: column;
+         z-index: 3 !important;
+        /* background-image: url('/bg.png') !important; */
+  background-repeat: repeat !important;
     }
 
     @media (max-width: 768px) {
@@ -400,10 +442,14 @@
             width: 100%;
         }
 
-        .smksd {
+        .svg-animation-container {
             margin-top: 20px;
-            width: 50%;
             margin-left: 20px;
+        }
+
+        .smksd {
+            width: 50%;
+            display: block;
         }
     }
 </style>

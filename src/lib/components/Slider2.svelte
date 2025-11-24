@@ -1,29 +1,10 @@
 <script>
     import { onMount } from "svelte";
 
-    let visible = false;
-    let container;
     let swiperInstance;
     let isInitialized = false;
 
     onMount(() => {
-        // Intersection Observer for animation
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    visible = entry.isIntersecting;
-                });
-            },
-            { 
-                threshold: 0.2,
-                rootMargin: "50px"
-            }
-        );
-
-        if (container) {
-            observer.observe(container);
-        }
-
         // Initialize Swiper
         const initSwiper = () => {
             if (isInitialized || typeof Swiper === 'undefined') return;
@@ -75,7 +56,6 @@
         setTimeout(checkAndInit, 100);
 
         return () => {
-            observer.disconnect();
             if (swiperInstance && isInitialized) {
                 try {
                     swiperInstance.destroy(true, true);
@@ -87,10 +67,10 @@
     });
 </script>
 
-<section bind:this={container}>
+<section>
     <h1 class="title">See What We Build</h1>
 
-    <div class="inner-box {visible ? 'expanded' : 'initial'}">
+    <div class="inner-box">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -232,23 +212,9 @@
 
     .inner-box {
         background: #2a2a2a;
-        transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1), 
-                    height 600ms cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: hidden;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-    }
-
-    .initial {
-        width: 1322px;
+        width: 100vw;
         height: 622px;
-        max-width: 95vw;
-    }
-
-    .expanded {
-        width: 100%;
-        height: 100%;
-        min-height: 622px;
+        overflow: hidden;
     }
 
     /* Swiper full inside */
