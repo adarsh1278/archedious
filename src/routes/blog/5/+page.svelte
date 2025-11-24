@@ -11,7 +11,7 @@
                 "As you consider architects for your project, understanding this sophisticated approach to minimalist design will help you identify professionals who can create spaces that feel abundant through restraint, luxurious through simplicity, and deeply personal through careful curation. Whether you're planning a family home, designing an office, or creating a retail space, the principles of new minimalism can enhance functionality while reducing both environmental impact and long-term maintenance costs.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/minimal-western-wall-outdoor-architecture-2025-02-10-00-08-50-utc 1.png",
                 alt: "abstract material grid",
             },
         },
@@ -40,7 +40,7 @@
                     "This approach requires sophisticated design thinking and precise execution. Ask potential architects to show you examples of how they've created multi-functional elements in past projects. Can they demonstrate how their designs eliminate clutter while adding functionality?",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/female-hands-with-mosaic-2024-09-13-10-54-35-utc 1.png",
                     alt: "material panel showing light and form",
                 },
             },
@@ -81,7 +81,7 @@
                     ],
                 },
                 image: {
-                    src: "/image 85.png",
+                    src: "/a-diverse-group-of-business-professionals-collabor-2025-01-15-16-17-22-utc 1.png",
                     alt: "wood grains for minimalist design",
                 },
                 additionalContent: [

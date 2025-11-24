@@ -11,7 +11,7 @@
                 "As you search for the right architect for your project, understanding wabi-sabi principles will help you identify professionals who can create spaces that become more beautiful with age, that connect you to natural processes, and that offer a refreshing alternative to the sterile perfection that dominates much contemporary architecture. Whether you're planning a home, office, or retail space, wabi-sabi approaches can create environments that feel deeply human, authentically crafted, and timelessly beautiful.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/the-surface-of-the-sidewalk-is-beautifully-paved-w-2024-10-18-14-14-36-utc 1.png",
                 alt: "material textures image",
             },
         },
@@ -40,7 +40,7 @@
                     "This honesty extends to how materials are joined and detailed. Rather than hiding connections and transitions, wabi-sabi design often celebrates the joints, showing how different materials meet and interact. This creates opportunities for beautiful details while also acknowledging the human craft involved in building.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/interior-of-living-room-with-wooden-table-chair-2025-03-27-01-58-52-utc 1.png",
                     alt: "material variation image",
                 },
                 additionalContent: [
@@ -74,7 +74,7 @@
                     "Adobe, rammed earth, and ceramic materials naturally embody wabi-sabi principles through their connection to earth and their response to environmental conditions. These materials show their making process—the marks of forms, the evidence of hand-shaping, and the natural variations that occur during production and curing.",
                 ],
                 image: {
-                    src: "/image 85.png",
+                    src: "/overhead-view-of-various-patterned-fabric-swatches-2025-04-04-07-11-21-utc 1.png",
                     alt: "earth materials, wood grains",
                 },
             },

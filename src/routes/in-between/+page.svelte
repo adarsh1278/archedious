@@ -106,7 +106,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="image 83.png"
+                            src="/curve-pattern-of-geometric-white-aluminum-composit-2025-07-07-18-20-06-utc 1.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -161,7 +161,7 @@
                         class="content-3-image2"
                     />
                     <img
-                        src="image 83.png"
+                        src="/minimal-western-wall-outdoor-architecture-2025-02-10-00-08-50-utc 1.png"
                         alt="Image 3"
                         class="content-3-image1"
                     />
@@ -186,7 +186,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="image 83.png"
+                            src="/the-surface-of-the-sidewalk-is-beautifully-paved-w-2024-10-18-14-14-36-utc 1.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />
@@ -215,7 +215,7 @@
                             class="content-3-image2"
                         />
                         <img
-                            src="background-with-the-texture-of-an-old-stump-2025-03-14-00-23-11-utc 1.png"
+                            src="/old-craftsman-measure-and-work-with-wood-products-2025-03-09-02-10-51-utc 1.png"
                             alt="Image 3"
                             class="content-3-image1"
                         />

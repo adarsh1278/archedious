@@ -12,7 +12,7 @@
                 "In India's diverse real estate market, smart materials offer solutions for extreme climate challenges while meeting modern lifestyle demands. From Mumbai apartments dealing with humidity to Delhi offices managing temperature swings, responsive materials create comfortable, efficient environments that traditional design cannot match.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/curve-pattern-of-geometric-white-aluminum-composit-2025-07-07-18-20-06-utc 1.png",
                 alt: "Grid of material samples: concrete, wood, steel, brick",
             },
         },
@@ -47,7 +47,7 @@
                     "Temperature-regulating workstations using PCM-enhanced furniture maintain personal comfort zones, reducing conflicts over office air conditioning settings while decreasing overall energy consumption.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/low-angle-and-perspective-side-view-of-rectangle-p-2025-03-11-12-09-36-utc 1.png",
                     alt: "Material grid showing steel, wood, concrete, brick",
                 },
                 additionalContent: [
@@ -77,7 +77,7 @@
                     ],
                 },
                 image: {
-                    src: "/image 85.png",
+                    src: "/spain-modern-architecture-details-white-house-dur-2024-10-18-03-43-47-utc 1.png",
                     alt: "wood grains and tactile materials",
                 },
             },

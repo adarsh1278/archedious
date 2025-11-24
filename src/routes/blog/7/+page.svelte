@@ -11,7 +11,7 @@
                 "Understanding architecture as a living, artistic practice will fundamentally change how you evaluate potential architects for your project. Instead of simply comparing portfolios and checking references, you'll begin to recognize architects who bring creative vision, artistic sensitivity, and innovative thinking to their work. Whether you're planning a home, office, retail space, or institutional building, choosing an architect who approaches their work as an art form can transform your project from a functional solution into an inspiring, transformative environment.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/old-craftsman-measure-and-work-with-wood-products-2025-03-09-02-10-51-utc 1.png",
                 alt: "architectural artistic concept",
             },
         },
@@ -40,7 +40,7 @@
                     "Buildings are environments to be experienced through movement and time. Artistic architects think like choreographers, considering how people will move through spaces, where they will pause, and what views and experiences will unfold as they navigate the building. This choreographic thinking shows up in doorway placement that creates anticipation before revealing destination spaces, in staircases that become processional experiences, and in the careful orchestration of views that unfold as you move through a building.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/engineer-and-investor-are-negotiating-the-details-2025-01-17-00-07-24-utc 1.png",
                     alt: "movement choreography architecture",
                 },
                 additionalContent: [
@@ -69,7 +69,7 @@
                     "The most artistic architects understand that collaboration enhances rather than compromises their creative vision. They work closely with clients to understand not just functional requirements but aspirations and emotional goals. They collaborate with engineers and craftspeople to push technical boundaries and explore new possibilities.",
                 ],
                 image: {
-                    src: "/image 85.png",
+                    src: "/engineering-team-consulting-and-analyzing-working-2024-09-22-16-40-02-utc 1.png",
                     alt: "creative design process textures",
                 },
             },
