@@ -64,6 +64,11 @@
 
     <ul class="menu {menuOpen ? 'open' : ''}">
         <li><a href="/" data-sveltekit-reload on:click={closeAll}>Home</a></li>
+         <li>
+            <a href="/about" data-sveltekit-reload on:click={closeAll}
+                >About Us</a
+            >
+        </li>
 
         <!-- PROJECTS DROPDOWN -->
         <li class="dropdown">
@@ -163,12 +168,12 @@
 
                                 <li>
                                     <a
-                                        href="/casestudies/A-82-first-floor"
+                                        href="/casestudies/sixD"
                                         class="sub-link"
                                         data-sveltekit-reload
                                         on:click={closeAll}
                                     >
-                                        A-82 First Floor
+                                        SixD
                                     </a>
                                 </li>
                             </ul>
@@ -180,10 +185,10 @@
 
         <li>
             <a
-                href="/in-between"
+                href="/Archideus Journal"
                 class="nav-link"
                 data-sveltekit-reload
-                on:click={closeAll}>In-between</a
+                on:click={closeAll}>Archideus Journal</a
             >
         </li>
         <li>
@@ -194,11 +199,7 @@
                 on:click={closeAll}>Contact us</a
             >
         </li>
-        <li>
-            <a href="/about" data-sveltekit-reload on:click={closeAll}
-                >About Us</a
-            >
-        </li>
+       
     </ul>
 
 <style>

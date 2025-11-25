@@ -156,7 +156,7 @@
                 shape environments that earn their place:
                 <br />
                 <span class="it">
-                    practical, precise, and purposeful by design.
+                    Practical, Precise, & Purposeful by design.
                 </span>
             </p>
             <video class="section-3-video" autoplay muted loop playsinline>
@@ -173,25 +173,37 @@
                         Meet Vaasudev, the founder of Archideus. He is the heart
                         and spirit behind the practice, driven by the belief
                         that architecture is not only about structures but about
-                        the emotions a space can hold. For him, what matters
-                        most is making it possible—doing whatever it takes to
-                        shape a space into what it is meant to be.
+                        the emotions a space can hold.<br />
+                        <div class="hieght"></div>
+                        For him, what matters most is making it possible—doing whatever
+                        it takes to shape a space into what it is meant to be.
                     </span>
+                    <!-- <div class="hieght"></div> -->
                     <span>
-                        Vasu's process always begins on paper, sketching by hand
-                        to translate emotions into lines. These blueprints are
-                        more than technical drawings; they are the first step in
-                        turning intention into form, guiding spaces that are
-                        functional, enduring, and deeply human.
+                        <span class="desc-special">
+                            Vasu's process always begins on paper, sketching by
+                            hand to translate emotions into lines.
+                        </span>
+                        <div class="hieght"></div>
+                        These blueprints are more than technical drawings; they are
+                        the first step in turning intention into form, guiding spaces
+                        that are functional, enduring, and deeply human.
                     </span>
                 </div>
             </div>
             <div class="image-section-4">
                 <div class="frame">
-                    <img src="/Group 35.png" alt="Happy couple at home" />
+                    <img
+                        src="/Group 35.png"
+                        alt="Happy couple at home"
+                        class="sec-image"
+                    />
                 </div>
                 <div class="sec-4-img-txt">
                     <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
+                    <div class="sec-4-des">
+                        Studio head Architect, Concept Design Head
+                    </div>
                 </div>
             </div>
 
@@ -207,7 +219,9 @@
                 insights to behind-the-scenes stories — explore how we think,
                 build, and imagine at Archideus
             </p>
-            <button> Read Our stories </button>
+            <a href="/Archideus Journal">
+                <button> Read Our stories </button>
+            </a>
         </div>
     </div>
 
@@ -239,7 +253,9 @@
                             The Science Behind Timeless Materials: Why Concrete,
                             Steel, and Wood Still Reign in Modern Architecture
                         </h4> -->
-                        <span> 12min </span>
+                        <div>
+                            <span> 12min </span>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -302,7 +318,8 @@
             <span>Then you're already imagining it.</span>
             <span class="itallic">Lets bring it to life.</span>
         </h3>
-        <button>Just Say Hello</button>
+       <a href="/contact">
+ <button>Just Say Hello</button>
     </div>
 </div>
 
@@ -312,7 +329,24 @@
     .hoverme {
         transition: all 0.7s ease;
     }
+    .hieght {
+        height: 14px !important;
+        /* background-color: aqua !important; */
+        width: 100% !important;
+    }
+    .desc-special {
+        margin-top: 0% !important;
+        /* background-color: aqua; */
+        color: #000;
+        font-family: "Instrument Sans";
+        font-size: 24px;
+        font-style: italic !important;
+        font-weight: 500;
+        /* line-height: 36px; */
+    }
     .image-section-4 {
+        position: relative;
+
         /* background-color: aqua; */
         width: 40%;
         padding-top: 5vmax;
@@ -322,6 +356,11 @@
         justify-content: space-between;
         align-items: center;
     }
+    .sec-image {
+        border-radius: 0px;
+        position: relative;
+    }
+
     .frame img {
         width: 533px;
         height: 533px;
@@ -332,13 +371,42 @@
         scale: 1.1;
         text-decoration: none;
     }
+    .sec-4-img-txt {
+        position: absolute;
+        bottom: 0;
+        padding: 0%;
+        left: 2vmax;
+        height: 23%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 0;
+        /* padding-left: 2vmax; */
+        /* background-color: #8c3d3d; */
+    }
+    .sec-4-head {
+        /* background-color: aqua; */
+        margin-bottom: 2vmax;
+    }
 
     :root {
         --primary-color: #8c3d3d;
         --text-color: #333;
         --max-width: 1300px;
     }
-
+    .sec-4-des {
+        margin: 0% !important;
+        padding: 0% !important;
+        /* background-color: aqua; */
+        color: #8c3d3d !important;
+        font-family: "Instrument Sans" !important;
+        font-size: 16px !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+        line-height: 0px !important;
+    }
     /* Responsive */
     @media (max-width: 1024px) {
         .container {
@@ -348,6 +416,136 @@
 
         .blank-section {
             display: none; /* hide spacing column on tablets */
+        }
+    }
+    /* 📱 Mobile (up to 768px) - Content 3 & 4 */
+    @media (max-width: 768px) {
+        /* Content 3 Styles */
+        .content-3 {
+            flex-direction: column !important;
+            width: 95% !important;
+            gap: 2rem !important;
+            padding-top: 3rem !important;
+        }
+
+        .content-3-tab {
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 2rem !important;
+        }
+
+        .content-3-card {
+            width: 100% !important;
+            min-width: auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .content-3-image1 {
+            height: 220px !important;
+        }
+
+        /* Content 4 Styles */
+        .content-4 {
+            width: 95% !important;
+            gap: 2rem !important;
+            margin-top: 3rem !important;
+            text-align: left !important;
+            align-items: start !important;
+            padding-left: 1vmax;
+        }
+
+        .content-4 h3 {
+            font-size: 32px !important;
+            line-height: 40px !important;
+            text-align: left !important;
+            width: 100% !important;
+        }
+
+        .content-4 h3 span {
+            display: block !important;
+        }
+
+        .content-4 button {
+            width: 100% !important;
+            max-width: 280px !important;
+            font-size: 18px !important;
+        }
+
+        /* Image Section 4 Mobile Adjustments */
+        .image-section-4 {
+            width: 100% !important;
+            padding-top: 0 !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 2rem !important;
+        }
+
+        .frame {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .frame img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 400px !important;
+        }
+
+        .sec-4-img-txt {
+            position: static !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            padding: 0 1rem !important;
+            gap: 0.5rem !important;
+            height: auto !important;
+        }
+
+        .sec-4-head {
+            font-size: 24px !important;
+            text-align: center !important;
+            margin-bottom: 0 !important;
+            white-space: normal !important;
+            line-height: 1.3 !important;
+        }
+
+        .sec-4-des {
+            font-size: 14px !important;
+            text-align: center !important;
+            white-space: normal !important;
+            line-height: 1.4 !important;
+            word-wrap: break-word !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .blank-section {
+            display: none; /* no blank space on mobile */
+        }
+
+        .circle {
+            display: none; /* remove circle for simplicity */
+        }
+
+        .text-section p {
+            margin: 0 auto;
         }
     }
 
@@ -379,5 +577,15 @@
         .text-section p {
             margin: 0 auto;
         }
+        .frame img {
+            width: 40vmax !important;
+            height: 533px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+        }
     }
+
+    /* 📱 Very Small Mobile (up to 480px) - Additional adjustments */
+
+    /* Content 2 Responsive (if needed) */
 </style>

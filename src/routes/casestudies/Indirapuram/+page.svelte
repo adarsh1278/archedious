@@ -3,6 +3,25 @@
     import { page } from "$app/stores";
 
     let slideIndex = 1;
+    let bgSlideIndex = 0;
+    const bgImages = [
+        "/Enscape_2024-12-03-18-23-26 2.png",
+        "/Enscape_2024-12-03-18-38-51 (1) 1.png",
+        "/Enscape_2024-12-03-18-33-14 1.png",
+        "/Enscape_2025-02-15-16-55-40 1.png",
+    ];
+    let bgTimer = 5000;
+    let bgTimeLeft = bgTimer;
+
+    function nextBgSlide() {
+        bgSlideIndex = (bgSlideIndex + 1) % bgImages.length;
+        bgTimeLeft = bgTimer;
+    }
+
+    function prevBgSlide() {
+        bgSlideIndex = (bgSlideIndex - 1 + bgImages.length) % bgImages.length;
+        bgTimeLeft = bgTimer;
+    }
 
     onMount(() => {
         // Auto slide functionality
@@ -63,7 +82,7 @@
                     ) {
                         e.preventDefault();
 
-                        const scrollDistance = e.deltaY * 2;
+                        const scrollDistance = e.deltaY * 0.5;
                         targetScrollLeft = Math.max(
                             0,
                             Math.min(
@@ -89,7 +108,9 @@
             };
         }
 
-        return () => clearInterval(interval);
+        return () => {
+            clearInterval(interval);
+        };
     });
 
     function currentSlide(n) {
@@ -257,26 +278,66 @@
         </div>
 
         <div class="sub-head">
-            <h2>Making Everyday Living Feel Better</h2>
+            <h2>A home that elevates each day with openness and warmth</h2>
             <p>
-                We reimagined the space as something you don’t just see, but
-                feel.
+                A bare-shell penthouse transformed into a warm, cohesive home
+                rooted in timeless design. With fixed services and Mivan
+                constraints, the project focuses on seamless planning, refined
+                materiality, and layered lighting to create quiet everyday
+                luxury.
             </p>
         </div>
 
         <div class="hero-2">
-            <div class="hero-bg-2">
-                <!-- <div class="animated-text">
-                    <p class="text-1">Living Room</p>
-                    <p class="text-2">Master Bedroom</p>
-                    <p class="text-3">BathStudio</p>
-                </div> -->
+            <div
+                class="hero-bg-2"
+                style="background-image: url('{bgImages[bgSlideIndex]}');"
+            >
+                <button
+                    class="carousel-arrow prev-arrow"
+                    on:click={prevBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button
+                    class="carousel-arrow next-arrow"
+                    on:click={nextBgSlide}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <div class="carousel-timer">
+                    <div class="timer-progress" style="width: 0%"></div>
+                </div>
             </div>
         </div>
 
         <div class="section-3">
             <video class="section-3-video" autoplay muted loop playsinline>
-                <source src="/Untitled design.mp4" type="video/mp4" />
+                <source src="/indrav3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
@@ -286,11 +347,13 @@
                     Designing within fixed Mivan walls and rigid service layouts
                     demanded precision at every step. From aligning electrical
                     points to coordinating finishes across multiple vendors, the
-                    process was a balance of discipline and detail. The result
-                    is a home that feels expansive, warm, and effortlessly
-                    refined—where thoughtful flow, layered lighting, and
-                    material harmony come together to create a space that’s
-                    timeless, personal, and truly lived-in.
+                    process was a balance of discipline and detail.
+                    <br class="gp" />
+
+                    The result is a home that feels expansive, warm, and
+                    effortlessly refined—where thoughtful flow, layered
+                    lighting, and material harmony come together to create a
+                    space that’s timeless, personal, and truly lived-in.
                 </p>
             </div>
         </div>
@@ -308,40 +371,15 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox("/hrscrollv1.mp4")}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/v1.png"
+                                        src="/Rectangle 58.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
@@ -379,61 +417,36 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                        )}
+                                  
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/bg2.png"
+                                        src="/v234.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Perfect collaboration space.</h3>
-                                <p class="video-subtitle">
-                                    Beyond expectations.
-                                </p>
+                                <h3>
+                                    It’s a workspace that truly matches the
+                                    precision we stand for.
+                                </h3>
+
                                 <p class="video-description">
-                                    The design perfectly captures our creative
-                                    energy and provides the flexibility we need
-                                    for different types of work and
-                                    collaboration.
+                                    The new office brings clarity and structure
+                                    into our everyday operations. Every zone,
+                                    whether collaborative or private, has been
+                                    thoughtfully designed to support how our
+                                    engineering team works.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Sarah Mitchell, Creative Director
+                                        Pawan Panchpal, Founder
                                     </p>
                                     <p class="company-name">
-                                        Mouse & Cheese Design Studio
+                                        SixD Engineering Solutions
                                     </p>
                                 </div>
                             </div>
@@ -450,60 +463,36 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://vimeo.com/76979871",
-                                        )}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/section2.png"
+                                        src="/v46823.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Inspiring work environment.</h3>
-                                <p class="video-subtitle">Thoughtful design.</p>
+                                <h3>
+                                    It’s a home that reflects the elegance we
+                                    always imagined
+                                </h3>
+
                                 <p class="video-description">
-                                    Every corner of the studio has been
-                                    thoughtfully designed to enhance creativity
-                                    and productivity while maintaining a
-                                    comfortable atmosphere.
+                                    Every corner of the space carries a quiet
+                                    sense of luxury, subtle, warm, and
+                                    beautifully curated. The aesthetics feel
+                                    effortless, yet every detail has been
+                                    thoughtfully designed to match our
+                                    lifestyle.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Alex Chen, Lead Designer
+                                        Ashutosh Sehrawat, Co-Founder
                                     </p>
-                                    <p class="company-name">
-                                        Mouse & Cheese Design Studio
-                                    </p>
+                                    <p class="company-name">Research Realm</p>
                                 </div>
                             </div>
                         </div>
@@ -535,7 +524,9 @@
                     design insights to behind-the-scenes stories — explore how
                     we think, build, and imagine at Archideus
                 </p>
-                <button> Read Our stories </button>
+                <a href="/Archideus Journal">
+                    <button> Read Our stories </button>
+                </a>
             </div>
         </div>
 
@@ -630,7 +621,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-            <button>Just Say Hello</button>
+           <a href="/contact">
+ <button>Just Say Hello</button>
+       </a>
         </div>
     </div>
 </div>
@@ -657,6 +650,10 @@
 </div>
 
 <style>
+    .gp {
+        height: 3vmax;
+        width: 100%;
+    }
     .case-study-wrapper {
         background-image: url("/bg.png");
         background-repeat: repeat;
@@ -961,9 +958,9 @@
         width: auto;
         min-width: 800px;
         object-fit: cover;
-
         border-radius: 12px;
     }
+    
     .scroll-image-3 {
         height: 536px;
         width: 500px;
@@ -1077,6 +1074,19 @@
         border-radius: 12px;
     }
 
+    /* Tablet breakpoint for better image sizing */
+    @media (max-width: 1280px) and (min-width: 1081px) {
+        .scroll-image {
+            min-width: 600px;
+        }
+        
+        .scroll-image-3 {
+            min-width: 300px;
+            width: 400px;
+        }
+    }
+
+    /* Mobile and small tablet breakpoint */
     @media (max-width: 1080px) {
         .horizontal-scroll {
             display: flex;
@@ -1090,10 +1100,11 @@
         }
 
         .scroll-video {
-            width: auto;
-            height: 552px;
+            width: 100%;
+            height: auto;
             max-height: 90vh;
             object-fit: cover;
+            border-radius: 12px;
         }
 
         .scroll-item-1,
@@ -1107,7 +1118,24 @@
             height: auto;
         }
 
-        .scroll-image,
+        .scroll-image {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .scroll-image-3 {
+            width: 100%;
+            height: auto;
+            min-width: unset;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
         .scroll-video,
         .scroll-item-4 img,
         .scroll-item-5 img {
@@ -1122,16 +1150,30 @@
             align-items: flex-start;
         }
 
+        .scroll-item-3 {
+            max-width: 100%;
+        }
+
         .scroll-item-3 h3 {
             margin-top: 2rem;
         }
 
+        .scroll-item-4 {
+            width: 100%;
+        }
+
+        .scroll-item-5 {
+            width: 100%;
+        }
+
+        .scroll-item-5 img {
+            width: 100%;
+            height: auto;
+        }
+
         .scroll-item-1 p {
-            /* background-color: aqua; */
             text-align: left !important;
-            /* override justify */
             text-justify: auto;
-            /* reset from inter-word */
             line-height: 30px;
             letter-spacing: -0.38px;
         }
@@ -1145,7 +1187,7 @@
         width: 100%;
         height: 45.48vmax;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         color: white;
         text-align: center;
@@ -1153,36 +1195,79 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-        animation: changeBackground 15s infinite;
     }
 
     .hero-2 {
         width: 90%;
     }
 
-    @keyframes changeBackground {
-        0%,
-        20% {
-            background-image: url("/1 29.png");
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: rgba(255, 255, 255, 0.8);
+        z-index: 10;
+        padding: 0;
+    }
+
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+    }
+
+    .prev-arrow {
+        left: 2rem;
+    }
+
+    .next-arrow {
+        right: 2rem;
+    }
+
+    .carousel-timer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0 0 12px 0;
+        overflow: hidden;
+    }
+
+    .timer-progress {
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        transition: width 0.1s linear;
+        border-radius: 0 0 12px 0;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
         }
 
-        20.1%,
-        40% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM)-02 1.png");
+        .carousel-arrow svg {
+            width: 32px;
+            height: 32px;
         }
 
-        40.1%,
-        60% {
-            background-image: url("/BACK BATHROOM  1.png");
-        }
-        60.1%,
-        80% {
-            background-image: url("/BACK SIDE (MASTER BEDROOM) 1.png");
+        .prev-arrow {
+            left: 1rem;
         }
 
-        80.1%,
-        100% {
-            background-image: url("/PARENT BEDROOM_01 1.png");
+        .next-arrow {
+            right: 1rem;
         }
     }
 
@@ -1366,7 +1451,7 @@
 
     @media (max-width: 600px) {
         .section-3 {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 2rem;
             padding: 1.5rem 0;
         }
@@ -2014,6 +2099,7 @@
             justify-content: start;
             align-items: start;
             gap: 0;
+            margin-top: 2rem;
         }
 
         .content-2 h3 {
@@ -2034,19 +2120,19 @@
 
         .content-3 {
             flex-direction: column;
-            gap: 7vmax;
+            gap: 2rem;
         }
 
         .content-3-tab {
             flex-direction: column;
-            gap: 6vmax;
-            margin-bottom: 6vmax;
+            gap: 2rem;
+            margin-bottom: 0;
             width: 100%;
         }
 
         .content-4 h3 {
             width: 100%;
-            margin-top: 8vmax;
+            margin-top: 3rem;
         }
 
         .content-3-card {
@@ -2054,6 +2140,7 @@
             max-width: none;
             min-width: auto;
             width: 100%;
+            height: auto;
         }
     }
 

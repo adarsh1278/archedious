@@ -5,6 +5,13 @@
     let lastScroll = 0;
     let isHidden = false;
 
+    function closeDrawer() {
+        const menuCheckbox = document.getElementById("menu-toggle");
+        if (menuCheckbox && menuCheckbox instanceof HTMLInputElement && menuCheckbox.checked) {
+            menuCheckbox.checked = false;
+        }
+    }
+
     onMount(() => {
         lastScroll = window.scrollY;
 
@@ -31,20 +38,16 @@
 
         window.addEventListener("scroll", handleScroll);
 
+        // Close drawer when clicking on any link with valid href
         const drawerLinks = document.querySelectorAll(".drawer a");
 
         drawerLinks.forEach((link) => {
             link.addEventListener("click", () => {
                 const href = link.getAttribute("href");
 
-                // Ignore submenu toggles
-                if (!href || href === "#" || href.trim() === "") {
-                    return;
-                }
-
-                // Close drawer if it's currently open
-                if (menuToggle && menuToggle.checked) {
-                    menuToggle.checked = false;
+                // Close drawer only for valid navigation links
+                if (href && href !== "#" && href.trim() !== "") {
+                    closeDrawer();
                 }
             });
         });
@@ -93,13 +96,15 @@
                         <a href="/casestudies/office-Space" class="sub-link"
                             >The Terrace Studio</a
                         >
-                        <a href="#" class="sub-link">A-82 First Floor</a>
+                        <a href="/casestudies/sixD" class="sub-link"
+                            >SixD Office</a
+                        >
                     </div>
                 </div>
             </div>
         </div>
 
-        <a href="/in-between" class="nav-link">In-between</a>
+        <a href="/Archideus Journal" class="nav-link">Archideus Journal</a>
         <a href="/contact" class="nav-link">Contact us</a>
     </div>
     <!-- Right Empty (Desktop) -->
@@ -117,8 +122,8 @@
     <div class="drawer">
         <label for="menu-toggle" class="drawer-close">×</label>
         <div class="drawer-content">
-            <a href="/" class="drawer-link">Home</a>
-            <a href="/about" class="drawer-link">About</a>
+            <a href="/" class="drawer-link" on:click={closeDrawer}>Home</a>
+            <a href="/about" class="drawer-link" on:click={closeDrawer}>About</a>
 
             <!-- Mobile Projects with submenu -->
             <div class="drawer-dropdown">
@@ -140,11 +145,20 @@
                             class="drawer-sublink">Residential ▸</label
                         >
                         <div class="drawer-sub-submenu">
-                            <a href="#" class="drawer-sublink-child">Villa</a>
-                            <a href="#" class="drawer-sublink-child"
-                                >Apartment</a
+                            <a
+                                href="/casestudies/Lawrence"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Lawrence Villa</a
                             >
-                            <a href="#" class="drawer-sublink-child">Bungalow</a
+                            <a
+                                href="/casestudies/roopnagar"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Roop Nagar Villa</a
+                            >
+                            <a
+                                href="/casestudies/Indirapuram"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>Indirapuram</a
                             >
                         </div>
                     </div>
@@ -161,16 +175,30 @@
                             class="drawer-sublink">Commercial ▸</label
                         >
                         <div class="drawer-sub-submenu">
-                            <a href="#" class="drawer-sublink-child">Office</a>
-                            <a href="#" class="drawer-sublink-child">Mall</a>
-                            <a href="#" class="drawer-sublink-child">Hotel</a>
+                            <a
+                                href="/casestudies/mouseAndcheese"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}
+                                >Mouse & Cheese Design Studio</a
+                            >
+                            <a
+                                href="/casestudies/office-Space"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}
+                                >The Terrace Studio</a
+                            >
+                            <a
+                                href="/casestudies/sixD"
+                                class="drawer-sublink-child"
+                                on:click={closeDrawer}>SixD Office</a
+                            >
                         </div>
                     </div>
                 </div>
             </div>
 
-            <a href="#" class="drawer-link">In-between</a>
-            <a href="/contact" class="drawer-link">Contact us</a>
+            <a href="/Archideus Journal" class="drawer-link" on:click={closeDrawer}>Archideus Journal</a>
+            <a href="/contact" class="drawer-link" on:click={closeDrawer}>Contact us</a>
         </div>
     </div>
 </nav>

@@ -12,7 +12,7 @@
                 "In India's diverse real estate market, smart materials offer solutions for extreme climate challenges while meeting modern lifestyle demands. From Mumbai apartments dealing with humidity to Delhi offices managing temperature swings, responsive materials create comfortable, efficient environments that traditional design cannot match.",
             ],
             image: {
-                src: "/image 83.png",
+                src: "/curve-pattern-of-geometric-white-aluminum-composit-2025-07-07-18-20-06-utc 1.png",
                 alt: "Grid of material samples: concrete, wood, steel, brick",
             },
         },
@@ -47,7 +47,7 @@
                     "Temperature-regulating workstations using PCM-enhanced furniture maintain personal comfort zones, reducing conflicts over office air conditioning settings while decreasing overall energy consumption.",
                 ],
                 image: {
-                    src: "/image 84.png",
+                    src: "/low-angle-and-perspective-side-view-of-rectangle-p-2025-03-11-12-09-36-utc 1.png",
                     alt: "Material grid showing steel, wood, concrete, brick",
                 },
                 additionalContent: [
@@ -77,7 +77,7 @@
                     ],
                 },
                 image: {
-                    src: "/image 85.png",
+                    src: "/spain-modern-architecture-details-white-house-dur-2024-10-18-03-43-47-utc 1.png",
                     alt: "wood grains and tactile materials",
                 },
             },
@@ -245,14 +245,16 @@
 
     <div class="footer-content">
         <div class="content-2">
-            <h3>The In - Between</h3>
+            <h3>The Archideus Journal</h3>
             <div class="content-2-description">
                 <p>
                     Dive into our thoughts, process, and inspirations. From
                     design insights to behind-the-scenes stories — explore how
                     we think, build, and imagine at Archideus
                 </p>
-                <button> Read Our stories </button>
+                <a href="/Archideus Journal">
+                    <button> Read Our stories </button>
+                </a>
             </div>
         </div>
         <div class=" content-3">
@@ -345,12 +347,190 @@
                 <span>Then you’re already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-            <button> Just Say Hello </button>
+            <a href="/contact">
+                <button> Just Say Hello </button>
+            </a>
         </div>
     </div>
 </div>
 
 <style>
+    @media (max-width: 768px) {
+        .content-3 {
+            gap: 0 !important;
+            margin: 0% !important;
+
+            height: fit-content;
+            line-height: 0px !important;
+        }
+
+        .content-3-tab {
+            gap: 4vmax !important;
+            margin: 0% !important;
+            margin-bottom: 4vmax !important;
+
+            line-height: 0px !important;
+            /* background-color: #8B3A3A; */
+        }
+
+        .content-3-card {
+            /* background-color: aqua; */
+
+            text-align: left;
+            gap: 2vmax !important;
+            padding-bottom: 0% !important;
+            margin: 0% !important;
+            line-height: 0px !important;
+            height: auto !important;
+        }
+
+        .content-3-card-header {
+            padding-top: 0;
+            display: flex;
+            flex-direction: row !important;
+            /* background-color: aqua; */
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0%;
+        }
+
+        .content-3-card-header h4 {
+            font-family: "Instrument Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 32px;
+
+            margin: 0;
+            width: 60%;
+            margin-bottom: 0%;
+        }
+
+        .content-3-card-header span {
+            font-family: "Instrument Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 0%;
+        }
+
+        .content-3-card-description {
+            color: var(--Accent, #171717);
+            margin-top: 0;
+            width: 82%;
+            padding-top: 0%;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            font-family: "Instrument Sans";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+            letter-spacing: -0.342px;
+            /* background-color: aqua; */
+        }
+
+        .hero p {
+            font-size: 32px;
+            line-height: 40px;
+            padding: 0 2rem;
+        }
+
+        .container-1 {
+            min-height: 300vh;
+            max-height: 500vh;
+        }
+
+        .content-4 {
+            /* background-color: aqua; */
+            padding-top: 0% !important;
+            margin-top: 0% !important;
+        }
+
+        .section {
+            flex-direction: column !important;
+            padding: 2rem 1rem !important;
+            text-align: center;
+            height: auto;
+            /* background-color: #38f9d7; */
+            min-height: 100vh;
+            /* gap: 10vmax; */
+            align-items: center !important;
+            justify-content: space-evenly !important;
+        }
+
+        .section img {
+            width: 80% !important;
+            margin-top: 1.5rem;
+            margin-left: 0 !important;
+        }
+
+        .section-2 img {
+            width: 80% !important;
+            margin-left: 0 !important;
+        }
+
+        .section p {
+            width: 80% !important;
+            font-size: 35px !important;
+            line-height: 32px !important;
+            text-align: start !important;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+        }
+
+        .section-4 {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 2rem;
+            margin-bottom: 50vmax;
+        }
+
+        .section-4-descr {
+            width: 90% !important;
+            text-align: center;
+            align-items: center;
+        }
+
+        .image-section-4 {
+            width: 90% !important;
+        }
+
+        .section-4 div h4 {
+            font-size: 32px !important;
+            line-height: 40px !important;
+            text-align: center;
+        }
+
+        .section-4 img {
+            width: 80% !important;
+            order: -1;
+        }
+
+        .text-block {
+            text-align: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .text-block span {
+            font-size: 18px !important;
+            line-height: 28px !important;
+            text-align: center !important;
+        }
+
+        /* Reduce gap for sections 1, 2, 3 only */
+        .section:not(.section-4) {
+            gap: 1rem !important;
+        }
+
+        .section:not(.section-4) img {
+            margin-top: 1rem !important;
+        }
+    }
     .container {
         max-width: 1100px;
         margin: 32px auto;

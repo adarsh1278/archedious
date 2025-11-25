@@ -39,7 +39,7 @@
 
             function isFullyInView(el) {
                 const rect = el.getBoundingClientRect();
-                return rect.top >= 0 && rect.bottom <= window.innerHeight - 10;
+                return rect.top >= 0 || rect.bottom <= window.innerHeight - 10;
             }
 
             const handleWheel = (e) => {
@@ -329,40 +329,15 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox("/hrscrollv1.mp4")}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/v1.png"
+                                        src="/Rectangle 58.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
@@ -400,61 +375,36 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                        )}
+                                  
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/bg2.png"
+                                        src="/v234.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Perfect collaboration space.</h3>
-                                <p class="video-subtitle">
-                                    Beyond expectations.
-                                </p>
+                                <h3>
+                                    It’s a workspace that truly matches the
+                                    precision we stand for.
+                                </h3>
+
                                 <p class="video-description">
-                                    The design perfectly captures our creative
-                                    energy and provides the flexibility we need
-                                    for different types of work and
-                                    collaboration.
+                                    The new office brings clarity and structure
+                                    into our everyday operations. Every zone,
+                                    whether collaborative or private, has been
+                                    thoughtfully designed to support how our
+                                    engineering team works.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Sarah Mitchell, Creative Director
+                                        Pawan Panchpal, Founder
                                     </p>
                                     <p class="company-name">
-                                        Mouse & Cheese Design Studio
+                                        SixD Engineering Solutions
                                     </p>
                                 </div>
                             </div>
@@ -471,60 +421,36 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://vimeo.com/76979871",
-                                        )}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >
                                     <img
-                                        src="/section2.png"
+                                        src="/v46823.png"
                                         alt="Video thumbnail"
                                         class="video-thumbnail"
                                     />
-                                    <div class="play-button">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="138"
-                                            height="138"
-                                            viewBox="0 0 138 138"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M17.457 69C17.457 97.5807 40.5561 120.75 69.0502 120.75C97.5444 120.75 120.643 97.5807 120.643 69C120.643 40.4193 97.5444 17.25 69.0502 17.25C40.5561 17.25 17.457 40.4193 17.457 69Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                            <path
-                                                d="M57.5851 86.25V51.75L86.2479 69L57.5851 86.25Z"
-                                                stroke="#F9F7F2"
-                                                stroke-width="1.5"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3>Inspiring work environment.</h3>
-                                <p class="video-subtitle">Thoughtful design.</p>
+                                <h3>
+                                    It’s a home that reflects the elegance we
+                                    always imagined
+                                </h3>
+
                                 <p class="video-description">
-                                    Every corner of the studio has been
-                                    thoughtfully designed to enhance creativity
-                                    and productivity while maintaining a
-                                    comfortable atmosphere.
+                                    Every corner of the space carries a quiet
+                                    sense of luxury, subtle, warm, and
+                                    beautifully curated. The aesthetics feel
+                                    effortless, yet every detail has been
+                                    thoughtfully designed to match our
+                                    lifestyle.
                                 </p>
                                 <div class="video-author">
                                     <p class="author-name">
-                                        Alex Chen, Lead Designer
+                                        Ashutosh Sehrawat, Co-Founder
                                     </p>
-                                    <p class="company-name">
-                                        Mouse & Cheese Design Studio
-                                    </p>
+                                    <p class="company-name">Research Realm</p>
                                 </div>
                             </div>
                         </div>
@@ -556,7 +482,9 @@
                     design insights to behind-the-scenes stories — explore how
                     we think, build, and imagine at Archideus
                 </p>
-                <button> Read Our stories </button>
+                <a href="/Archideus Journal">
+                    <button> Read Our stories </button>
+                </a>
             </div>
         </div>
 
@@ -651,7 +579,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-            <button>Just Say Hello</button>
+           <a href="/contact">
+ <button>Just Say Hello</button>
+       </a>
         </div>
     </div>
 </div>
@@ -1379,7 +1309,7 @@
 
     @media (max-width: 600px) {
         .section-3 {
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 2rem;
             padding: 1.5rem 0;
         }
@@ -2027,6 +1957,7 @@
             justify-content: start;
             align-items: start;
             gap: 0;
+            margin-top: 2rem;
         }
 
         .content-2 h3 {
@@ -2047,19 +1978,19 @@
 
         .content-3 {
             flex-direction: column;
-            gap: 7vmax;
+            gap: 2rem;
         }
 
         .content-3-tab {
             flex-direction: column;
-            gap: 6vmax;
-            margin-bottom: 6vmax;
+            gap: 2rem;
+            margin-bottom: 0;
             width: 100%;
         }
 
         .content-4 h3 {
             width: 100%;
-            margin-top: 8vmax;
+            margin-top: 3rem;
         }
 
         .content-3-card {
@@ -2067,6 +1998,7 @@
             max-width: none;
             min-width: auto;
             width: 100%;
+            height: auto;
         }
     }
 

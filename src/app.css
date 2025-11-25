@@ -8,6 +8,10 @@
 html {
   overflow-x: hidden;
 }
+img {
+  border-radius: 12px;
+
+}
 
 body {
   height: 100%;

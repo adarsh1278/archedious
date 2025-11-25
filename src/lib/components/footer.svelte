@@ -6,7 +6,8 @@
                 <div class="menu">
                     <div class="address">
                         <span>Address</span>
-                        <p>Random st, Sector 45 Noida-78</p>
+                        <p>Bansal Tower, 201, Phase 2, Ashok Vihar, Delhi, 110052
+                        </p>
                     </div>
                     <div class="mymenu">
                         <span>Navlinks</span>
@@ -33,7 +34,7 @@
                                     <span class="icons">
                                         <i class="fa-solid fa-angle-right"></i>
                                     </span>
-                                    In-between
+                                    Archideus Journal
                                 </li>
                             </a>
                             <a href="">
