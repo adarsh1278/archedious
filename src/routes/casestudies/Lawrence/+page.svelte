@@ -389,8 +389,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox("/hrscrollv1.mp4")}
+                                 
                                     role="button"
                                     tabindex="0"
                                 >
@@ -436,10 +435,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                        )}
+                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -485,10 +481,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://vimeo.com/76979871",
-                                        )}
+                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -1355,8 +1348,10 @@
         margin-top: 7.9vmax;
         display: flex;
         border-radius: 16px;
-        background: url("/bg3.png") no-repeat center center;
+        background-image: url("/bg3.png");
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         max-width: 90%;
         justify-content: center;
         height: 35vmax;
@@ -1487,7 +1482,7 @@
         overflow: hidden;
         border-radius: 16px;
         height: 100%;
-        background: #f5f5f5;
+        background: transparent;
     }
 
     .carousel-slide {

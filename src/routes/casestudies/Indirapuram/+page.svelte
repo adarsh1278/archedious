@@ -371,8 +371,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox("/hrscrollv1.mp4")}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >
@@ -418,10 +417,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                        )}
+                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -467,10 +463,7 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    on:click={() =>
-                                        openVideoLightbox(
-                                            "https://vimeo.com/76979871",
-                                        )}
+                                    
                                     role="button"
                                     tabindex="0"
                                 >

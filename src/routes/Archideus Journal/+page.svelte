@@ -239,7 +239,7 @@
         <h3>
             <span>If you’ve come this far,</span>
             <span>Then you’re already imagining it.</span>
-            <span class="itallic">Lets bring it to life.</span>
+            <span class="italic">Lets bring it to life.</span>
         </h3>
         <a href="/contact">
             <button> Just Say Hello </button>
@@ -788,7 +788,8 @@
         color: var(--Primary, #8b3a3a);
         font-family: "Playfair Display";
         font-size: 4vmax;
-        font-style: italic;
+        /* font-style: italic; */
+
         font-weight: 400;
         line-height: 133.327%;
         letter-spacing: -1.2px;
@@ -796,6 +797,9 @@
         margin-bottom: 0%;
 
         /* background-color: aqua; */
+    }
+    .italic{
+        font-style: italic;
     }
 
     .content-4 h3 span {
