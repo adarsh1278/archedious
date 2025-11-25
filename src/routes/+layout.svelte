@@ -33,16 +33,16 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<!-- ✅ Navbar OUTSIDE smooth scroll wrapper so it stays fixed -->
+{#if $page.url.pathname === "/"}
+	<Navbar />
+{:else}
+	<OtherNavbar />
+{/if}
+
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<div class="main">
-			<!-- ✅ Conditional Navbar -->
-			{#if $page.url.pathname === "/"}
-				<Navbar />
-			{:else}
-				<OtherNavbar />
-			{/if}
-
 			<!-- ✅ Page Content -->
 			<slot />
 

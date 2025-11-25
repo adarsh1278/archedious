@@ -1,8 +1,12 @@
 <script>
+    import { onMount } from "svelte";
+
     let menuOpen = false;
     let projectsOpen = false;
     let residentialOpen = false;
     let commercialOpen = false;
+    let isHidden = false;
+    let lastScroll = 0;
 
     const closeAll = () => {
         menuOpen = false;
@@ -10,9 +14,40 @@
         residentialOpen = false;
         commercialOpen = false;
     };
+
+    onMount(() => {
+        lastScroll = window.scrollY;
+
+        const handleScroll = () => {
+            const current = window.scrollY;
+            const delta = Math.abs(current - lastScroll);
+
+            // Ignore tiny scroll movements
+            if (delta < 5) return;
+
+            if (current < 100) {
+                // Always show at top
+                isHidden = false;
+            } else if (current > lastScroll) {
+                // Scrolling down → hide navbar
+                isHidden = true;
+            } else {
+                // Scrolling up → show navbar
+                isHidden = false;
+            }
+
+            lastScroll = current;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
 </script>
 
-<nav class="navbar">
+<nav class="navbar" class:hidden={isHidden}>
     <div class="logo">
         <img src="logo.svg" alt="logo" />
     </div>
@@ -174,8 +209,17 @@
         background: transparent;
         color: white;
         position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         z-index: 100;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.hidden {
+        transform: translateY(-100%);
     }
 
     .logo img {

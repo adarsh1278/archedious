@@ -1,30 +1,40 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
 
-    let menuToggle;
+    let menuToggle: HTMLInputElement;
     let lastScroll = 0;
-    let navVisible = true;
+    let isHidden = false;
 
     onMount(() => {
-        window.addEventListener("scroll", () => {
-            const current = window.scrollY;
+        lastScroll = window.scrollY;
 
-            // Scroll down → hide navbar
-            if (current > lastScroll && current > 80) {
-                navVisible = false;
-            }
-            // Scroll up → show navbar
-            else {
-                navVisible = true;
+        const handleScroll = () => {
+            const current = window.scrollY;
+            const delta = Math.abs(current - lastScroll);
+
+            // Ignore tiny scroll movements
+            if (delta < 5) return;
+
+            if (current < 100) {
+                // Always show at top
+                isHidden = false;
+            } else if (current > lastScroll) {
+                // Scrolling down → hide navbar
+                isHidden = true;
+            } else {
+                // Scrolling up → show navbar
+                isHidden = false;
             }
 
             lastScroll = current;
-        });
+        };
+
+        window.addEventListener("scroll", handleScroll);
 
         const drawerLinks = document.querySelectorAll(".drawer a");
 
         drawerLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
+            link.addEventListener("click", () => {
                 const href = link.getAttribute("href");
 
                 // Ignore submenu toggles
@@ -38,17 +48,21 @@
                 }
             });
         });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     });
 </script>
 
-<nav class="navbar {navVisible ? 'show' : 'hide'}">
+<nav class="navbar" class:hidden={isHidden}>
     <!-- Left (Logo) -->
     <div class="nav-left">
         <img src="/logo-2.svg" alt="Logo" class="logo" />
     </div>
 
     <!-- Center (Menu) -->
-    <div class="nav-center desktop-menu navbar {navVisible ? 'show' : 'hide'}">
+    <div class="nav-center desktop-menu">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About</a>
 
@@ -92,7 +106,7 @@
     <div class="nav-right desktop-empty"></div>
 
     <!-- Mobile Menu Toggle -->
-    <input type="checkbox" id="menu-toggle" hidden />
+    <input type="checkbox" id="menu-toggle" hidden bind:this={menuToggle} />
     <label for="menu-toggle" class="hamburger mobile-menu mobileMenuHide">
         <span></span>
         <span></span>
@@ -117,9 +131,8 @@
                     <div class="drawer-subitem">
                         <input
                             type="checkbox"
-                            id="menu-toggle"
+                            id="mobile-residential-toggle"
                             hidden
-                            bind:this={menuToggle}
                         />
 
                         <label
@@ -168,32 +181,7 @@
         position: relative;
     }
 
-    .navbar {
-        transition:
-            transform 0.35s ease,
-            opacity 0.35s ease;
-    }
 
-    /* Hide when scrolling down */
-    .navbar.hide {
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* Show when scrolling up */
-    .navbar.show {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Always show when hovered (desktop behaviour) */
-    .navbar.hide:hover {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
 
     /* Dropdown menu */
     .dropdown-menu2 {
@@ -267,14 +255,23 @@
     }
 
     .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 71px;
         background: #8B3A3A;
         display: flex;
         align-items: center;
         padding: 0 20px;
-        position: fixed;
-        z-index: 100;
+        z-index: 9999;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.hidden {
+        transform: translateY(-100%);
     }
 
     .nav-left {
