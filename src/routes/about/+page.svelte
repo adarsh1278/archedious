@@ -96,6 +96,7 @@
                     `+=${window.innerHeight * (sections.length - index)}`,
                 pin: true,
                 pinSpacing: false,
+                scroller: "#smooth-content", // Tell ScrollTrigger to use the smooth scroll container
                 // markers: false, // Set to true for debugging
             });
         });
