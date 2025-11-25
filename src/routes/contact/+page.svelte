@@ -73,8 +73,8 @@
                     </div>
                     <div class="text pl-3">
                         <p>
-                            <a href="mailto:archideus.support.com"
-                                >archideus.support.com</a
+                            <a href="mailto:build@archideus.in"
+                                >build@archideus.in</a
                             >
                         </p>
                     </div>
