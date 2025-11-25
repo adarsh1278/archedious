@@ -357,6 +357,7 @@
         align-items: center;
     }
     .sec-image {
+        border-radius: 0px;
         position: relative;
     }
 
