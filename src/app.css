@@ -8,6 +8,10 @@
 html {
   scroll-behavior: smooth;
 }
+img {
+  border-radius: 12px;
+
+}
 
 body {
   height: 100%;
