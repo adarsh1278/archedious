@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
 
-    let menuToggle = null;
+    let menuToggle: HTMLInputElement;
     let lastScroll = 0;
-    let navVisible = true;
+    let isHidden = false;
 
     function closeDrawer() {
         const menuCheckbox = document.getElementById("menu-toggle");
@@ -13,20 +13,30 @@
     }
 
     onMount(() => {
-        window.addEventListener("scroll", () => {
-            const current = window.scrollY;
+        lastScroll = window.scrollY;
 
-            // Scroll down → hide navbar
-            if (current > lastScroll && current > 80) {
-                navVisible = false;
-            }
-            // Scroll up → show navbar
-            else {
-                navVisible = true;
+        const handleScroll = () => {
+            const current = window.scrollY;
+            const delta = Math.abs(current - lastScroll);
+
+            // Ignore tiny scroll movements
+            if (delta < 5) return;
+
+            if (current < 100) {
+                // Always show at top
+                isHidden = false;
+            } else if (current > lastScroll) {
+                // Scrolling down → hide navbar
+                isHidden = true;
+            } else {
+                // Scrolling up → show navbar
+                isHidden = false;
             }
 
             lastScroll = current;
-        });
+        };
+
+        window.addEventListener("scroll", handleScroll);
 
         // Close drawer when clicking on any link with valid href
         const drawerLinks = document.querySelectorAll(".drawer a");
@@ -41,17 +51,21 @@
                 }
             });
         });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     });
 </script>
 
-<nav class="navbar">
+<nav class="navbar" class:hidden={isHidden}>
     <!-- Left (Logo) -->
     <div class="nav-left">
         <img src="/logo-2.svg" alt="Logo" class="logo" />
     </div>
 
     <!-- Center (Menu) -->
-    <div class="nav-center desktop-menu navbar {navVisible ? 'show' : 'hide'}">
+    <div class="nav-center desktop-menu">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About</a>
 
@@ -97,7 +111,7 @@
     <div class="nav-right desktop-empty"></div>
 
     <!-- Mobile Menu Toggle -->
-    <input type="checkbox" id="menu-toggle" hidden />
+    <input type="checkbox" id="menu-toggle" hidden bind:this={menuToggle} />
     <label for="menu-toggle" class="hamburger mobile-menu mobileMenuHide">
         <span></span>
         <span></span>
@@ -195,41 +209,14 @@
         position: relative;
     }
 
-    .navbar {
-        transition:
-            transform 0.35s ease,
-            opacity 0.35s ease;
-    }
 
-    /* Hide when scrolling down */
-    .navbar.hide {
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* Show when scrolling up */
-    .navbar.show {
-        backdrop-filter: blur(3px);
-        background-color: rgba(255, 255, 255, 0.01);
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Always show when hovered (desktop behaviour) */
-    .navbar.hide:hover {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
 
     /* Dropdown menu */
     .dropdown-menu2 {
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--background) !important;
+        background: #8B3A3A !important;
         min-width: 200px;
         display: none;
         flex-direction: column;
@@ -252,7 +239,7 @@
     .dropdown-link {
         display: block;
         padding: 10px 15px;
-        color: black;
+        color: white;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -264,7 +251,7 @@
         position: absolute;
         top: 0;
         left: 100%;
-        background: #cec7bf;
+        background: #8B3A3A;
         min-width: 180px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: none;
@@ -279,7 +266,7 @@
     .sub-link {
         display: block;
         padding: 15px;
-        color: black;
+        color: white;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -288,25 +275,31 @@
 
     .dropdown-item:focus,
     .dropdown-item:hover {
-        background: #c8c3b8 !important;
+        background: #7a3333 !important;
     }
 
     .sub-link:hover {
-        background: #dfdad0dd !important;
+        background: #7a3333 !important;
     }
 
     .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 71px;
-        /* background-color: var(--background); */
-        background: transparent;
+        background: #8B3A3A;
         display: flex;
         align-items: center;
         padding: 0 20px;
-        position: fixed;
-        z-index: 100;
-        /* background-image: url(bg.png); */
-        /* background-repeat: repeat; */
+        z-index: 9999;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.hidden {
+        transform: translateY(-100%);
     }
 
     .nav-left {
@@ -323,7 +316,7 @@
 
     .nav-link {
         text-decoration: none;
-        color: black;
+        color: white;
         font-family: var(--sub);
         font-weight: 300;
         font-size: 18px;
@@ -349,7 +342,7 @@
 
     .hamburger span {
         height: 3px;
-        background: #000;
+        background: white;
         border-radius: 3px;
         transition: 0.3s;
     }
@@ -359,11 +352,11 @@
         width: 100%;
         clear: both;
         font-weight: 400;
-        color: var(--bs-dropdown-link-color);
+        color: white;
         text-align: inherit;
         text-decoration: none;
         white-space: nowrap;
-        background-color: #d1cbbf !important;
+        background-color: #8B3A3A !important;
         border: 0;
     }
 

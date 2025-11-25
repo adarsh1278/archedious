@@ -26,15 +26,13 @@
       document.body.style.height = `${svgHeight + scrollBuffer}px`;
 
       const handleScroll = () => {
-        const scrollTop = window.scrollY;
+        const scrollTop = window.scrollY || window.pageYOffset;
 
         if (scrollTop < triggerPoint) {
-          // Trigger point se pehle line hidden rahegi
           path.style.strokeDashoffset = pathLength;
           return;
         }
 
-        // Trigger ke baad drawing start kare
         const effectiveScroll = scrollTop - triggerPoint;
         const scrollPercent =
           (effectiveScroll / (svgHeight - triggerPoint)) * speed;
@@ -44,6 +42,7 @@
       };
 
       window.addEventListener("scroll", handleScroll);
+      handleScroll();
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
@@ -71,12 +70,15 @@
 
 <style>
   .wrapper {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 100px 0;
     position: absolute;
-    top: 804px;
-    z-index: 0;
+    top: 730px;
+    left: 35%;
+    transform: translateX(-50%);
+    z-index: -2;
   }
 
   .svg-container {
@@ -88,9 +90,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 5500px;
     pointer-events: none;
-    transition: all 0.5s ease;
-    height: 5500px; /* same as SVG viewBox height */
+    transition: all 0.8s ease;
   }
 
   .cls-1 {

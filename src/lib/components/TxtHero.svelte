@@ -44,6 +44,7 @@
         background-color: var(--primary);
         align-items: center;
         justify-content: center;
+        z-index: -3;
     }
 
     .mask-container {

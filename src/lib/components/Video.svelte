@@ -1,32 +1,38 @@
 <script>
   import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  let visible = false;
+  gsap.registerPlugin(ScrollTrigger);
+
   let containerEl;
+  let innerBox;
 
   onMount(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
+    if (innerBox && containerEl) {
+      // Set initial state
+      gsap.set(innerBox, {
+        width: "1000px",
+        height: "500px",
+        scale: 0.85,
+        opacity: 0.7
+      });
 
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            if (entry.isIntersecting) {
-              visible = true;
-            }
-          }, 700);
-        } else {
-          visible = false;
+      // Animate on scroll - scrubbed to scroll position
+      gsap.to(innerBox, {
+        width: "100%",
+        height: "100%",
+        scale: 1,
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerEl,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1.5
         }
-      },
-      { threshold: 0.8 }
-    );
-
-    if (containerEl) {
-      observer.observe(containerEl);
+      });
     }
-
-    return () => observer.disconnect();
   });
 </script>
 
@@ -42,19 +48,11 @@
   }
 
   .inner-box {
-    transition: all 600ms ease-in-out;
+    width: 1000px;
+    height: 500px;
     overflow: hidden;
     position: relative;
-  }
-
-  .initial {
-    width: 1322px;
-    height: 622px;
-  }
-
-  .expanded {
-    width: 100%;
-    height: 100%;
+    will-change: width, height, transform, opacity;
   }
 
   video {
@@ -116,7 +114,7 @@
 </style>
 
 <div class="outer-container" bind:this={containerEl}>
-  <div class="inner-box {visible ? 'expanded' : 'initial'}">
+  <div class="inner-box" bind:this={innerBox}>
     <video muted autoplay loop playsinline preload="auto">
       <source src="/videos/artisan.mp4" type="video/mp4" />
     </video>
