@@ -62,8 +62,6 @@
   // Main mount ---------------------------------------------------------
   onMount(async () => {
     if (typeof window === "undefined") return;
-    // measure old start position (if any) BEFORE we swap the path
-    const oldStartY = pathEl ? pathStartScreenY(pathEl) : null;
 
     // fetch new svg file text (encode URI to handle spaces / parens)
     let svgText;
@@ -121,19 +119,7 @@
 
       // determine svgHeight from viewBox (preferred) or fallback to ownerSVGElement height
       const vb = svgEl.viewBox.baseVal;
-      const svgHeight = (vb && vb.height) ? vb.height : (svgEl.getBoundingClientRect().height || 5500);
-
-      // update page height so the scroll range covers the whole path
-      document.body.style.height = `${svgHeight + window.innerHeight}px`;
-
-      // measure new start position and shift wrapper so it aligns with old
-      const newStartY = pathStartScreenY(pathEl);
-      if (oldStartY !== null && newStartY !== null && wrapperEl) {
-        const diff = oldStartY - newStartY; // positive -> move wrapper down
-        const computedTop = getComputedStyle(wrapperEl).top;
-        const currentTopPx = parseFloat(computedTop) || 0;
-        wrapperEl.style.top = `${currentTopPx + diff}px`;
-      }
+      const svgHeight = (vb && vb.height) ? vb.height : (svgEl.getBoundingClientRect().height || 9000);
 
       // set trigger point adaptively (keeps same behavior across widths)
       const updateTrigger = () => {
@@ -181,7 +167,7 @@
     margin: 0 auto;
     padding: 100px 0;
     position: absolute;
-    top: 480px; /* initial top — script will adjust this value on mount to match old start */
+    top: -400px; /* initial top — script will adjust this value on mount to match old start */
     left: 55%;
     transform: translateX(-50%);
     z-index: -2;
