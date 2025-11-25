@@ -5,7 +5,8 @@
 	import OtherNavbar from "$lib/components/OtherNavbar.svelte";
 	import "../app.css";
 	import { page } from "$app/stores";
-	import { onMount } from "svelte";
+	import { afterNavigate } from "$app/navigation";
+	import { onMount, tick } from "svelte";
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -26,6 +27,28 @@
 		return () => {
 			if (smoother) smoother.kill();
 		};
+	});
+
+	afterNavigate(async () => {
+		await tick();
+		
+		// Try multiple methods to ensure scroll to top
+		window.scrollTo(0, 0);
+		document.documentElement.scrollTop = 0;
+		document.body.scrollTop = 0;
+		
+		// Also scroll the smooth wrapper
+		const wrapper = document.getElementById('smooth-wrapper');
+		if (wrapper) {
+			wrapper.scrollTop = 0;
+		}
+		
+		// Use ScrollSmoother if available
+		setTimeout(() => {
+			if (smoother) {
+				smoother.scrollTo(0, false);
+			}
+		}, 10);
 	});
 </script>
 

@@ -97,10 +97,13 @@
     .mkdjdk {
         width: 100%;
         max-width: 1300px;
-        margin-bottom: 200px;
+        /* background-color: aqua; */
+        margin-bottom: 100px;
         display: flex;
         justify-content: space-between;
         margin-top: 85px;
+
+        /* background-color: aqua; */
         
         
   background-repeat: repeat;
@@ -138,7 +141,7 @@
     .mskdj {
         width: 780px;
         margin-left: 40px;
-        margin-top: 150px;
+        /* margin-top: 150px; */
         margin-bottom: 50px;
     }
 
@@ -379,10 +382,11 @@
         }
 
         .mskdj {
+            /* background-color: aqua; */
             width: 90%;
             display: flex;
             margin-left: 20px;
-            margin-top: 150px;
+            /* margin-top: 150px; */
             margin-bottom: 50px;
             font-size: 22px;
             flex-direction: column;

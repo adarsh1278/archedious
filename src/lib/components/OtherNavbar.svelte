@@ -376,10 +376,10 @@
         background: #8b3a3a;
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding-top: 60px;
-        justify-content: center;
+        padding-left: 40px;
         transition: right 0.3s ease;
+        overflow-y: auto;
     }
 
     #menu-toggle:checked ~ .drawer {
@@ -399,14 +399,16 @@
     .drawer-content {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        align-items: center;
+        gap: 30px;
+        align-items: flex-start;
+        width: 100%;
     }
 
     .drawer-link {
         color: white;
-        font-size: 1.8rem;
+        font-size: 2rem;
         text-decoration: none;
+        font-family: var(--main);
     }
 
     .drawer-close {
@@ -429,15 +431,17 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     /* First-level submenu */
     .drawer-submenu {
         display: none;
         flex-direction: column;
-        gap: 10px;
-        margin-top: 5px;
+        gap: 20px;
+        margin-top: 20px;
+        margin-left: 40px;
+        width: 100%;
     }
 
     /* Show first-level submenu when checkbox checked */
@@ -445,20 +449,31 @@
         display: flex;
     }
 
+    /* Subitem container */
+    .drawer-subitem {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     /* First-level submenu links */
     .drawer-sublink {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         text-decoration: none;
         cursor: pointer;
+        font-family: var(--main);
     }
 
     /* Second-level submenu */
     .drawer-sub-submenu {
         display: none;
         flex-direction: column;
-        gap: 8px;
-        margin-left: 20px;
+        gap: 15px;
+        margin-top: 15px;
+        margin-left: 40px;
+        width: 100%;
     }
 
     /* Show second-level submenu */
@@ -470,11 +485,16 @@
     /* Second-level links */
     .drawer-sublink-child {
         color: #f0f0f0;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         text-decoration: none;
+        font-family: var(--main);
     }
     .drawer-sublink-child:hover {
         text-decoration: underline;
+    }
+    
+    .drawer-sublink-child::before {
+        content: ". ";
     }
 
     /* Responsive */
