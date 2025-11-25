@@ -9,6 +9,7 @@
     import Testimonials from "$lib/components/Testimonials.svelte";
     import SvgAnimation from "$lib/components/SvgAnimation.svelte";
     import NewMe from "$lib/components/NewMe.svelte";
+    import TesTonomials1 from "$lib/components/TesTonomials1.svelte";
 
 </script>
 
@@ -24,6 +25,7 @@
 <Video/>
 
 <Slider2/>
+<TesTonomials1/>
 
 <Testimonials/>
 
