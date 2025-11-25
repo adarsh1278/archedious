@@ -9,7 +9,7 @@
   const svgFileUrl = "/Homepage- final (1).svg";
 
   // Auto-scroll/animation params
-  const speed = 2.5;
+  const speed = 1.9;
   let triggerPoint = 700;
   let scrollHandler: (() => void) | null = null;
 
