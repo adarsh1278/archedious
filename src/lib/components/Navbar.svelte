@@ -27,6 +27,11 @@
 
     <ul class="menu {menuOpen ? 'open' : ''}">
         <li><a href="/" data-sveltekit-reload on:click={closeAll}>Home</a></li>
+         <li>
+            <a href="/about" data-sveltekit-reload on:click={closeAll}
+                >About Us</a
+            >
+        </li>
 
         <!-- PROJECTS DROPDOWN -->
         <li class="dropdown">
@@ -157,11 +162,7 @@
                 on:click={closeAll}>Contact us</a
             >
         </li>
-        <li>
-            <a href="/about" data-sveltekit-reload on:click={closeAll}
-                >About Us</a
-            >
-        </li>
+       
     </ul>
 </nav>
 
