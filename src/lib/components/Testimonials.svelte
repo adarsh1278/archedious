@@ -87,9 +87,9 @@
         </a>
     </div>
 
-    <div class="svg-animation-container">
+    <!-- <div class="svg-animation-container">
         <SvgLineDrawing svgPath="/last.svg" className="smksd" />
-    </div>
+    </div> -->
 </div>
 </div>
 
@@ -110,7 +110,7 @@
         font-style: italic;
     }
     .wrap{
-         z-index: 3;
+         z-index: -3;
         background-image: url('/bg.png');
   background-repeat: repeat;    
     }
