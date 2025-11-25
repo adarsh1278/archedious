@@ -372,14 +372,16 @@
         top: 0;
         right: -100%;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         background: #8b3a3a;
         display: flex;
         flex-direction: column;
-        padding-top: 60px;
+        padding-top: 80px;
         padding-left: 40px;
+        padding-right: 40px;
         transition: right 0.3s ease;
         overflow-y: auto;
+        z-index: 9998;
     }
 
     #menu-toggle:checked ~ .drawer {
@@ -402,6 +404,8 @@
         gap: 30px;
         align-items: flex-start;
         width: 100%;
+        position: relative;
+        z-index: 1;
     }
 
     .drawer-link {
@@ -409,15 +413,19 @@
         font-size: 2rem;
         text-decoration: none;
         font-family: var(--main);
+        position: relative;
+        z-index: 1;
     }
 
     .drawer-close {
         position: absolute;
-        top: 15px;
-        right: 20px;
+        top: 20px;
+        right: 30px;
         font-size: 3rem;
         color: white;
         cursor: pointer;
+        z-index: 10;
+        line-height: 1;
     }
 
     /* Default: hide hamburger and mobile wrapper on desktop */
@@ -498,7 +506,7 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .mobile-menu,
         .mobileMenuHide {
             display: flex;
@@ -507,6 +515,18 @@
         .desktop-menu,
         .desktop-empty {
             display: none;
+        }
+        
+        .drawer-link {
+            font-size: 1.8rem;
+        }
+        
+        .drawer-sublink {
+            font-size: 1.6rem;
+        }
+        
+        .drawer-sublink-child {
+            font-size: 1.4rem;
         }
     }
 </style>

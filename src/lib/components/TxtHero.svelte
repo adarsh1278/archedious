@@ -147,20 +147,48 @@
 
 
     @media (max-width: 768px) {
+        .heroTxt {
+            height: 60vh;
+        }
 
-    .masked-text {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #fff;
-        font-family: sans-serif;
-        align-items: center;
-        justify-content: center;
-        line-height: 15px;
-        padding-bottom: 0;
+        .mask-container {
+            width: 90%;
+        }
+
+        .masked-text {
+            font-size: 2rem;
+            gap: 0.6rem;
+            line-height: 50px;
+            padding-bottom: 0;
+        }
+
+        .word-box {
+            height: 3rem;
+            line-height: 50px;
+            font-size: 140%;
+            padding: 0 3px;
+        }
     }
 
-}
+    @media (max-width: 480px) {
+        .heroTxt {
+            height: 50vh;
+        }
+
+        .mask-container {
+            width: 95%;
+        }
+
+        .masked-text {
+            font-size: 1.6rem;
+            gap: 0.5rem;
+            line-height: 42px;
+        }
+
+        .word-box {
+            height: 2.6rem;
+            line-height: 42px;
+            font-size: 120%;
+        }
+    }
 </style>
