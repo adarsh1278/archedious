@@ -101,8 +101,8 @@
         display: flex;
         justify-content: space-between;
         margin-top: 85px;
-         z-index: 3;
-        background-image: url('/bg.png');
+        
+        
   background-repeat: repeat;
        
     }
@@ -110,8 +110,7 @@
         font-style: italic;
     }
     .wrap{
-         z-index: -3;
-        background-image: url('/bg.png');
+         
   background-repeat: repeat;    
     }
 
