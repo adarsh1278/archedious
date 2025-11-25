@@ -48,7 +48,13 @@
         return;
       }
       const effectiveScroll = scrollTop - triggerPoint;
-      const scrollPercent = (effectiveScroll / (svgHeight - triggerPoint)) * speed;
+      const rawPercent = effectiveScroll / (svgHeight - triggerPoint);
+      
+      // Gradually decrease speed from 1.8 to 0.8 as scroll progresses
+      // Speed = 1.8 - (rawPercent * 1.0) gives smooth deceleration
+      const dynamicSpeed = 1.8 - (rawPercent * 0.5);
+      
+      const scrollPercent = rawPercent * dynamicSpeed;
       const clamped = Math.max(0, Math.min(scrollPercent, 1));
       pathEl.style.strokeDashoffset = String(pathLength * (1 - clamped));
     }
