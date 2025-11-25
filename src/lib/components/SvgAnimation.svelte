@@ -50,8 +50,7 @@
       const effectiveScroll = scrollTop - triggerPoint;
       const rawPercent = effectiveScroll / (svgHeight - triggerPoint);
       
-      // Gradually decrease speed from 1.8 to 0.8 as scroll progresses
-      // Speed = 1.8 - (rawPercent * 1.0) gives smooth deceleration
+
       const dynamicSpeed = 1.8 - (rawPercent * 0.5);
       
       const scrollPercent = rawPercent * dynamicSpeed;
