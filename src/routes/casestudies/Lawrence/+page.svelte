@@ -1208,7 +1208,7 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-        transition: background-image 0.5s ease-in-out;
+       
     }
 
     .hero-2 {
