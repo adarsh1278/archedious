@@ -55,50 +55,10 @@
     });
 </script>
 
-<div class="nmslks">
-    <h2 class="mksk">What we built became a part of their journey</h2>
 
-    <div class="carousel">
-        <div
-            class="slides"
-            style="transform: translateX(-{currentIndex *
-                103}%); width: {testimonials.length * 100}%;"
-        >
-            {#each testimonials as t, i}
-                <div class="slide">
-                    <div class="video-container">
-                        <img
-                            src={t.thumbnail}
-                            alt="video thumbnail"
-                            loading="lazy"
-                        />
-                        <div
-                            class="play-btn"
-                            on:click={() => openLightbox(t.video)}
-                        ></div>
-                    </div>
-                    <div class="content">
-                        <h2>{t.quoteHeading}</h2>
-                        <h3>{t.quoteSub}</h3>
-                        <p>{t.text}</p>
-                        <div class="author">{t.author}, {t.role}</div>
-                        <div class="role">{t.company}</div>
-                    </div>
-                </div>
-            {/each}
-        </div>
-    </div>
-</div>
 <div class="wrap">
 
-<div class="dots">
-    {#each testimonials as _, i}
-        <div
-            class="dot {i === currentIndex ? 'active' : ''}"
-            on:click={() => (currentIndex = i)}
-        ></div>
-    {/each}
-</div>
+
 
 {#if showLightbox}
     <div class="lightbox" on:click={closeLightbox}>
@@ -116,8 +76,10 @@
 <div class="mkdjdk">
     <div>
         <h2 class="mskdj">
-            If you’ve come this far, Then you’re already imagining it. Lets
+            If you’ve come this far, Then you’re already imagining it. 
+            <span>Lets
             bring it to life.
+            </span>
         </h2>
 
         <a href="/contact">
@@ -125,9 +87,9 @@
         </a>
     </div>
 
-    <div class="svg-animation-container">
+    <!-- <div class="svg-animation-container">
         <SvgLineDrawing svgPath="/last.svg" className="smksd" />
-    </div>
+    </div> -->
 </div>
 </div>
 
@@ -144,8 +106,11 @@
   background-repeat: repeat;
        
     }
+    span{
+        font-style: italic;
+    }
     .wrap{
-         z-index: 3;
+         z-index: -3;
         background-image: url('/bg.png');
   background-repeat: repeat;    
     }

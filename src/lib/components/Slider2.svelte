@@ -89,19 +89,37 @@
                     </a>
                 </div>
 
-                <div class="swiper-slide">
-                    <a href="/casestudies/office-space">
-                        <img src="/2.png" alt="Office Space" />
-                        <h2 class="nmsmjk">Office Space</h2>
-                        <span>Commercial | Noida, Uttar Pradesh</span>
-                    </a>
-                </div>
+               
 
                 <div class="swiper-slide">
                     <a href="/casestudies/Lawrence">
                         <img src="/case2.png" alt="Laurence Duplex" />
                         <h2>Laurence Duplex</h2>
                         <span>Residential | Noida, Uttar Pradesh</span>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="/casestudies/Indirapuram">
+                        <img src="/Enscape_2024-12-03-18-40-58 1.png" alt="Indirapuram Duplex" />
+                        <h2>Indirapuram </h2>
+                        <span>Residential | Ghaziabad, Uttar Pradesh</span>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="/casestudies/sixD">
+                        <img src="/image 89.png" alt="SixD Office" />
+                        <h2>SixD Office</h2>
+                        <span>Commercial | Noida</span>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="/casestudies/office-Space">
+                        <img src="/DIRECTOR CABIN LOUNGE  1.png" alt="The Terrace Studio" />
+                        <h2>The Terrace Studio</h2>
+                        <span>Commercial | Noida, Uttar Pradesh</span>
                     </a>
                 </div>
             </div>

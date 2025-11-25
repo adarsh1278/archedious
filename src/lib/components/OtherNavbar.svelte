@@ -61,7 +61,7 @@
 <nav class="navbar" class:hidden={isHidden}>
     <!-- Left (Logo) -->
     <div class="nav-left">
-        <img src="/logo-2.svg" alt="Logo" class="logo" />
+        <img src="/logo.svg" alt="Logo" class="logo" />
     </div>
 
     <!-- Center (Menu) -->
@@ -208,6 +208,11 @@
     .dropdown {
         position: relative;
     }
+    .logo{
+        width: 50px;
+        color: #f0f0f0
+        ;
+    }
 
 
 
@@ -303,6 +308,7 @@
     }
 
     .nav-left {
+        color: #f0f0f0;
         flex: 0 0 auto;
     }
 

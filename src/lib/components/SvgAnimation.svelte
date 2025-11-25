@@ -1,69 +1,166 @@
-<script>
-  import { onMount } from "svelte";
+<script lang="ts">
+  import { onMount, onDestroy } from "svelte";
 
-  let path;
-  let pathLength;
-  const svgHeight = 5500; // same as SVG viewBox height
-  const scrollBuffer = typeof window !== "undefined" ? window.innerHeight : 0;
-  const speed = 1.3;
+  let pathEl: SVGPathElement;
+  let wrapperEl: HTMLDivElement;
+  let svgEl: SVGSVGElement;
 
-  let triggerPoint = 700; // yaha se animation start hoga
+  // Update this if your file sits at a different URL in your project
+  const svgFileUrl = "/Homepage- final (1).svg";
 
-  onMount(() => {
-    // ✅ update trigger point dynamically
-    const updateTrigger = () => {
-      triggerPoint = window.innerWidth >= 1445 ? 500 : 800;
-    };
+  // Auto-scroll/animation params
+  const speed = 1.9;
+  let triggerPoint = 700;
+  let scrollHandler: (() => void) | null = null;
 
-    updateTrigger(); // run once on load
-    window.addEventListener("resize", updateTrigger);
+  // Helpers ------------------------------------------------------------
+  function pathStartScreenY(pathEl: SVGPathElement | null): number | null {
+    if (!pathEl) return null;
+    const svg = pathEl.ownerSVGElement;
+    if (!svg) return null;
+    try {
+      const pt = pathEl.getPointAtLength(0);
+      const svgRect = svg.getBoundingClientRect();
+      const viewBox = svg.viewBox.baseVal;
+      const scaleY = svgRect.height / viewBox.height;
+      return svgRect.top + pt.y * scaleY;
+    } catch (e) {
+      return null;
+    }
+  }
 
-    if (path) {
-      pathLength = path.getTotalLength();
-      path.style.strokeDasharray = pathLength;
-      path.style.strokeDashoffset = pathLength;
+  function setupPathAnimation(pathEl: SVGPathElement | null): number | undefined {
+    if (!pathEl) return;
+    const length = pathEl.getTotalLength();
+    pathEl.style.strokeDasharray = String(length);
+    pathEl.style.strokeDashoffset = String(length);
+    // expose length for scroll handler via closure
+    return length;
+  }
 
-      document.body.style.height = `${svgHeight + scrollBuffer}px`;
+  function installScrollHandler(pathEl: SVGPathElement, pathLength: number, svgHeight: number): (() => void) | null {
+    if (!pathEl) return null;
 
-      const handleScroll = () => {
-        const scrollTop = window.scrollY || window.pageYOffset;
+    function handleScroll() {
+      const scrollTop = window.scrollY || window.pageYOffset;
+      if (scrollTop < triggerPoint) {
+        pathEl.style.strokeDashoffset = String(pathLength);
+        return;
+      }
+      const effectiveScroll = scrollTop - triggerPoint;
+      const rawPercent = effectiveScroll / (svgHeight - triggerPoint);
+      
 
-        if (scrollTop < triggerPoint) {
-          path.style.strokeDashoffset = pathLength;
-          return;
+      const dynamicSpeed = 1.8 - (rawPercent * 0.5);
+      
+      const scrollPercent = rawPercent * dynamicSpeed;
+      const clamped = Math.max(0, Math.min(scrollPercent, 1));
+      pathEl.style.strokeDashoffset = String(pathLength * (1 - clamped));
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // run once
+    handleScroll();
+    return handleScroll;
+  }
+
+  // Main mount ---------------------------------------------------------
+  onMount(async () => {
+    if (typeof window === "undefined") return;
+
+    // fetch new svg file text (encode URI to handle spaces / parens)
+    let svgText;
+    try {
+      const res = await fetch(encodeURI(svgFileUrl));
+      if (!res.ok) {
+        console.error("Failed to fetch SVG:", res.status, res.statusText);
+        return;
+      }
+      svgText = await res.text();
+    } catch (err) {
+      console.error("Error fetching SVG:", err);
+      return;
+    }
+
+    // parse and extract <path> and viewBox / height
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgText, "image/svg+xml");
+    const newPathEl = doc.querySelector("path") || doc.querySelector(".cls-1");
+    const newSvgEl = doc.querySelector("svg");
+
+    if (!newPathEl) {
+      console.error("No <path> found inside the uploaded SVG.");
+      return;
+    }
+
+    // Replace path 'd' in-place (keeps binding to pathEl)
+    const newD = newPathEl.getAttribute("d");
+    if (newD && pathEl) {
+      pathEl.setAttribute("d", newD);
+    }
+
+    // If the uploaded SVG has a viewBox, copy it to our inline svg so measurements match
+    if (newSvgEl && svgEl) {
+      const vb = newSvgEl.getAttribute("viewBox");
+      if (vb) {
+        svgEl.setAttribute("viewBox", vb);
+      } else {
+        // fallback: copy width/height attributes if viewBox not present
+        const w = newSvgEl.getAttribute("width");
+        const h = newSvgEl.getAttribute("height");
+        if (w && h) {
+          svgEl.setAttribute("width", w);
+          svgEl.setAttribute("height", h);
         }
+      }
+    }
 
-        const effectiveScroll = scrollTop - triggerPoint;
-        const scrollPercent =
-          (effectiveScroll / (svgHeight - triggerPoint)) * speed;
-        const clampedPercent = Math.min(scrollPercent, 1);
+    // ensure layout updated before measuring new path start
+    requestAnimationFrame(() => {
+      // recalc svg bounding, path, etc.
+      // setup animation stroke values
+      const pathLength = setupPathAnimation(pathEl);
+      if (!pathLength) return;
 
-        path.style.strokeDashoffset = pathLength * (1 - clampedPercent);
+      // determine svgHeight from viewBox (preferred) or fallback to ownerSVGElement height
+      const vb = svgEl.viewBox.baseVal;
+      const svgHeight = (vb && vb.height) ? vb.height : (svgEl.getBoundingClientRect().height || 9000);
+
+      // set trigger point adaptively (keeps same behavior across widths)
+      const updateTrigger = () => {
+        triggerPoint = window.innerWidth >= 1445 ? 650 : 900;
       };
+      updateTrigger();
+      window.addEventListener("resize", updateTrigger);
 
-      window.addEventListener("scroll", handleScroll);
-      handleScroll();
+      // install scroll handler (save for cleanup)
+      scrollHandler = installScrollHandler(pathEl, pathLength, svgHeight);
+    });
+  });
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
+  onDestroy(() => {
+    if (typeof window !== "undefined") {
+      if (scrollHandler) window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener("resize", () => {});
     }
   });
 </script>
 
-<div class="wrapper">
+<!-- Markup: initial inline svg contains a <=placeholder path. It will be replaced on mount -->
+<div class="wrapper" bind:this={wrapperEl}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    bind:this={svgEl}
     id="Layer_1"
     data-name="Layer 1"
     width="1323.19"
     viewBox="0 0 1323.19 7818.3"
   >
+    <!-- initial path (kept so Svelte can bind; content replaced at runtime) -->
     <path
-      bind:this={path}
-      id="drawPath"
+      bind:this={pathEl}
       class="cls-1"
-      d="M52.32,0c0,32.34,0,106.48,0,117.43,0,7.92,0,15.84,0,23.76,0,11.82,0,183.77.01,195.58,0,14.59,0,29.18.01,43.76,0,16.23.01,32.45.02,48.68,0,16.74.01,33.47.02,50.21,0,16.12.01,32.23.02,48.35,0,14.33,0,28.65.01,42.98,0,11.5,0,22.99.01,34.49,0,7.47,0,14.95,0,22.42v88.79l67.51,69.26c17.27,17.01,42.11,41.51,73.34,72.38,14.36,13.07,32.49,17.75,45.57,12.64,9.27-3.62,15.7-11.11,15.7-11.11,1.38-1.61,4.73-5.77,7.09-12.06,1.35-3.6,3.56-11.07,2.13-20.3-.58-3.77-1.62-6.82-2.48-8.94-1.55-4.06-6.36-15.01-17.84-20.93-15.04-7.76-35.37-3.7-49.98,10.72-8.2,8.48-16.39,16.97-24.59,25.45l-19.9,20.5c-17.27,17.01-39.72,41.3-70.95,72.17-14.36,13.07-32.49,17.75-45.57,12.64-9.27-3.62-15.7-11.11-15.7-11.11-1.38-1.61-4.73-5.77-7.09-12.06-1.35-3.6-3.56-11.07-2.13-20.3.58-3.77,1.62-6.82,2.48-8.94,1.55-4.06,6.36-15.01,17.84-20.93,15.04-7.76,35.37-3.7,49.98,10.72,8.2,8.48,16.39,16.97,24.59,25.45l55.68,54.86,492.93-.47,417.79-.44,96.72.98c24.24-.25,59.13-.59,103.04-.96,19.39-.97,35.49-10.51,41.1-23.4,3.97-9.13,3.2-18.97,3.2-18.97-.17-2.12-.76-7.42-3.56-13.53-1.6-3.5-5.34-10.33-12.89-15.82-3.09-2.25-5.98-3.66-8.09-4.54-3.97-1.77-15.13-6.07-27.42-2.12-16.11,5.19-27.56,22.47-27.64,43,.24,11.79.47,23.59.71,35.38l.5,28.56c-.12,24.24,1.27,57.28,1.14,101.2l-.94,221.21c.42,33.4.85,66.8,1.27,100.19-2.05,37.93-9.54,102.03-39.2,161.83-16.13,32.51-31.15,48.31-47.39,58.84-19.09,12.38-37.97,16.28-50.09,17.65H418.19l-170.89-.71-96.72-.24c-24.24.43-59.12,1.04-103.03,1.74-19.38,1.11-35.41,10.79-40.92,23.71-3.9,9.16-3.05,18.99-3.05,18.99.18,2.12.81,7.42,3.66,13.5,1.63,3.48,5.42,10.29,13.01,15.72,3.1,2.22,6.01,3.62,8.12,4.48,3.99,1.74,15.18,5.96,27.44,1.91,16.07-5.31,27.39-22.68,27.31-43.21-.33-11.79-.65-23.58-.98-35.38l-.72-28.56c-.07-24.24-1.71-57.27-1.91-101.19l-1.53-189.05h1074.19v816.03l-.8,96.72c.29,24.24.69,59.13,1.14,103.04,1,19.39,10.58,35.48,23.47,41.06,9.13,3.95,18.97,3.16,18.97,3.16,2.12-.17,7.42-.77,13.52-3.58,3.49-1.61,10.32-5.36,15.8-12.92,2.24-3.09,3.65-5.98,4.53-8.1,1.76-3.97,6.05-15.14,2.07-27.42-5.22-16.1-22.52-27.52-43.05-27.57-11.79.26-23.59.51-35.38.77l-28.56.55c-24.24-.07-57.28,1.37-101.2,1.32H352.87l-100.45,1.36-96.72.98c-24.24-.25-59.13-.59-103.04-.96-19.39-.97-35.49-10.51-41.1-23.4-3.97-9.13-3.2-18.97-3.2-18.97.17-2.12.76-7.42,3.56-13.53,1.6-3.5,5.34-10.33,12.89-15.82,3.09-2.25,5.98-3.66,8.09-4.54,3.97-1.77,15.13-6.07,27.42-2.12,16.11,5.19,27.56,22.47,27.64,43-.24,11.79-.47,23.59-.71,35.38l-.5,28.56c.12,24.24-1.27,57.28-1.14,101.2l.53,33.49c-.42,33.4-.85,66.8-1.27,100.19,2.05,37.93-.47,62,29.2,121.8,16.13,32.51,31.15,48.31,47.39,58.84,19.09,12.38,37.97,16.28,50.09,17.65,185.06,0,496.04,0,681.1,0l98.75-.42,96.72.98c24.24-.25,59.13-.59,103.04-.96,19.39-.97,35.49-10.51,41.1-23.4,3.97-9.13,3.2-18.97,3.2-18.97-.17-2.12-.76-7.42-3.56-13.53-1.6-3.5-5.34-10.33-12.89-15.82-3.09-2.25-5.98-3.66-8.09-4.54-3.97-1.77-15.13-6.07-27.42-2.12-16.11,5.19-27.56,22.47-27.64,43,.24,11.79.47,23.59.71,35.38l.5,28.56c-.12,24.24,1.27,57.28,1.14,101.2l.53,200.44-1.22,96.71c.19,24.24.44,59.13.69,103.04.92,19.39,10.42,35.52,23.3,41.16,9.12,3.99,18.96,3.25,18.96,3.25,2.12-.16,7.42-.74,13.54-3.52,3.5-1.59,10.34-5.31,15.86-12.85,2.25-3.08,3.68-5.97,4.56-8.08,1.78-3.97,6.11-15.12,2.19-27.42-5.15-16.13-22.4-27.62-42.93-27.75-11.79.21-23.59.41-35.38.62l-28.56.43c-24.24-.18-57.29,1.12-101.2.88H168.89v154.96c0,7.47-.01,14.95-.01,22.42v88.79s-18.47,19.22-18.47,19.22c-17.27,17.01-42.11,41.51-73.34,72.38-14.36,13.07-32.49,17.75-45.57,12.64-9.27-3.62-15.7-11.11-15.7-11.11-1.38-1.61-4.73-5.77-7.09-12.06-1.35-3.6-3.56-11.07-2.13-20.3.58-3.77,1.62-6.82,2.48-8.94,1.55-4.06,6.36-15.01,17.84-20.93,15.04-7.76,35.37-3.7,49.98,10.72,8.2,8.48,16.39,16.97,24.59,25.45l19.9,20.5c17.27,17.01,39.72,41.3,70.95,72.17,14.36,13.07,32.49,17.75,45.57,12.64,9.27-3.62,15.7-11.11,15.7-11.11,1.38-1.61,4.73-5.77,7.09-12.06,1.35-3.6,3.56-11.07,2.13-20.3-.58-3.77-1.62-6.82-2.48-8.94-1.55-4.06-6.36-15.01-17.84-20.93-15.04-7.76-35.37-3.7-49.98,10.72-8.2,8.48-16.39,16.97-24.59,25.45l-80.7,87.89-1.24,795.24v16.96h1233.72v761.91H168.89v-801.85h1066.62l-.71,890.35c0,3.5,0,6.99,0,10.49v21.5s-8.64,8.99-8.64,8.99c-8.08,7.95-19.69,19.41-34.29,33.85-6.71,6.11-15.19,8.3-21.31,5.91-4.33-1.69-7.34-5.19-7.34-5.19-.65-.75-2.21-2.7-3.31-5.64-.63-1.68-1.66-5.18-1-9.49.27-1.76.76-3.19,1.16-4.18.72-1.9,2.98-7.02,8.34-9.79,7.03-3.63,16.54-1.73,23.37,5.01,3.83,3.97,7.67,7.93,11.5,11.9l9.3,9.59c8.08,7.95,18.57,19.31,33.18,33.75,6.71,6.11,15.19,8.3,21.31,5.91,4.33-1.69,7.34-5.19,7.34-5.19.65-.75,2.21-2.7,3.31-5.64.63-1.68,1.66-5.18,1-9.49-.27-1.76-.76-3.19-1.16-4.18-.72-1.9-2.98-7.02-8.34-9.79-7.03-3.63-16.54-1.73-23.37,5.01-3.83,3.97-7.67,7.93-11.5,11.9l-84.77,87.14,5,1881.67"
+      d="M52.32,0c0,32.34,0,106.48,0,117.43,0,7.92,0,15.84,0,23.76,0,11.82,0,183.77.01,195.58,0,14.59,0,29.18.01,43.76,0,16.23.01,32.45.02,48.68,0,16.74.01,33.47.02,50.21,0,16.12.01,32.23.02,48.35,0,14.33,0,28.65.01,42.98,0,11.5,0,22.99.01,34.49,0,7.47,0,14.95,0,22.42v88.79l67.51,69.26"
     />
   </svg>
 </div>
@@ -75,15 +172,10 @@
     margin: 0 auto;
     padding: 100px 0;
     position: absolute;
-    top: 730px;
-    left: 35%;
+    top: -400px; /* initial top — script will adjust this value on mount to match old start */
+    left: 55%;
     transform: translateX(-50%);
     z-index: -2;
-  }
-
-  .svg-container {
-    position: relative;
-    width: 100%;
   }
 
   svg {
@@ -92,9 +184,9 @@
     left: 0;
     width: 100%;
     height: auto;
-    max-height: 5500px;
+    max-height: 9000px;
     pointer-events: none;
-    transition: all 0.8s ease;
+    transition: all 0.6s ease;
   }
 
   .cls-1 {
@@ -107,26 +199,9 @@
     transform-origin: center;
   }
 
+  /* hide wrapper on mobile if you used that before */
   @media only screen and (max-width: 800px) {
     .wrapper {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 100px 0;
-      position: absolute;
-      top: 804px;
-      z-index: 0;
-      display: none;
-    }
-  }
-
-  @media only screen and (min-width: 1920px) {
-    .wrapper {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 100px 0;
-      position: absolute;
-      top: 804px;
-      z-index: 0;
       display: none;
     }
   }
