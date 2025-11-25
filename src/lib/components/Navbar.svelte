@@ -51,14 +51,16 @@
     <div class="logo">
         <img src="logo.svg" alt="logo" />
     </div>
+</nav>
 
-    <button on:click={() => (menuOpen = !menuOpen)} class="hamburger">
-        {#if menuOpen}
-            ✖
-        {:else}
-            ☰
-        {/if}
-    </button>
+<!-- Hamburger always stays visible -->
+<button on:click={() => (menuOpen = !menuOpen)} class="hamburger">
+    {#if menuOpen}
+        ✖
+    {:else}
+        ☰
+    {/if}
+</button>
 
     <ul class="menu {menuOpen ? 'open' : ''}">
         <li><a href="/" data-sveltekit-reload on:click={closeAll}>Home</a></li>
@@ -198,7 +200,6 @@
             >
         </li>
     </ul>
-</nav>
 
 <style>
     .navbar {
@@ -227,6 +228,9 @@
     }
 
     .hamburger {
+        position: fixed;
+        top: 15px;
+        right: 35px;
         font-size: 2.5rem;
         background: none;
         border: none;
