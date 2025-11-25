@@ -30,7 +30,7 @@
     .heroTxt {
         position: relative;
         width: 100vw;
-        height: 50vh;
+        height: 100vh;
         min-height: 400px;
         display: flex;
         overflow: hidden;

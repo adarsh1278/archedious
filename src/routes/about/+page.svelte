@@ -1,117 +1,10 @@
 <script>
-    import { onMount, onDestroy } from "svelte";
-    import { browser } from "$app/environment";
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+    
     import AboutTxtHero from "$lib/components/AboutTxtHero.svelte";
 
-    let containerRef;
-    let heroTextRef;
+    
 
-    onMount(() => {
-        if (!browser) return;
-
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Split text function
-        const splitText = (selector) => {
-            const elem = document.querySelector(selector);
-            if (!elem) return [];
-
-            const text = elem.innerText;
-            const chars = text.split("");
-            const charsContainer = document.createElement("div");
-            const charsArray = [];
-
-            charsContainer.style.position = "relative";
-            charsContainer.style.display = "inline-block";
-
-            chars.forEach((char) => {
-                const charContainer = document.createElement("div");
-
-                charContainer.style.position = "relative";
-                charContainer.style.display = "inline-block";
-                charContainer.innerText = char === " " ? "\u00A0" : char; // Use non-breaking space for spaces
-                charsContainer.appendChild(charContainer);
-
-                charsArray.push(charContainer);
-            });
-
-            // Remove current text
-            elem.innerHTML = "";
-            // Append new structure
-            elem.appendChild(charsContainer);
-
-            return charsArray;
-        };
-
-        // Animate function with infinite loop
-        const animate = function () {
-            const chars = splitText(".hero p");
-
-            // Create timeline for infinite animation
-            const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
-
-            // Initial animation - characters slide up from below
-            tl.fromTo(
-                chars,
-                {
-                    y: 100,
-                    opacity: 0,
-                },
-                {
-                    duration: 0.2,
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.1,
-                    delay: 1,
-                    ease: "power2.out",
-                },
-            )
-                // Hold the text visible for a moment
-                .to({}, { duration: 1.5 })
-                // Fade out animation
-                .to(chars, {
-                    duration: 0.15,
-                    y: -50,
-                    opacity: 0,
-                    stagger: 0.05,
-                    ease: "power2.in",
-                });
-
-            return tl;
-        };
-
-        // Call the animation
-        animate();
-
-        const sections = gsap.utils.toArray(".section");
-
-        sections.forEach((section, index) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: "top top",
-                end: () =>
-                    `+=${window.innerHeight * (sections.length - index)}`,
-                pin: true,
-                pinSpacing: false,
-                scroller: "#smooth-content", // Tell ScrollTrigger to use the smooth scroll container
-                // markers: false, // Set to true for debugging
-            });
-        });
-
-        // Cleanup function
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    });
-
-    onDestroy(() => {
-        if (browser) {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        }
-    });
+    
 </script>
 
 <svelte:head>
@@ -124,7 +17,7 @@
 <div class="container">
     <AboutTxtHero />
 
-    <div class="container-1" bind:this={containerRef}>
+    <div class="container-1">
         <div class="section section-1">
             <p>
                 Archideus is a full-spectrum architectural practice led by the

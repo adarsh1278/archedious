@@ -321,8 +321,9 @@
      }
 
      .container-1 {
-         min-height: 300vh;
-         max-height: 500vh;
+        
+        
+         height: fit-content;
      }
 
      .content-4 {
@@ -733,9 +734,7 @@
      font-style: italic;
  }
 
- .container-1 {
-     margin-bottom: 55vmax;
- }
+
 
  .content-4 button {
      color: #FFF;
