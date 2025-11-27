@@ -1,6 +1,10 @@
 <div class="container">
   <div class="text-section">
-    <h1>For those who makes it home</h1>
+    <h1>
+      For those who
+      <br />
+      makes it home
+    </h1>
     <p>Your Stories, Your Dreams shaped into spaces that feels like home</p>
   </div>
 
@@ -15,7 +19,11 @@
 
 <div class="container">
   <div class="text-section">
-    <h1>Workspaces that speaks for you</h1>
+    <h1>
+      Workspaces that
+      <br />
+      speaks for you
+    </h1>
     <p>
       Designed for performance and people, spaces where your team thrives and
       your vision becomes reality.
