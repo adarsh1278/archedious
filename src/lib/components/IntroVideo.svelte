@@ -22,8 +22,12 @@
             };
 
             window.addEventListener("wheel", preventScroll, { passive: false });
-            window.addEventListener("touchmove", preventScroll, { passive: false });
-            window.addEventListener("scroll", preventScroll, { passive: false });
+            window.addEventListener("touchmove", preventScroll, {
+                passive: false,
+            });
+            window.addEventListener("scroll", preventScroll, {
+                passive: false,
+            });
         }
 
         if (videoElement) {
@@ -85,7 +89,6 @@
     <div class="intro-container" class:fade-out={fadeOut}>
         <video
             bind:this={videoElement}
-            src="/videos/Archideus Loader .mp4"
             muted
             playsinline
             preload="auto"
@@ -93,6 +96,12 @@
             class="intro-video"
             class:video-hidden={!isVideoReady || !isVideoLoaded}
         >
+            <source
+                src="/videos/Archideus Loader vertical.mp4"
+                type="video/mp4"
+                media="(max-width: 768px)"
+            />
+            <source src="/videos/Archideus Loader .mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>

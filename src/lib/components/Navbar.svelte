@@ -222,9 +222,10 @@
     }
 
     .logo img {
-        margin-top: 1vmax;
+        margin-top: 1.3vmax;
         height: 40px;
         width: 40px;
+        margin-left: 0.3vmax;
     }
 
     .hamburger {
@@ -290,8 +291,9 @@
 
     @media (max-width: 600px) {
         .logo img {
-            margin-top: 2vmax;
+            margin-top: 2.3vmax;
             width: 40px;
+            margin-left: 1vmax;
         }
     }
 </style>

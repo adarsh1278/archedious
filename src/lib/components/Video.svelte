@@ -111,10 +111,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: 1rem;
+      font-size: 1.3rem;
       text-align: center;
       line-height: 1.4;
-      max-width: 1113px;
+      max-width: 90%;
       width: 100%;
       font-weight: 500;
       font-family: var(--main);

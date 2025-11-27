@@ -284,6 +284,9 @@
         border-top: 1px solid #faebd7;
         color: var(--background);
     }
+    .copyright p {
+        margin-top: 1vmax;
+    }
 
     .socialIcon {
         width: 48px;
