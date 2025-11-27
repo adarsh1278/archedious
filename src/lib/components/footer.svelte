@@ -6,7 +6,9 @@
                 <div class="menu">
                     <div class="address">
                         <span>Address</span>
-                        <p> 201, Bansal Tower,  Phase 2, Ashok Vihar, Delhi, 110052
+                        <p>
+                            201, Bansal Tower, Phase 2, Ashok Vihar, Delhi,
+                            110052
                         </p>
                     </div>
                     <div class="mymenu">
@@ -116,6 +118,7 @@
         </main>
         <div class="copyright">
             <p>© 2025 Archideus. All rights reserved.</p>
+            <p>Designed by Mouse & Cheese Design Studio.</p>
             <ul>
                 <a href="#">
                     <li>Terms</li>

@@ -294,13 +294,13 @@
 
     .bg-primary {
         background-color: #8b3a3a !important;
-        color: white !important;
+        color: #EFE8DB !important;
     }
 
     h1 {
         font-size: 48px;
         font-weight: 400;
-        color: white;
+        color: #EFE8DB;
         line-height: 64px;
         margin-bottom: 84px;
     }
@@ -309,8 +309,8 @@
     }
 
     .text > p > a {
-        color: white;
-        color: white;
+       
+        color: #EFE8DB;
         font-family: var(--sub);
         font-weight: 400;
         margin-left: 16px;
@@ -496,7 +496,7 @@
         h1 {
             font-size: 33px;
             font-weight: 400;
-            color: white;
+            color: #EFE8DB;
             line-height: 45px;
             margin-bottom: 84px;
         }

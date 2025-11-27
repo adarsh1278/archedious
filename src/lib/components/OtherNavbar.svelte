@@ -244,7 +244,7 @@
     .dropdown-link {
         display: block;
         padding: 10px 15px;
-        color: white;
+        color: EFE8DB;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -271,7 +271,7 @@
     .sub-link {
         display: block;
         padding: 15px;
-        color: white;
+        color: EFE8DB;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -322,7 +322,7 @@
 
     .nav-link {
         text-decoration: none;
-        color: white;
+        color: EFE8DB;
         font-family: var(--sub);
         font-weight: 300;
         font-size: 18px;
@@ -358,7 +358,7 @@
         width: 100%;
         clear: both;
         font-weight: 400;
-        color: white;
+        color: EFE8DB;
         text-align: inherit;
         text-decoration: none;
         white-space: nowrap;
@@ -409,7 +409,7 @@
     }
 
     .drawer-link {
-        color: white;
+        color: EFE8DB;
         font-size: 2rem;
         text-decoration: none;
         font-family: var(--main);
@@ -422,7 +422,7 @@
         top: 20px;
         right: 30px;
         font-size: 3rem;
-        color: white;
+        color: EFE8DB;
         cursor: pointer;
         z-index: 10;
         line-height: 1;

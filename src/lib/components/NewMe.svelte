@@ -59,10 +59,12 @@
   .text-section > h1 {
     z-index: 3;
     position: relative;
+    text-align: left;
   }
 
   .text-section > p {
     z-index: 3;
+    text-align: left;
     position: relative;
   }
 

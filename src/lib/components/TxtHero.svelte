@@ -61,7 +61,7 @@
         gap: 0.8rem;
         font-size: 2.5rem;
         font-weight: bold;
-        color: #EFE8DB;
+        color: #efe8db;
         font-family: sans-serif;
         align-items: center;
         justify-content: center;
@@ -73,7 +73,7 @@
         display: inline-block;
         background-color: var(--primary);
         overflow: hidden;
-        height: 4.5rem; 
+        height: 4.5rem;
         line-height: 2.5rem;
         vertical-align: bottom;
         padding: 0 4px;
@@ -144,8 +144,6 @@
         }
     }
 
-
-
     @media (max-width: 768px) {
         .heroTxt {
             height: 60vh;
@@ -172,7 +170,7 @@
 
     @media (max-width: 480px) {
         .heroTxt {
-            height: 50vh;
+            height: 70vh;
         }
 
         .mask-container {

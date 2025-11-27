@@ -10,7 +10,7 @@
     import SvgAnimation from "$lib/components/SvgAnimation.svelte";
     import NewMe from "$lib/components/NewMe.svelte";
     import TesTonomials1 from "$lib/components/TesTonomials1.svelte";
-
+    import TestimonialsCarousel from "$lib/components/TestimonialsCarousel.svelte";
 </script>
 
 <!-- App Password :   fdvl rszp reli isdt  -->
@@ -19,15 +19,13 @@
 <!-- <Hero /> -->
 <TxtHero />
 
+<NewMe />
 
-<NewMe/>
+<Video />
 
-<Video/>
+<Slider2 />
+<TestimonialsCarousel />
 
-<Slider2/>
-<TesTonomials1/>
+<Testimonials />
 
-<Testimonials/>
-
-
-<SvgAnimation/>
+<SvgAnimation />

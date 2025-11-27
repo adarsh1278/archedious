@@ -29,7 +29,9 @@
     }
   }
 
-  function setupPathAnimation(pathEl: SVGPathElement | null): number | undefined {
+  function setupPathAnimation(
+    pathEl: SVGPathElement | null,
+  ): number | undefined {
     if (!pathEl) return;
     const length = pathEl.getTotalLength();
     pathEl.style.strokeDasharray = String(length);
@@ -38,7 +40,11 @@
     return length;
   }
 
-  function installScrollHandler(pathEl: SVGPathElement, pathLength: number, svgHeight: number): (() => void) | null {
+  function installScrollHandler(
+    pathEl: SVGPathElement,
+    pathLength: number,
+    svgHeight: number,
+  ): (() => void) | null {
     if (!pathEl) return null;
 
     function handleScroll() {
@@ -49,10 +55,9 @@
       }
       const effectiveScroll = scrollTop - triggerPoint;
       const rawPercent = effectiveScroll / (svgHeight - triggerPoint);
-      
 
-      const dynamicSpeed = 1.8 - (rawPercent * 0.5);
-      
+      const dynamicSpeed = 1.8 - rawPercent * 0.5;
+
       const scrollPercent = rawPercent * dynamicSpeed;
       const clamped = Math.max(0, Math.min(scrollPercent, 1));
       pathEl.style.strokeDashoffset = String(pathLength * (1 - clamped));
@@ -124,7 +129,10 @@
 
       // determine svgHeight from viewBox (preferred) or fallback to ownerSVGElement height
       const vb = svgEl.viewBox.baseVal;
-      const svgHeight = (vb && vb.height) ? vb.height : (svgEl.getBoundingClientRect().height || 9000);
+      const svgHeight =
+        vb && vb.height
+          ? vb.height
+          : svgEl.getBoundingClientRect().height || 9000;
 
       // set trigger point adaptively (keeps same behavior across widths)
       const updateTrigger = () => {

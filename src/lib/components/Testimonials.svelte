@@ -55,42 +55,39 @@
     });
 </script>
 
-
 <div class="wrap">
-
-
-
-{#if showLightbox}
-    <div class="lightbox" on:click={closeLightbox}>
-        <div class="lightbox-content" on:click|stopPropagation>
-            {#if activeVideo}
-                <video controls preload="none">
-                    <source src={`/videos/${activeVideo}`} type="video/mp4" />
-                </video>
-            {/if}
-            <button class="close-btn" on:click={closeLightbox}>✖</button>
+    {#if showLightbox}
+        <div class="lightbox" on:click={closeLightbox}>
+            <div class="lightbox-content" on:click|stopPropagation>
+                {#if activeVideo}
+                    <video controls preload="none">
+                        <source
+                            src={`/videos/${activeVideo}`}
+                            type="video/mp4"
+                        />
+                    </video>
+                {/if}
+                <button class="close-btn" on:click={closeLightbox}>✖</button>
+            </div>
         </div>
-    </div>
-{/if}
+    {/if}
 
-<div class="mkdjdk">
-    <div>
-        <h2 class="mskdj">
-            If you’ve come this far, Then you’re already imagining it. 
-            <span>Lets
-            bring it to life.
-            </span>
-        </h2>
+    <div class="mkdjdk">
+        <div>
+            <h2 class="mskdj">
+                If you’ve come this far, Then you’re already imagining it.
+                <span>Lets bring it to life. </span>
+            </h2>
 
-        <a href="/contact">
-            <button class="nsksdoo"> Just say hello! </button>
-        </a>
-    </div>
+            <a href="/contact">
+                <button class="nsksdoo"> Just say hello! </button>
+            </a>
+        </div>
 
-    <!-- <div class="svg-animation-container">
+        <!-- <div class="svg-animation-container">
         <SvgLineDrawing svgPath="/last.svg" className="smksd" />
     </div> -->
-</div>
+    </div>
 </div>
 
 <style>
@@ -105,17 +102,14 @@
         margin-top: 85px;
 
         /* background-color: aqua; */
-        
-        
-  background-repeat: repeat;
-       
+
+        background-repeat: repeat;
     }
-    span{
+    span {
         font-style: italic;
     }
-    .wrap{
-         
-  background-repeat: repeat;    
+    .wrap {
+        background-repeat: repeat;
     }
 
     .nsksdoo {
@@ -183,19 +177,19 @@
         height: auto;
         display: block;
     }
-    
+
     @media (min-width: 1440px) {
         :global(.smksd) {
             max-width: 360px;
         }
     }
-    
+
     @media (max-width: 1200px) {
         :global(.smksd) {
             max-width: 300px;
         }
     }
-    
+
     @media (max-width: 992px) {
         :global(.smksd) {
             max-width: 250px;
@@ -331,11 +325,11 @@
 
     .nmslks {
         display: flex;
-        
+
         flex-direction: column;
-         z-index: 3 !important;
+        z-index: 3 !important;
         /* background-image: url('/bg.png') !important; */
-  background-repeat: repeat !important;
+        background-repeat: repeat !important;
     }
 
     @media (max-width: 768px) {
@@ -363,34 +357,43 @@
         .mkdjdk {
             width: 100%;
             max-width: 1300px;
-            margin-bottom: 200px;
+            margin-bottom: 50px;
             display: flex;
+            /* background-color: aqua; */
+
             flex-direction: column;
+            padding: 0 20px;
+            box-sizing: border-box;
+            padding-left: 0%;
+            padding-top: 0%;
+            line-height: 2vmax;
+            margin-top: 0%;
+            align-items: flex-start;
         }
 
         .nsksdoo {
-            margin-left: 20px;
+            margin-left: 0;
             border-radius: 24px;
             width: 252px;
+
             height: 52px;
         }
 
         .mksk {
-            margin-left: 20px;
-            width: 90%;
+            margin-left: 0;
+            width: 100%;
             margin-bottom: 58px;
             font-size: 23px;
         }
 
         .mskdj {
-            /* background-color: aqua; */
-            width: 90%;
-            display: flex;
-            margin-left: 20px;
-            /* margin-top: 150px; */
-            margin-bottom: 50px;
+            width: 100%;
+            display: block;
+            margin-left: 0;
+            margin-top: 30px;
+            margin-bottom: 30px;
             font-size: 22px;
-            flex-direction: column;
+            text-align: left;
             box-sizing: border-box;
         }
 
