@@ -1,6 +1,7 @@
 <script>
     
     import AboutTxtHero from "$lib/components/AboutTxtHero.svelte";
+    import ProjectCards from "$lib/components/ProjectCards.svelte";
 
     
 
@@ -75,7 +76,7 @@
                     <!-- <div class="hieght"></div> -->
                     <span>
                         <span class="desc-special">
-                            Vasu's process always begins on paper, sketching by
+                            Vaasu's process always begins on paper, sketching by
                             hand to translate emotions into lines.
                         </span>
                         <div class="hieght"></div>
@@ -206,6 +207,8 @@
         </a>
     </div>
 
+    <ProjectCards />
+
     <div class="content-4">
         <h3>
             <span>If you've come this far,</span>
@@ -319,13 +322,14 @@
             flex-direction: column !important;
             width: 95% !important;
             gap: 2rem !important;
-            padding-top: 3rem !important;
+            padding-top: 0rem !important;
+            margin-top: 0 !important;
         }
 
         .content-3-tab {
             flex-direction: column !important;
             width: 100% !important;
-            gap: 2rem !important;
+            gap: 4rem !important;
         }
 
         .content-3-card {
@@ -343,7 +347,7 @@
         .content-4 {
             width: 95% !important;
             gap: 2rem !important;
-            margin-top: 3rem !important;
+            margin-top: 1rem !important;
             text-align: left !important;
             align-items: start !important;
             padding-left: 1vmax;

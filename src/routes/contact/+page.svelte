@@ -155,7 +155,7 @@
             </div>
 
             <div class="bgM">
-                <img src="/cbg.png" alt="" class="cbg" />
+                <img src="/Contact page vector.svg" alt="" class="cbg" />
             </div>
         </div>
 
@@ -286,8 +286,10 @@
 
     .bgM {
         position: relative;
-        bottom: -330px;
+        top: -60px;
         right: -38px;
+        height: 100%;
+        object-fit: cover;
     }
 
     .bg-primary {

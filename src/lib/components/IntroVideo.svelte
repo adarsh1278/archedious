@@ -85,7 +85,7 @@
     <div class="intro-container" class:fade-out={fadeOut}>
         <video
             bind:this={videoElement}
-            src="/videos/Archideus Landing Intro.mp4"
+            src="/videos/Archideus Loader .mp4"
             muted
             playsinline
             preload="auto"

@@ -15,8 +15,8 @@
 
 <!-- App Password :   fdvl rszp reli isdt  -->
 
-<!-- <IntroVideo /> -->
-<Hero />
+<IntroVideo />
+<!-- <Hero /> -->
 <TxtHero />
 
 

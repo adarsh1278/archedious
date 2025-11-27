@@ -6,7 +6,7 @@
                 <div class="menu">
                     <div class="address">
                         <span>Address</span>
-                        <p>Bansal Tower, 201, Phase 2, Ashok Vihar, Delhi, 110052
+                        <p> 201, Bansal Tower,  Phase 2, Ashok Vihar, Delhi, 110052
                         </p>
                     </div>
                     <div class="mymenu">

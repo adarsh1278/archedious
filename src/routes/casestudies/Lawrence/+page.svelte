@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { page } from "$app/stores";
+    import ProjectCards from "$lib/components/ProjectCards.svelte";
 
     let slideIndex = 1;
     let bgSlideIndex = 0;
@@ -533,6 +534,8 @@
                 </div>
             </div>
         </div>
+
+        <ProjectCards />
 
         <div class="content-2">
             <h3>The Archideus Journal</h3>
