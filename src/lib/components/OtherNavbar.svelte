@@ -7,7 +7,11 @@
 
     function closeDrawer() {
         const menuCheckbox = document.getElementById("menu-toggle");
-        if (menuCheckbox && menuCheckbox instanceof HTMLInputElement && menuCheckbox.checked) {
+        if (
+            menuCheckbox &&
+            menuCheckbox instanceof HTMLInputElement &&
+            menuCheckbox.checked
+        ) {
             menuCheckbox.checked = false;
         }
     }
@@ -61,7 +65,9 @@
 <nav class="navbar" class:hidden={isHidden}>
     <!-- Left (Logo) -->
     <div class="nav-left">
-        <img src="/logo.svg" alt="Logo" class="logo" />
+        <a href="/" data-sveltekit-reload>
+            <img src="/logo.svg" alt="Logo" class="logo" />
+        </a>
     </div>
 
     <!-- Center (Menu) -->
@@ -123,7 +129,9 @@
         <label for="menu-toggle" class="drawer-close">×</label>
         <div class="drawer-content">
             <a href="/" class="drawer-link" on:click={closeDrawer}>Home</a>
-            <a href="/about" class="drawer-link" on:click={closeDrawer}>About Us</a>
+            <a href="/about" class="drawer-link" on:click={closeDrawer}
+                >About Us</a
+            >
 
             <!-- Mobile Projects with submenu -->
             <div class="drawer-dropdown">
@@ -184,8 +192,7 @@
                             <a
                                 href="/casestudies/office-Space"
                                 class="drawer-sublink-child"
-                                on:click={closeDrawer}
-                                >The Terrace Studio</a
+                                on:click={closeDrawer}>The Terrace Studio</a
                             >
                             <a
                                 href="/casestudies/sixD"
@@ -197,8 +204,14 @@
                 </div>
             </div>
 
-            <a href="/Archideus Journal" class="drawer-link" on:click={closeDrawer}>Archideus Journal</a>
-            <a href="/contact" class="drawer-link" on:click={closeDrawer}>Contact us</a>
+            <a
+                href="/Archideus Journal"
+                class="drawer-link"
+                on:click={closeDrawer}>Archideus Journal</a
+            >
+            <a href="/contact" class="drawer-link" on:click={closeDrawer}
+                >Contact us</a
+            >
         </div>
     </div>
 </nav>
@@ -208,20 +221,18 @@
     .dropdown {
         position: relative;
     }
-    .logo{
-        width: 50px;
-        color: #f0f0f0
-        ;
+    .logo {
+        width: 35px;
+        height: 35px;
+        color: #efe8db;
     }
-
-
 
     /* Dropdown menu */
     .dropdown-menu2 {
         position: absolute;
         top: 100%;
         left: 0;
-        background: #8B3A3A !important;
+        background: #8b3a3a !important;
         min-width: 200px;
         display: none;
         flex-direction: column;
@@ -244,7 +255,7 @@
     .dropdown-link {
         display: block;
         padding: 10px 15px;
-        color: EFE8DB;
+        color: #efe8db;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -256,7 +267,7 @@
         position: absolute;
         top: 0;
         left: 100%;
-        background: #8B3A3A;
+        background: #8b3a3a;
         min-width: 180px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: none;
@@ -271,7 +282,7 @@
     .sub-link {
         display: block;
         padding: 15px;
-        color: EFE8DB;
+        color: #efe8db;
         text-decoration: none;
         font-family: var(--sub);
         font-weight: 300;
@@ -294,7 +305,7 @@
         right: 0;
         width: 100%;
         height: 71px;
-        background: #8B3A3A;
+        background: #8b3a3a;
         display: flex;
         align-items: center;
         padding: 0 20px;
@@ -322,7 +333,7 @@
 
     .nav-link {
         text-decoration: none;
-        color: EFE8DB;
+        color: #efe8db;
         font-family: var(--sub);
         font-weight: 300;
         font-size: 18px;
@@ -358,11 +369,11 @@
         width: 100%;
         clear: both;
         font-weight: 400;
-        color: EFE8DB;
+        color: #efe8db;
         text-align: inherit;
         text-decoration: none;
         white-space: nowrap;
-        background-color: #8B3A3A !important;
+        background-color: #8b3a3a !important;
         border: 0;
     }
 
@@ -409,7 +420,7 @@
     }
 
     .drawer-link {
-        color: EFE8DB;
+        color: #efe8db;
         font-size: 2rem;
         text-decoration: none;
         font-family: var(--main);
@@ -422,7 +433,7 @@
         top: 20px;
         right: 30px;
         font-size: 3rem;
-        color: EFE8DB;
+        color: #efe8db;
         cursor: pointer;
         z-index: 10;
         line-height: 1;
@@ -500,7 +511,7 @@
     .drawer-sublink-child:hover {
         text-decoration: underline;
     }
-    
+
     .drawer-sublink-child::before {
         content: ". ";
     }
@@ -511,20 +522,24 @@
         .mobileMenuHide {
             display: flex;
         }
+        .logo {
+            width: 35px;
+            color: #efe8db;
+        }
 
         .desktop-menu,
         .desktop-empty {
             display: none;
         }
-        
+
         .drawer-link {
             font-size: 1.8rem;
         }
-        
+
         .drawer-sublink {
             font-size: 1.6rem;
         }
-        
+
         .drawer-sublink-child {
             font-size: 1.4rem;
         }

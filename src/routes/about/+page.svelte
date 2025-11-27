@@ -1,11 +1,7 @@
 <script>
-    
     import AboutTxtHero from "$lib/components/AboutTxtHero.svelte";
     import ProjectCards from "$lib/components/ProjectCards.svelte";
-
-    
-
-    
+    import Testimonials from "$lib/components/Testimonials.svelte";
 </script>
 
 <svelte:head>
@@ -60,49 +56,54 @@
             </video>
         </div>
 
-        <div class="section section-4">
-            <div class="section-4-descr">
-                <h4>Shaping Archideus</h4>
-                <div class="text-block">
-                    <span>
-                        Meet Vaasudev, the founder of Archideus. He is the heart
-                        and spirit behind the practice, driven by the belief
-                        that architecture is not only about structures but about
-                        the emotions a space can hold.<br />
-                        <div class="hieght"></div>
-                        For him, what matters most is making it possible—doing whatever
-                        it takes to shape a space into what it is meant to be.
-                    </span>
-                    <!-- <div class="hieght"></div> -->
-                    <span>
-                        <span class="desc-special">
-                            Vaasu's process always begins on paper, sketching by
-                            hand to translate emotions into lines.
+        <div class="sec-4-p">
+            <div class="section section-4">
+                <div class="section-4-descr">
+                    <h4>Shaping Archideus</h4>
+                    <div class="text-block">
+                        <span>
+                            Meet Vaasudev, the founder of Archideus. He is the
+                            heart and spirit behind the practice, driven by the
+                            belief that architecture is not only about
+                            structures but about the emotions a space can hold.<br
+                            />
+                            <div class="hieght"></div>
+                            For him, what matters most is making it possible—doing
+                            whatever it takes to shape a space into what it is meant
+                            to be.
                         </span>
-                        <div class="hieght"></div>
-                        These blueprints are more than technical drawings; they are
-                        the first step in turning intention into form, guiding spaces
-                        that are functional, enduring, and deeply human.
-                    </span>
-                </div>
-            </div>
-            <div class="image-section-4">
-                <div class="frame">
-                    <img
-                        src="/Group 35.png"
-                        alt="Happy couple at home"
-                        class="sec-image"
-                    />
-                </div>
-                <div class="sec-4-img-txt">
-                    <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
-                    <div class="sec-4-des">
-                        Studio head Architect, Concept Design Head
+                        <!-- <div class="hieght"></div> -->
+                        <span>
+                            <span class="desc-special">
+                                Vaasu's process always begins on paper,
+                                sketching by hand to translate emotions into
+                                lines.
+                            </span>
+                            <div class="hieght"></div>
+                            These blueprints are more than technical drawings; they
+                            are the first step in turning intention into form, guiding
+                            spaces that are functional, enduring, and deeply human.
+                        </span>
                     </div>
                 </div>
-            </div>
+                <div class="image-section-4">
+                    <div class="frame">
+                        <img
+                            src="/Group 35.png"
+                            alt="Happy couple at home"
+                            class="sec-image"
+                        />
+                    </div>
+                    <div class="sec-4-img-txt">
+                        <h3 class="sec-4-head">Ar. Vaasudev Samrat,</h3>
+                        <div class="sec-4-des">
+                            Studio head Architect, Concept Design Head
+                        </div>
+                    </div>
+                </div>
 
-            <!-- <img src="/aboutus2.png" alt="Section 4 Image" /> -->
+                <!-- <img src="/aboutus2.png" alt="Section 4 Image" /> -->
+            </div>
         </div>
     </div>
 
@@ -209,14 +210,8 @@
 
     <ProjectCards />
 
-    <div class="content-4">
-        <h3>
-            <span>If you've come this far,</span>
-            <span>Then you're already imagining it.</span>
-            <span class="itallic">Lets bring it to life.</span>
-        </h3>
-       <a href="/contact">
- <button>Just Say Hello</button>
+    <div class="sec-4">
+        <Testimonials />
     </div>
 </div>
 
@@ -225,6 +220,10 @@
 
     .hoverme {
         transition: all 0.7s ease;
+    }
+    .sec-4 {
+        width: 100%;
+        text-align: left;
     }
     .hieght {
         height: 14px !important;
@@ -325,6 +324,15 @@
             padding-top: 0rem !important;
             margin-top: 0 !important;
         }
+        .sec-4-p {
+            /* background-color: azure; */
+            display: flex;
+            justify-content: center;
+        }
+        .section-4 {
+            text-align: left;
+            width: 90% !important;
+        }
 
         .content-3-tab {
             flex-direction: column !important;
@@ -347,7 +355,7 @@
         .content-4 {
             width: 95% !important;
             gap: 2rem !important;
-            margin-top: 1rem !important;
+            /* margin-top: 1rem !important; */
             text-align: left !important;
             align-items: start !important;
             padding-left: 1vmax;
@@ -372,7 +380,7 @@
 
         /* Image Section 4 Mobile Adjustments */
         .image-section-4 {
-            width: 100% !important;
+            width: 60vw !important;
             padding-top: 0 !important;
             height: auto !important;
             display: flex !important;
@@ -383,16 +391,17 @@
         }
 
         .frame {
-            width: 100% !important;
+            width: 90% !important;
+            /* background-color: black; */
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
         }
 
         .frame img {
-            width: 100% !important;
+            width: 300px !important;
             height: auto !important;
-            max-width: 400px !important;
+            max-width: 300px !important;
         }
 
         .sec-4-img-txt {
@@ -474,12 +483,6 @@
 
         .text-section p {
             margin: 0 auto;
-        }
-        .frame img {
-            width: 40vmax !important;
-            height: 533px;
-            flex-shrink: 0;
-            aspect-ratio: 1/1;
         }
     }
 

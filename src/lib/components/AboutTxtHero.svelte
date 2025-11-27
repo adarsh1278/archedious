@@ -108,4 +108,45 @@
             opacity: 1;
         }
     }
+
+    @media (max-width: 768px) {
+        .heroTxt {
+            height: 60vh;
+        }
+
+        .mask-container {
+            width: 90%;
+        }
+
+        .masked-text {
+            font-size: 2.3rem;
+            gap: 0.6rem;
+            line-height: 60px;
+            padding-bottom: 0;
+        }
+
+        .word-box {
+            height: 4rem;
+            line-height: 60px;
+            font-size: 155%;
+            padding: 0 3px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .heroTxt {
+            height: 50vh;
+        }
+
+        .masked-text {
+            font-size: 2rem;
+            line-height: 50px;
+        }
+
+        .word-box {
+            height: 3.2rem;
+            line-height: 50px;
+            font-size: 140%;
+        }
+    }
 </style>
