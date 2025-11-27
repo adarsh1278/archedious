@@ -100,7 +100,10 @@
                     </div>
                     <div class="text pl-3">
                         <p>
-                            <a href="https://www.instagram.com/archideus.in?igsh=MzM0OHpqcHJrczIz">@archideus.in</a>
+                            <a
+                                href="https://www.instagram.com/archideus.in?igsh=MzM0OHpqcHJrczIz"
+                                >@archideus.in</a
+                            >
                         </p>
                     </div>
                 </div>
@@ -220,7 +223,7 @@
                                     >What kind of space are you imagining?</label
                                 >
                                 <textarea
-                                  name="spaceDescription"
+                                    name="spaceDescription"
                                     class="form-control"
                                     id="Yourmessage1"
                                     cols="30"
@@ -239,7 +242,7 @@
                                     >Where is the site located?</label
                                 >
                                 <textarea
-                                   name="siteLocation"
+                                    name="siteLocation"
                                     class="form-control"
                                     id="Yourmessage2"
                                     cols="30"
@@ -294,13 +297,13 @@
 
     .bg-primary {
         background-color: #8b3a3a !important;
-        color: #EFE8DB !important;
+        color: #efe8db !important;
     }
 
     h1 {
         font-size: 48px;
         font-weight: 400;
-        color: #EFE8DB;
+        color: #efe8db;
         line-height: 64px;
         margin-bottom: 84px;
     }
@@ -309,8 +312,7 @@
     }
 
     .text > p > a {
-       
-        color: #EFE8DB;
+        color: #efe8db;
         font-family: var(--sub);
         font-weight: 400;
         margin-left: 16px;
@@ -496,7 +498,7 @@
         h1 {
             font-size: 33px;
             font-weight: 400;
-            color: #EFE8DB;
+            color: #efe8db;
             line-height: 45px;
             margin-bottom: 84px;
         }
@@ -510,6 +512,15 @@
             width: auto !important;
             overflow: hidden;
             padding: 0px 20px;
+        }
+    }
+    @media (max-width: 768px) {
+        .bgM {
+            position: relative;
+            top: -110px;
+            right: -93px;
+            height: 300%;
+            /* object-fit: cover; */
         }
     }
 </style>
