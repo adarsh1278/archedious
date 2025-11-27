@@ -61,7 +61,7 @@
         gap: 0.8rem;
         font-size: 2.5rem;
         font-weight: bold;
-        color: #fff;
+        color: #EFE8DB;
         font-family: sans-serif;
         align-items: center;
         justify-content: center;

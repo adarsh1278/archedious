@@ -97,6 +97,7 @@
     .mkdjdk {
         width: 100%;
         max-width: 1300px;
+        margin-left: 2.3vmax;
         /* background-color: aqua; */
         margin-bottom: 100px;
         display: flex;

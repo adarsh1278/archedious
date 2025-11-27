@@ -67,7 +67,7 @@
     <!-- Center (Menu) -->
     <div class="nav-center desktop-menu">
         <a href="/" class="nav-link">Home</a>
-        <a href="/about" class="nav-link">About</a>
+        <a href="/about" class="nav-link">About Us</a>
 
         <!-- Projects with dropdown -->
         <div class="dropdown">
@@ -123,7 +123,7 @@
         <label for="menu-toggle" class="drawer-close">×</label>
         <div class="drawer-content">
             <a href="/" class="drawer-link" on:click={closeDrawer}>Home</a>
-            <a href="/about" class="drawer-link" on:click={closeDrawer}>About</a>
+            <a href="/about" class="drawer-link" on:click={closeDrawer}>About Us</a>
 
             <!-- Mobile Projects with submenu -->
             <div class="drawer-dropdown">

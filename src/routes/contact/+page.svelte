@@ -287,7 +287,7 @@
     .bgM {
         position: relative;
         top: -60px;
-        right: -38px;
+        right: -28px;
         height: 100%;
         object-fit: cover;
     }

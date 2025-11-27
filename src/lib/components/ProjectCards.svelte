@@ -109,10 +109,7 @@
 
 <section class="projects-section">
     <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-description">
-            Discover spaces we've shaped, tailored to reflect each client's story, purpose, and vision.
-        </p>
+        <h2 class="section-title">More of What We've Built</h2>
     </div>
 
     <div class="swiper-container">
@@ -158,11 +155,7 @@
     .section-header {
         max-width: 1400px;
         margin: 0 auto 3rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 4rem;
-        border-bottom: 2px solid #000;
+        /* border-bottom: 2px solid #000; */
         padding-bottom: 2rem;
     }
 
@@ -172,18 +165,6 @@
         font-size: 64px;
         font-weight: 400;
         margin: 0;
-        flex-shrink: 0;
-    }
-
-    .section-description {
-        color: #000;
-        font-family: var(--sub);
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 1.6;
-        margin: 0;
-        max-width: 600px;
-        text-align: right;
     }
 
     .swiper-container {
@@ -282,18 +263,8 @@
     }
 
     @media (max-width: 1024px) {
-        .section-header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
         .section-title {
             font-size: 48px;
-        }
-
-        .section-description {
-            text-align: left;
-            max-width: 100%;
         }
 
         .project-image {
@@ -313,10 +284,6 @@
 
         .section-title {
             font-size: 36px;
-        }
-
-        .section-description {
-            font-size: 16px;
         }
 
         .projectSwiper {
