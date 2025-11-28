@@ -339,7 +339,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    
                                     role="button"
                                     tabindex="0"
                                 >
@@ -385,7 +384,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -431,7 +429,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    
                                     role="button"
                                     tabindex="0"
                                 >
@@ -591,9 +588,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-           <a href="/contact">
- <button>Just Say Hello</button>
-       </a>
+            <a href="/contact">
+                <button>Just Say Hello</button>
+            </a>
         </div>
     </div>
 </div>
@@ -795,12 +792,15 @@
             align-items: center;
             width: 95%;
             text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         .sub-head h2 {
             font-size: 22px;
             line-height: 28px;
             width: 100%;
+            text-align: left;
         }
 
         .sub-head p {

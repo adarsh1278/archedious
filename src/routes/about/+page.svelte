@@ -223,7 +223,12 @@
     }
     .sec-4 {
         width: 100%;
+        /* background-color: aqua; */
         text-align: left;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     .hieght {
         height: 14px !important;

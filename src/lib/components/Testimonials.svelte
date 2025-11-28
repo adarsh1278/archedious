@@ -76,7 +76,10 @@
         <div>
             <h2 class="mskdj">
                 If you’ve come this far, Then you’re already imagining it.
-                <span>Lets bring it to life. </span>
+                <span>
+                    <br />
+                    Lets bring it to life.
+                </span>
             </h2>
 
             <a href="/contact">
@@ -372,7 +375,7 @@
         }
 
         .nsksdoo {
-            margin-left: 0;
+            margin-left: 20px;
             border-radius: 24px;
             width: 252px;
 
@@ -388,6 +391,7 @@
 
         .mskdj {
             width: 100%;
+            height: fit-content;
             display: block;
             margin-left: 0;
             margin-top: 30px;
@@ -395,6 +399,9 @@
             font-size: 22px;
             text-align: left;
             box-sizing: border-box;
+            /* background-color: aqua; */
+            padding-right: 2vmax;
+            padding-left: 20px;
         }
 
         .nmslks {
@@ -403,6 +410,10 @@
             margin-top: 200px;
             width: 100%;
             overflow: hidden;
+            padding-left: 70px !important;
+            margin-left: 30px !important;
+            background-color: azure;
+            display: none;
         }
 
         .carousel {

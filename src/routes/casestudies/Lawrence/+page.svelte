@@ -390,7 +390,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                 
                                     role="button"
                                     tabindex="0"
                                 >
@@ -436,7 +435,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -482,7 +480,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -642,9 +639,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-           <a href="/contact">
- <button>Just Say Hello</button>
-       </a>
+            <a href="/contact">
+                <button>Just Say Hello</button>
+            </a>
         </div>
     </div>
 </div>
@@ -845,6 +842,8 @@
             flex-direction: column;
             align-items: center;
             width: 95%;
+            padding-left: 15px;
+            padding-right: 15px;
             text-align: center;
         }
 
@@ -852,6 +851,7 @@
             font-size: 22px;
             line-height: 28px;
             width: 100%;
+            text-align: left;
         }
 
         .sub-head p {
@@ -969,7 +969,7 @@
         object-fit: cover;
         border-radius: 12px;
     }
-    
+
     .scroll-image-3 {
         height: 536px;
         width: 500px;
@@ -1088,7 +1088,7 @@
         .scroll-image {
             min-width: 600px;
         }
-        
+
         .scroll-image-3 {
             min-width: 300px;
             width: 400px;
@@ -1204,7 +1204,6 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-       
     }
 
     .hero-2 {
