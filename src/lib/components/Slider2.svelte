@@ -1,139 +1,176 @@
 <script>
     import { onMount } from "svelte";
 
-    let swiperInstance;
-    let isInitialized = false;
+    let currentSlide = 0;
+    let autoplayInterval;
+    let sliderContainer;
+
+    const slides = [
+        {
+            href: "/casestudies/roopnagar",
+            image: "/FINAL 1.png",
+            alt: "Roop nagar villa",
+            title: "Roop nagar villa",
+            location: "Residential | Noida, Uttar Pradesh",
+        },
+        {
+            href: "/casestudies/mouseAndcheese",
+            image: "/2.png",
+            alt: "Mouse and cheese design studio",
+            title: "Mouse and cheese design studio",
+            location: "Commercial | Noida, Uttar Pradesh",
+            smallTitle: true,
+        },
+        {
+            href: "/casestudies/Lawrence",
+            image: "/case2.png",
+            alt: "Laurence Duplex",
+            title: "Laurence Duplex",
+            location: "Residential | Noida, Uttar Pradesh",
+        },
+        {
+            href: "/casestudies/Indirapuram",
+            image: "/Enscape_2024-12-03-18-40-58 1.png",
+            alt: "Indirapuram Duplex",
+            title: "Indirapuram",
+            location: "Residential | Ghaziabad, Uttar Pradesh",
+        },
+        {
+            href: "/casestudies/sixD",
+            image: "/image 89.png",
+            alt: "SixD Office",
+            title: "SixD Office",
+            location: "Commercial | Noida",
+        },
+        {
+            href: "/casestudies/office-Space",
+            image: "/DIRECTOR CABIN LOUNGE  1.png",
+            alt: "The Terrace Studio",
+            title: "The Terrace Studio",
+            location: "Commercial | Noida, Uttar Pradesh",
+        },
+    ];
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+        }
+    }
+
+    function handleKeydown(event) {
+        if (event.key === "ArrowLeft") {
+            prevSlide();
+        } else if (event.key === "ArrowRight") {
+            nextSlide();
+        }
+    }
 
     onMount(() => {
-        // Initialize Swiper
-        const initSwiper = () => {
-            if (isInitialized || typeof Swiper === 'undefined') return;
-            
-            try {
-                swiperInstance = new Swiper(".mySwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    speed: 600,
-                    effect: 'slide',
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                        dynamicBullets: false,
-                    },
-                    keyboard: {
-                        enabled: true,
-                        onlyInViewport: true,
-                    },
-                    autoplay: {
-                        delay: 5000,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
-                    loop: true,
-                    grabCursor: true,
-                    watchSlidesProgress: true,
-                    preventInteractionOnTransition: false,
-                });
-                isInitialized = true;
-            } catch (error) {
-                console.error('Swiper initialization error:', error);
-            }
-        };
-
-        // Wait for Swiper library and DOM
-        const checkAndInit = () => {
-            if (typeof Swiper !== 'undefined') {
-                initSwiper();
-            } else {
-                setTimeout(checkAndInit, 50);
-            }
-        };
-
-        setTimeout(checkAndInit, 100);
+        startAutoplay();
+        window.addEventListener("keydown", handleKeydown);
 
         return () => {
-            if (swiperInstance && isInitialized) {
-                try {
-                    swiperInstance.destroy(true, true);
-                } catch (e) {
-                    console.error('Swiper destroy error:', e);
-                }
-            }
+            stopAutoplay();
+            window.removeEventListener("keydown", handleKeydown);
         };
     });
 </script>
 
 <section>
-    <h1 class="title">See What We Build</h1>
+    <h1 class="title">See What We've Built</h1>
 
     <div class="inner-box">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <a href="/casestudies/roopnagar">
-                        <img src="/FINAL 1.png" alt="Roop nagar villa" />
-                        <h2>Roop nagar villa</h2>
-                        <span>Residential | Noida, Uttar Pradesh</span>
-                    </a>
-                </div>
-
-                <div class="swiper-slide">
-                    <a href="/casestudies/mouseAndcheese">
-                        <img src="/2.png" alt="Mouse and cheese design studio" />
-                        <h2 class="nmsmjk">Mouse and cheese design studio</h2>
-                        <span>Commercial | Noida, Uttar Pradesh</span>
-                    </a>
-                </div>
-
-               
-
-                <div class="swiper-slide">
-                    <a href="/casestudies/Lawrence">
-                        <img src="/case2.png" alt="Laurence Duplex" />
-                        <h2>Laurence Duplex</h2>
-                        <span>Residential | Noida, Uttar Pradesh</span>
-                    </a>
-                </div>
-
-                <div class="swiper-slide">
-                    <a href="/casestudies/Indirapuram">
-                        <img src="/Enscape_2024-12-03-18-40-58 1.png" alt="Indirapuram Duplex" />
-                        <h2>Indirapuram </h2>
-                        <span>Residential | Ghaziabad, Uttar Pradesh</span>
-                    </a>
-                </div>
-
-                <div class="swiper-slide">
-                    <a href="/casestudies/sixD">
-                        <img src="/image 89.png" alt="SixD Office" />
-                        <h2>SixD Office</h2>
-                        <span>Commercial | Noida</span>
-                    </a>
-                </div>
-
-                <div class="swiper-slide">
-                    <a href="/casestudies/office-Space">
-                        <img src="/DIRECTOR CABIN LOUNGE  1.png" alt="The Terrace Studio" />
-                        <h2>The Terrace Studio</h2>
-                        <span>Commercial | Noida, Uttar Pradesh</span>
-                    </a>
-                </div>
+        <div
+            class="slider-container"
+            bind:this={sliderContainer}
+            on:mouseenter={stopAutoplay}
+            on:mouseleave={startAutoplay}
+        >
+            <div
+                class="slider-wrapper"
+                style="transform: translateX(-{currentSlide * 100}%)"
+            >
+                {#each slides as slide, index}
+                    <div class="slide">
+                        <a href={slide.href}>
+                            <img src={slide.image} alt={slide.alt} />
+                            <h2 class={slide.smallTitle ? "nmsmjk" : ""}>
+                                {slide.title}
+                            </h2>
+                            <span>{slide.location}</span>
+                        </a>
+                    </div>
+                {/each}
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+
+            <button
+                class="slider-button prev"
+                on:click={prevSlide}
+                aria-label="Previous slide"
+            >
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <button
+                class="slider-button next"
+                on:click={nextSlide}
+                aria-label="Next slide"
+            >
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="pagination">
+                {#each slides as _, index}
+                    <button
+                        class="pagination-bullet {index === currentSlide
+                            ? 'active'
+                            : ''}"
+                        on:click={() => goToSlide(index)}
+                        aria-label="Go to slide {index + 1}"
+                    ></button>
+                {/each}
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    .inner-box{
-        border-radius: 12px;
-    }
     section {
         width: 100%;
         display: flex;
@@ -142,7 +179,6 @@
         overflow: hidden;
         margin: 100px 0px;
         flex-direction: column;
-        contain: layout style paint;
     }
 
     .title {
@@ -152,16 +188,57 @@
         padding-bottom: 20px;
     }
 
-    .swiper-slide {
+    .inner-box {
+        width: 90%;
+        max-width: 1400px;
+        height: 622px;
+        margin: 0 auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .slider-container {
         position: relative;
-        text-align: center;
-        /* background: #444; */
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+    }
+
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 
-    .swiper-slide h2 {
+    .slide a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .slide h2 {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -171,11 +248,11 @@
         text-align: center;
         font-weight: 500;
         line-height: 1.2;
-
         width: 100%;
+        z-index: 2;
     }
 
-    .swiper-slide span {
+    .slide span {
         position: absolute;
         top: 51%;
         left: 50%;
@@ -187,100 +264,66 @@
         line-height: 1.2;
         width: 100%;
         margin-top: 65px;
+        z-index: 2;
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: white !important;
-        opacity: 1 !important;
-    }
-
-    .swiper-button-next.swiper-button-disabled,
-    .swiper-button-prev.swiper-button-disabled {
-        color: white !important;
-        opacity: 1 !important;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
+    .slider-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 50%;
-        width: 60px !important;
-        height: 60px !important;
+        width: 60px;
+        height: 60px;
         color: white;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: all 0.3s ease;
     }
 
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
+    .slider-button:hover {
         background: rgba(255, 255, 255, 0.3);
-        transform: scale(1.1);
+        transform: translateY(-50%) scale(1.1);
     }
 
-    .swiper-button-prev {
+    .slider-button.prev {
         left: 2rem;
     }
 
-    .swiper-button-next {
+    .slider-button.next {
         right: 2rem;
     }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 20px !important;
-    }
-
-    :global(.swiper-pagination-bullet) {
-     
-        opacity: 0.5 !important;
-    }
-
-    :global(.swiper-pagination-bullet-active) {
-        opacity: 1 !important;
-    }
-
-    .inner-box {
-        width: 90%;
-        max-width: 1400px;
-        height: 622px;
-        margin: 0 auto;
-    }
-
-    /* Swiper full inside */
-    .swiper {
-        width: 100%;
-        height: 100%;
-        transform: translateZ(0);
-    }
-
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        /* background: #444; */
+    .pagination {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+        gap: 8px;
+        z-index: 10;
     }
 
-    .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
+    .pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
     }
 
-
-
-    .swiper-slide a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        color: inherit;
+    .pagination-bullet.active {
+        background: rgba(255, 255, 255, 1);
+        width: 12px;
+        height: 12px;
     }
 
     /* Tablet */
@@ -288,29 +331,27 @@
         .inner-box {
             height: 450px;
         }
-        
-        .swiper-slide img {
-            border-radius: 10px;
-        }
-        
+
         .title {
             padding-left: 40px;
             font-size: 40px;
         }
-        
-        .swiper-slide h2 {
+
+        .slide h2 {
             font-size: 3.5rem;
         }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 45px !important;
-            height: 45px !important;
-            right: 30px;
+
+        .slider-button {
+            width: 45px;
+            height: 45px;
         }
-        
-        .swiper-button-prev {
+
+        .slider-button.prev {
             left: 30px;
+        }
+
+        .slider-button.next {
+            right: 30px;
         }
     }
 
@@ -323,43 +364,26 @@
 
         .inner-box {
             height: 350px;
-            width: 100vw;
-            padding: 10px;
-        }
-        
-        .swiper {
-            height: 350px;
-        }
-        
-        .swiper-slide {
-            height: 350px;
-        }
-        
-        .swiper-slide img {
-            border-radius: 8px;
-        }
-        
-        .inner-box {
             width: 95%;
         }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 45px !important;
-            height: 45px !important;
+
+        .slider-button {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.37);
         }
-        
-        .swiper-button-prev {
-            left: 1rem;
+
+        .slider-button.prev {
+            left: 10px;
         }
-        
-        .swiper-button-next {
-            right: 1rem;
+
+        .slider-button.next {
+            right: 10px;
         }
-        
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 16px !important;
+
+        .slider-button svg {
+            width: 18px;
+            height: 18px;
         }
 
         .title {
@@ -370,83 +394,49 @@
             font-size: 28px;
         }
 
-        .swiper-slide span {
+        .slide span {
             font-size: 16px;
             margin-top: 40px;
             padding: 0 10px;
         }
 
-        .swiper-slide h2 {
+        .slide h2 {
             font-size: 2rem;
             padding: 0 10px;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            background-color: #ffffff5e;
-            width: 40px !important;
-            height: 40px !important;
-            border-radius: 50%;
-            opacity: 1 !important;
-            right: 10px;
-        }
-
-        .swiper-button-prev {
-            left: 10px !important;
-        }
-        
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 18px !important;
         }
 
         .nmsmjk {
             font-size: 1.4rem !important;
         }
     }
-    
+
     /* Small mobile */
     @media (max-width: 480px) {
         .inner-box {
             height: 280px;
-            padding: 8px;
         }
-        
-        .swiper {
-            height: 280px;
+
+        .slider-button {
+            width: 40px;
+            height: 40px;
         }
-        
-        .swiper-slide {
-            height: 280px;
+
+        .slider-button svg {
+            width: 14px;
+            height: 14px;
         }
-        
-        .swiper-slide img {
-            border-radius: 6px;
-        }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 40px !important;
-            height: 40px !important;
-        }
-        
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 14px !important;
-        }
-        
-        .swiper-slide h2 {
+
+        .slide h2 {
             font-size: 1.6rem;
         }
-        
-        .swiper-slide span {
+
+        .slide span {
             font-size: 14px;
             margin-top: 35px;
         }
-        
+
         .nmsmjk {
             font-size: 1.2rem !important;
         }
     }
-    
 </style>
