@@ -17,7 +17,7 @@
     <div class="container-1">
         <div class="section section-1">
             <p>
-                Archideus is a full-spectrum architectural practice led by the
+                Archideus is a full spectrum architectural practice led by the
                 demands of function, not trends.
             </p>
             <img
@@ -112,7 +112,7 @@
         <div class="content-2-description">
             <p>
                 Dive into our thoughts, process, and inspirations. From design
-                insights to behind-the-scenes stories — explore how we think,
+                insights to behind the scenes stories explore how we think,
                 build, and imagine at Archideus
             </p>
             <a href="/Archideus Journal">

@@ -132,7 +132,7 @@
             journal: {
                 title: "The Archideus Journal",
                 description:
-                    "Dive into our thoughts, process, and inspirations. From design insights to behind-the-scenes stories — explore how we think, build, and imagine at Archideus",
+                    "Dive into our thoughts, process, and inspirations. From design insights to behind the scenes stories   explore how we think, build, and imagine at Archideus",
                 buttonText: "Read Our stories",
             },
             relatedArticles: [
@@ -281,8 +281,8 @@
             <div class="content-2-description">
                 <p>
                     Dive into our thoughts, process, and inspirations. From
-                    design insights to behind-the-scenes stories — explore how
-                    we think, build, and imagine at Archideus
+                    design insights to behind the scenes stories explore how we
+                    think, build, and imagine at Archideus
                 </p>
                 <a href="/Archideus Journal">
                     <button> Read Our stories </button>

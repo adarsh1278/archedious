@@ -4,7 +4,21 @@
     import ProjectCards from "$lib/components/ProjectCards.svelte";
 
     let slideIndex = 1;
-    let zoneSlideIndex = 1;
+    let bgSlideIndex = 0;
+    const bgImages = ["/bg2.png", "/bg5.png", "/bg6.png"];
+    const bgCaptions = [
+        "Micro-collaboration zone",
+        "Hierarchy Without Exclusion",
+        "Prototyping Zone",
+    ];
+
+    function nextBgSlide() {
+        bgSlideIndex = (bgSlideIndex + 1) % bgImages.length;
+    }
+
+    function prevBgSlide() {
+        bgSlideIndex = (bgSlideIndex - 1 + bgImages.length) % bgImages.length;
+    }
 
     onMount(() => {
         // Auto slide functionality for main carousel
@@ -14,12 +28,12 @@
 
         const interval = setInterval(autoSlide, 5000);
 
-        // Auto slide functionality for zone carousel
-        const autoZoneSlide = () => {
-            zoneSlideIndex = zoneSlideIndex >= 3 ? 1 : zoneSlideIndex + 1;
+        // Auto slide for background carousel
+        const bgAutoSlide = () => {
+            nextBgSlide();
         };
 
-        const zoneInterval = setInterval(autoZoneSlide, 5000);
+        const bgInterval = setInterval(bgAutoSlide, 5000);
 
         // Horizontal scroll functionality
         const content1 = document.querySelector(".horizontal-scroll");
@@ -95,30 +109,18 @@
             return () => {
                 content1.removeEventListener("wheel", handleWheel);
                 clearInterval(interval);
-                clearInterval(zoneInterval);
+                clearInterval(bgInterval);
             };
         }
 
         return () => {
             clearInterval(interval);
-            clearInterval(zoneInterval);
+            clearInterval(bgInterval);
         };
     });
 
     function currentSlide(n) {
         slideIndex = n;
-    }
-
-    function currentZoneSlide(n) {
-        zoneSlideIndex = n;
-    }
-
-    function nextZoneSlide() {
-        zoneSlideIndex = zoneSlideIndex >= 3 ? 1 : zoneSlideIndex + 1;
-    }
-
-    function prevZoneSlide() {
-        zoneSlideIndex = zoneSlideIndex <= 1 ? 3 : zoneSlideIndex - 1;
     }
 
     function openVideoLightbox(videoSrc) {
@@ -279,61 +281,47 @@
         </div>
 
         <div class="hero-2">
-            <div class="hero-bg-2">
-                <!-- Slide 1 -->
-                <div class="zone-slide {zoneSlideIndex === 1 ? 'active' : ''}">
-                    <div class="zone-slide-content">
-                        <p>Micro-collaboration zone</p>
-                    </div>
+            <div
+                class="hero-bg-2"
+                style="background-image: url('{bgImages[bgSlideIndex]}');"
+            >
+                <div class="animated-text">
+                    <p>{bgCaptions[bgSlideIndex]}</p>
                 </div>
-
-                <!-- Slide 2 -->
-                <div class="zone-slide {zoneSlideIndex === 2 ? 'active' : ''}">
-                    <div class="zone-slide-content">
-                        <p>Hierarchy Without Exclusion</p>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="zone-slide {zoneSlideIndex === 3 ? 'active' : ''}">
-                    <div class="zone-slide-content">
-                        <p>Prototyping Zone</p>
-                    </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <button class="zone-nav-btn zone-prev" on:click={prevZoneSlide}>
+                <button
+                    class="carousel-arrow prev-arrow"
+                    on:click={prevBgSlide}
+                >
                     <svg
-                        width="40"
-                        height="40"
-                        viewBox="0 0 40 40"
-                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     >
-                        <path
-                            d="M25 10L15 20L25 30"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
+                        <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
-                <button class="zone-nav-btn zone-next" on:click={nextZoneSlide}>
+                <button
+                    class="carousel-arrow next-arrow"
+                    on:click={nextBgSlide}
+                >
                     <svg
-                        width="40"
-                        height="40"
-                        viewBox="0 0 40 40"
-                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     >
-                        <path
-                            d="M15 10L25 20L15 30"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
+                        <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
             </div>
@@ -525,8 +513,8 @@
             <div class="content-2-description">
                 <p>
                     Dive into our thoughts, process, and inspirations. From
-                    design insights to behind-the-scenes stories — explore how
-                    we think, build, and imagine at Archideus
+                    design insights to behind the scenes stories explore how we
+                    think, build, and imagine at Archideus
                 </p>
                 <a href="/Archideus Journal">
                     <button> Read Our stories </button>
@@ -1168,7 +1156,7 @@
         width: 100%;
         height: 45.48vmax;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         color: white;
         text-align: center;
@@ -1176,55 +1164,71 @@
         margin-top: 2vmax;
         position: relative;
         overflow: hidden;
-        animation: changeBackground 15s infinite;
     }
 
     .hero-2 {
         width: 90%;
     }
 
-    .zone-slide {
+    .carousel-arrow {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    .zone-slide.active {
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
         display: flex;
-        opacity: 1;
-    }
-
-    .zone-slide:nth-child(1) {
-        background-image: url("/bg2.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .zone-slide:nth-child(2) {
-        background-image: url("/bg5.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .zone-slide:nth-child(3) {
-        background-image: url("/bg6.png");
-        background-size: cover;
-        background-position: center;
-    }
-
-    .zone-slide-content {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        padding-bottom: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        z-index: 10;
     }
 
-    .zone-slide-content p {
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-arrow {
+        left: 2rem;
+    }
+
+    .next-arrow {
+        right: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
+        }
+
+        .carousel-arrow svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .prev-arrow {
+            left: 1rem;
+        }
+
+        .next-arrow {
+            right: 1rem;
+        }
+    }
+
+    .hero-bg-2 .animated-text {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-bg-2 .animated-text p {
         color: #000;
         text-align: center;
         font-family: "Playfair Display";
@@ -1233,131 +1237,15 @@
         font-weight: 500;
         line-height: 56px;
         letter-spacing: -1px;
-        margin: 0;
-    }
-
-    .zone-nav-btn {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.8);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: #000;
-        z-index: 10;
-        transition: all 0.3s ease;
-    }
-
-    .zone-nav-btn:hover {
-        background-color: #fff;
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    .zone-prev {
-        left: 20px;
-    }
-
-    .zone-next {
-        right: 20px;
-    }
-
-    @media (max-width: 1024px) {
-        .hero-bg-2 {
-            height: 35vmax;
-        }
-
-        .zone-slide-content p {
-            font-size: 2.5vmax;
-            line-height: 44px;
-        }
-
-        .zone-nav-btn {
-            width: 45px;
-            height: 45px;
-        }
-
-        .zone-prev {
-            left: 15px;
-        }
-
-        .zone-next {
-            right: 15px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-bg-2 {
-            height: 30vmax;
-            padding: 1rem;
-        }
-
-        .zone-slide-content {
-            padding-bottom: 1.5rem;
-        }
-
-        .zone-slide-content p {
-            font-size: 2vmax;
-            line-height: 36px;
-        }
-
-        .zone-nav-btn {
-            width: 40px;
-            height: 40px;
-        }
-
-        .zone-nav-btn svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .zone-prev {
-            left: 10px;
-        }
-
-        .zone-next {
-            right: 10px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-bg-2 {
-            height: 25vmax;
-            padding: 0.5rem;
-            border-radius: 8px;
-        }
-
-        .zone-slide-content {
-            padding-bottom: 1rem;
-        }
-
-        .zone-slide-content p {
-            font-size: 1.5vmax;
-            line-height: 28px;
-        }
-
-        .zone-nav-btn {
-            width: 35px;
-            height: 35px;
-        }
-
-        .zone-nav-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .zone-prev {
-            left: 8px;
-        }
-
-        .zone-next {
-            right: 8px;
-        }
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        opacity: 1;
+        transform: translateY(29px);
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
     }
 
     .section-4 {
