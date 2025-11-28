@@ -33,6 +33,7 @@
     }
 </script>
 
+Contact page vector.svg
 <div class="wrapper-1200">
     <div class="gap">
         <div
@@ -517,9 +518,10 @@
     @media (max-width: 768px) {
         .bgM {
             position: relative;
-            top: -110px;
-            right: -93px;
+            top: -210px;
+            right: -120px;
             height: 300%;
+            width: 20px !important;
             /* object-fit: cover; */
         }
     }

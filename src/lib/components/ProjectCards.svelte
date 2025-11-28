@@ -8,7 +8,7 @@
             title: "Mouse and cheese design studio",
             type: "Commercial",
             location: "Noida, Uttar Pradesh",
-            titleClass: "long-title"
+            titleClass: "long-title",
         },
         {
             href: "/casestudies/Lawrence",
@@ -16,7 +16,7 @@
             title: "Laurence Duplex",
             type: "Residential",
             location: "Noida, Uttar Pradesh",
-            titleClass: ""
+            titleClass: "",
         },
         {
             href: "/casestudies/Indirapuram",
@@ -24,7 +24,7 @@
             title: "Indirapuram",
             type: "Residential",
             location: "Ghaziabad, Uttar Pradesh",
-            titleClass: ""
+            titleClass: "",
         },
         {
             href: "/casestudies/sixD",
@@ -32,7 +32,7 @@
             title: "SixD Office",
             type: "Commercial",
             location: "Noida",
-            titleClass: ""
+            titleClass: "",
         },
         {
             href: "/casestudies/office-Space",
@@ -40,7 +40,7 @@
             title: "The Terrace Studio",
             type: "Commercial",
             location: "Noida, Uttar Pradesh",
-            titleClass: ""
+            titleClass: "",
         },
         {
             href: "/casestudies/roopnagar",
@@ -48,8 +48,8 @@
             title: "Roop nagar villa",
             type: "Residential",
             location: "Noida, Uttar Pradesh",
-            titleClass: ""
-        }
+            titleClass: "",
+        },
     ];
 
     let swiperInstance;
@@ -57,8 +57,8 @@
 
     onMount(() => {
         const initSwiper = () => {
-            if (isInitialized || typeof Swiper === 'undefined') return;
-            
+            if (isInitialized || typeof Swiper === "undefined") return;
+
             try {
                 swiperInstance = new Swiper(".projectSwiper", {
                     slidesPerView: 1,
@@ -81,12 +81,12 @@
                 });
                 isInitialized = true;
             } catch (error) {
-                console.error('Swiper initialization error:', error);
+                console.error("Swiper initialization error:", error);
             }
         };
 
         const checkAndInit = () => {
-            if (typeof Swiper !== 'undefined') {
+            if (typeof Swiper !== "undefined") {
                 initSwiper();
             } else {
                 setTimeout(checkAndInit, 50);
@@ -100,7 +100,7 @@
                 try {
                     swiperInstance.destroy(true, true);
                 } catch (e) {
-                    console.error('Swiper destroy error:', e);
+                    console.error("Swiper destroy error:", e);
                 }
             }
         };
@@ -122,22 +122,42 @@
                                 <img src={project.image} alt={project.title} />
                             </div>
                             <div class="project-info">
-                                <h3 class={project.titleClass}>{project.title}</h3>
-                                <span class="project-meta">{project.type} | {project.location}</span>
+                                <h3 class={project.titleClass}>
+                                    {project.title}
+                                </h3>
+                                <span class="project-meta"
+                                    >{project.type} | {project.location}</span
+                                >
                             </div>
                         </a>
                     </div>
                 {/each}
             </div>
         </div>
-        
+
         <button class="project-button-prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
         </button>
         <button class="project-button-next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
@@ -160,7 +180,7 @@
     }
 
     .section-title {
-        color: #8B3A3A;
+        color: #8b3a3a;
         font-family: var(--main);
         font-size: 64px;
         font-weight: 400;
@@ -234,7 +254,7 @@
         position: absolute;
         top: 40%;
         transform: translateY(-50%);
-        background: #EFE8DB;
+        background: #efe8db;
         border: none;
         border-radius: 50%;
         width: 50px;
@@ -244,7 +264,7 @@
         justify-content: center;
         cursor: pointer;
         z-index: 10;
-        color: #8B3A3A;
+        color: #8b3a3a;
         transition: all 0.3s ease;
     }
 
@@ -314,7 +334,7 @@
 
         .project-button-prev svg,
         .project-button-next svg {
-            width: 20px;
+            width: 40px;
             height: 20px;
         }
     }
@@ -338,8 +358,8 @@
 
         .project-button-prev,
         .project-button-next {
-            width: 35px;
-            height: 35px;
+            width: 65px;
+            height: 65px;
         }
     }
 </style>

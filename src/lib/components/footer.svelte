@@ -118,7 +118,11 @@
         </main>
         <div class="copyright">
             <p>© 2025 Archideus. All rights reserved.</p>
-            <p>Designed by Mouse & Cheese Design Studio.</p>
+            <p>
+                <a href="https://www.mousencheese.design/">
+                    Designed by Mouse & Cheese Design Studio.</a
+                >
+            </p>
             <ul>
                 <a href="#">
                     <li>Terms</li>
@@ -284,6 +288,11 @@
         border-top: 1px solid #faebd7;
         color: var(--background);
     }
+
+    .copyright p a {
+        color: var(--background) !important;
+    }
+
     .copyright p {
         margin-top: 1vmax;
     }

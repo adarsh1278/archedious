@@ -220,7 +220,8 @@
                 <img
                     src="/final copy1243 3.png"
                     alt="Image 1"
-                    class="scroll-image"
+                    class="scroll-image
+                    "
                 />
                 <p>
                     Inspired by their looped logo, we recognized early on that
@@ -252,7 +253,7 @@
                     <img
                         src="/Rectangle 157.png"
                         alt="Image 3"
-                        class="scroll-image"
+                        class="scroll-image-2"
                     />
                 </div>
                 <h3>Noise Management</h3>
@@ -375,7 +376,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    
                                     role="button"
                                     tabindex="0"
                                 >
@@ -421,7 +421,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                  
                                     role="button"
                                     tabindex="0"
                                 >
@@ -467,7 +466,6 @@
                             <div class="video-container">
                                 <div
                                     class="video-placeholder"
-                                    
                                     role="button"
                                     tabindex="0"
                                 >
@@ -627,9 +625,9 @@
                 <span>Then you're already imagining it.</span>
                 <span class="itallic">Lets bring it to life.</span>
             </h3>
-           <a href="/contact">
- <button>Just Say Hello</button>
-       </a>
+            <a href="/contact">
+                <button>Just Say Hello</button>
+            </a>
         </div>
     </div>
 </div>
@@ -743,6 +741,8 @@
         justify-content: space-between;
         align-items: start;
         gap: 40px;
+
+        text-align: left;
     }
 
     .sub-head h2 {
@@ -754,6 +754,7 @@
         width: 33%;
         line-height: 40px;
         letter-spacing: -0.8px;
+        text-align: left;
     }
 
     .sub-head p {
@@ -831,6 +832,7 @@
             align-items: center;
             width: 95%;
             text-align: center;
+            padding-left: 2vmax;
         }
 
         .sub-head h2 {
@@ -949,8 +951,15 @@
 
     .scroll-image {
         height: 536px;
-        width: auto;
+        width: 345px;
         min-width: 800px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    .scroll-image-2 {
+        height: 536px;
+        width: 345px;
+
         object-fit: cover;
         border-radius: 12px;
     }
@@ -1170,7 +1179,7 @@
         animation: changeBackground 15s infinite;
     }
 
-  .hero-2 {
+    .hero-2 {
         width: 90%;
     }
 
