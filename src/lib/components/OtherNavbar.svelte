@@ -74,41 +74,8 @@
     <div class="nav-center desktop-menu">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
-
+        <a href="/project" class="nav-link">Projects</a>
         <!-- Projects with dropdown -->
-        <div class="dropdown">
-            <a href="#" class="nav-link">Projects ▾</a>
-            <div class="dropdown-menu2">
-                <div class="dropdown-item">
-                    <a href="#" class="dropdown-link">Residential ▸</a>
-                    <div class="sub-dropdown">
-                        <a href="/casestudies/Lawrence" class="sub-link"
-                            >Lawrence Villa</a
-                        >
-                        <a href="/casestudies/roopnagar" class="sub-link"
-                            >Roop Nagar Villa</a
-                        >
-                        <a href="/casestudies/Indirapuram" class="sub-link"
-                            >Indirapuram</a
-                        >
-                    </div>
-                </div>
-                <div class="dropdown-item">
-                    <a href="#" class="dropdown-link">Commercial ▸</a>
-                    <div class="sub-dropdown">
-                        <a href="/casestudies/mouseAndcheese" class="sub-link"
-                            >Mouse & Cheese Design Studio</a
-                        >
-                        <a href="/casestudies/office-Space" class="sub-link"
-                            >The Terrace Studio</a
-                        >
-                        <a href="/casestudies/sixD" class="sub-link"
-                            >SixD Office</a
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <a href="/Archideus Journal" class="nav-link">Archideus Journal</a>
         <a href="/contact" class="nav-link">Contact us</a>
@@ -133,76 +100,9 @@
                 >About Us</a
             >
 
-            <!-- Mobile Projects with submenu -->
-            <div class="drawer-dropdown">
-                <input type="checkbox" id="mobile-projects-toggle" hidden />
-                <label for="mobile-projects-toggle" class="drawer-link"
-                    >Projects ▾</label
-                >
-                <div class="drawer-submenu">
-                    <!-- Residential -->
-                    <div class="drawer-subitem">
-                        <input
-                            type="checkbox"
-                            id="mobile-residential-toggle"
-                            hidden
-                        />
-
-                        <label
-                            for="mobile-residential-toggle"
-                            class="drawer-sublink">Residential ▸</label
-                        >
-                        <div class="drawer-sub-submenu">
-                            <a
-                                href="/casestudies/Lawrence"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}>Lawrence Villa</a
-                            >
-                            <a
-                                href="/casestudies/roopnagar"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}>Roop Nagar Villa</a
-                            >
-                            <a
-                                href="/casestudies/Indirapuram"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}>Indirapuram</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Commercial -->
-                    <div class="drawer-subitem">
-                        <input
-                            type="checkbox"
-                            id="mobile-commercial-toggle"
-                            hidden
-                        />
-                        <label
-                            for="mobile-commercial-toggle"
-                            class="drawer-sublink">Commercial ▸</label
-                        >
-                        <div class="drawer-sub-submenu">
-                            <a
-                                href="/casestudies/mouseAndcheese"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}
-                                >Mouse & Cheese Design Studio</a
-                            >
-                            <a
-                                href="/casestudies/office-Space"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}>The Terrace Studio</a
-                            >
-                            <a
-                                href="/casestudies/sixD"
-                                class="drawer-sublink-child"
-                                on:click={closeDrawer}>SixD Office</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="/project" class="drawer-link" on:click={closeDrawer}
+                >Projects</a
+            >
 
             <a
                 href="/Archideus Journal"

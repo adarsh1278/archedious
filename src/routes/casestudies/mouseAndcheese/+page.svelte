@@ -1226,6 +1226,8 @@
         position: relative;
         width: 100%;
         height: auto;
+        margin-top: 300px;
+        padding-bottom: 20px;
     }
 
     .hero-bg-2 .animated-text p {
@@ -1235,7 +1237,7 @@
         font-size: 3.4vmax;
         font-style: normal;
         font-weight: 500;
-        line-height: 56px;
+        /* line-height: 56px; */
         letter-spacing: -1px;
         position: absolute;
         left: 0;

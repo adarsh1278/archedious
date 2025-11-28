@@ -68,7 +68,7 @@
                             structures but about the emotions a space can hold.<br
                             />
                             <div class="hieght"></div>
-                            For him, what matters most is making it possible—doing
+                            For him, what matters most is making it possible doing
                             whatever it takes to shape a space into what it is meant
                             to be.
                         </span>

@@ -159,7 +159,7 @@ Contact page vector.svg
             </div>
 
             <div class="bgM">
-                <img src="/Contact page vector.svg" alt="" class="cbg" />
+                <img src="/Vector mobile.svg" alt="" class="cbg" />
             </div>
         </div>
 
@@ -518,11 +518,14 @@ Contact page vector.svg
     @media (max-width: 768px) {
         .bgM {
             position: relative;
-            top: -210px;
-            right: -120px;
+            top: -60px;
+            right: -23px;
             height: 300%;
             width: 20px !important;
             /* object-fit: cover; */
+        }
+        .cbg {
+            height: 700px;
         }
     }
 </style>

@@ -1,4 +1,5 @@
 <script>
+    import ProjectCards from "$lib/components/ProjectCards.svelte";
     import { onMount } from "svelte";
 
     let scroller;
@@ -30,53 +31,7 @@
 </script>
 
 <div class="container-1">
-    <div class="header-1">
-        <h2>Projects</h2>
-        <p>
-            Discover spaces we’ve shaped — tailored to reflect each client’s
-            story, purpose, and vision.
-        </p>
-    </div>
-
-    <hr class="break-1" />
-
-    <!-- horizontal scroll section -->
-    <div class="content-1" bind:this={scroller}>
-        <div class="content-1-item">
-            <img src="h2.png" class="content-1-image" />
-            <div class="content-1-description">
-                <span>Roop nagar villa</span>
-                <button>Residential</button>
-            </div>
-        </div>
-
-        <div class="content-1-item">
-            <img src="h22.png" class="content-1-image" />
-            <div class="content-1-description">
-                <span>Lawrence</span>
-                <button>Commercial</button>
-            </div>
-        </div>
-
-        <div class="content-1-item">
-            <img src="h2.png" class="content-1-image" />
-            <div class="content-1-description">
-                <span>Roop nagar villa</span>
-                <button>Residential</button>
-            </div>
-        </div>
-
-        <div class="content-1-item">
-            <img src="h2.png" class="content-1-image" />
-            <div class="content-1-description">
-                <span>Roop nagar villa</span>
-                <button>Residential</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Your remaining sections -->
-    <slot />
+    <ProjectCards />
 </div>
 
 <style>
