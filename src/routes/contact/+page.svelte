@@ -522,6 +522,7 @@ Contact page vector.svg
             right: -23px;
             height: 300%;
             width: 20px !important;
+            display: none;
             /* object-fit: cover; */
         }
         .cbg {

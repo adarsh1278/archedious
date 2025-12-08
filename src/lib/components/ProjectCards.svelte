@@ -15,7 +15,7 @@
             image: "/case2.png",
             title: "Laurence Duplex",
             type: "Residential",
-            location: "Noida, Uttar Pradesh",
+            location: "Delhi",
             titleClass: "",
         },
         {
@@ -31,7 +31,7 @@
             image: "/image 89.png",
             title: "SixD Office",
             type: "Commercial",
-            location: "Noida",
+            location: "Noida, Uttar Pradesh",
             titleClass: "",
         },
         {
@@ -39,7 +39,7 @@
             image: "/DIRECTOR CABIN LOUNGE  1.png",
             title: "The Terrace Studio",
             type: "Commercial",
-            location: "Noida, Uttar Pradesh",
+            location: "Delhi",
             titleClass: "",
         },
         {
@@ -47,7 +47,7 @@
             image: "/FINAL 1.png",
             title: "Roop nagar villa",
             type: "Residential",
-            location: "Noida, Uttar Pradesh",
+            location: "Delhi",
             titleClass: "",
         },
     ];

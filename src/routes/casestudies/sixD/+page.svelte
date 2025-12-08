@@ -164,7 +164,7 @@
         <div class="hero-bg">
             <div>
                 <h1>SixD Office</h1>
-                <p>Commercial| Noida</p>
+                <p>Commercial| Noida Uttar Pradesh</p>
             </div>
         </div>
 
